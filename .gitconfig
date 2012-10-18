@@ -1,0 +1,17 @@
+[color]
+    ui = True
+
+[format]
+    pretty = oneline
+
+[user]
+	name = daniel
+	email = daniel@freshmilk.tv
+[core]
+	excludesfile = /home/dan/.gitignore_global
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 1920x1056+1920+0
+	history-view-vpane-position = 480
+	main-window-view = HistoryView
+	file-view-vpane-position = 494

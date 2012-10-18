@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/dan/workspace/projects/qman/buildout'
+let g:netrw_dirhist_2='/home/dan/workspace/projects/caloneo/buildout/caloneo/templates/base'
+let g:netrw_dirhist_3='/home/dan/.gvfs'
+let g:netrw_dirhist_4='/home/dan/workspace/forge/lightning_fast_shop/buildout/lfs'
