@@ -1,8 +1,15 @@
 #--- ALIAS ---
-alias ls='ls --color=auto'
+alias ls='ls -hH --color=auto'
+alias lsal='ls -al'
 alias vi='vim'
 alias diff='colordiff'
+alias grep='grep --color=auto'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias ping='ping -c 5'
 alias bashrc='vim ~/.bashrc && . ~/.bashrc'
+alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 
 #--- GIT-ALIAS ---
@@ -30,3 +37,14 @@ alias gitignore='vim .gitignore'
 alias freshmilk='thunar smb://192.168.0.106/'
 alias freshmilknettv='thunar smb://192.168.0.123/'
 alias freshmilk_austausch='thunar smb://192.168.0.106/dokumente/Austausch/Daniel/'
+
+#--- ROOT THINGS ---
+#------ systemd things ---
+alias list='systemctl list-units'
+alias units='systemctli list-unit-files'
+alias start='systemctl start'
+alias restart='systemctl restart'
+alias stop='systemctl stop'
+alias enable='systemctl enable'
+alias disable='systemctl disable'
+alias status='systemctl status'
