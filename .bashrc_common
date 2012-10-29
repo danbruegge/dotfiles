@@ -28,8 +28,6 @@ function gitpull()
     git merge $1
 }
 
-alias gitpush=gitpush
-alias gitpull=gitpull
 alias gitinfo='git remote -v && git branch -a -v && git status'
 alias gitignore='vim .gitignore'
 
