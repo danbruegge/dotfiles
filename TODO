@@ -1,0 +1,3 @@
+* optimize install script to an install AND update
+    * first, remove old files if exist
+    * second, set symbolic links

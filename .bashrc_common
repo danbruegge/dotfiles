@@ -46,3 +46,9 @@ alias stop='systemctl stop'
 alias enable='systemctl enable'
 alias disable='systemctl disable'
 alias status='systemctl status'
+
+#--- GAME THINGS ---
+alias wine='optirun wine'
+alias playonlinux='optirun playonlinux'
+alias minecraft='optirun minecraft'
+alias stalker='WINEPREFIX=~/.wine-stalker wine ~/.wine-stalker/drive_c/Program\ Files/THQ/S.T.A.L.K.E.R.\ -\ Shadow\ of\ Chernobyl/bin/XR_3DA.exe'
