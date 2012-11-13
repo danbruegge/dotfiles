@@ -1,17 +1,29 @@
 [color]
     ui = True
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [format]
     pretty = oneline
 
 [user]
-	name = daniel
-	email = daniel@freshmilk.tv
+    name = daniel
+    email = daniel@freshmilk.tv
+
 [core]
-	excludesfile = /home/dan/.gitignore-global
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 1920x1056+1920+0
-	history-view-vpane-position = 480
-	main-window-view = HistoryView
-	file-view-vpane-position = 494
+    excludesfile = /home/dan/.gitignore-global
+
+[alias]
+    undo=reset --hard
+    i=git remote -v && git branch -a -v && git status

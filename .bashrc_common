@@ -13,14 +13,14 @@ alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 
 #--- GIT-ALIAS ---
-function gitpush()
+function gpsh()
 {
     git checkout $2
     git merge $1
     git push origin $2
     git checkout $1
 }
-function gitpull()
+function gpll()
 {
     git checkout $1
     git pull origin $1
@@ -28,7 +28,7 @@ function gitpull()
     git merge $1
 }
 
-alias gitinfo='git remote -v && git branch -a -v && git status'
+alias gti='git'
 alias gitignore='vim .gitignore'
 
 #--- NETWORK ---
