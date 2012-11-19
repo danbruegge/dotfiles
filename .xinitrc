@@ -13,5 +13,4 @@ fi
 
 thunar --daemon &
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-#exec ck-launch-session dbus-launch --exit-with-session startxfce4
 exec dbus-launch --exit-with-session startxfce4
