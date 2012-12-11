@@ -1,4 +1,5 @@
 # For complete documentation of this file, please see Geany's main documentation
+
 [styling=C]
 
 [keywords]
@@ -48,6 +49,6 @@ run=
 
 [build-menu]
 FT_00_LB=JSHint
-FT_00_CM=jshint %f
+FT_00_CM=jshint --config ~/.config/geany/jshint.conf %f
 FT_00_WD=%d
 error_regex=(.+): line ([0-9]+)

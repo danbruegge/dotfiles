@@ -13,14 +13,14 @@ alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 
 #--- GIT-ALIAS ---
-function gpsh()
+function gitsh()
 {
     git checkout $2
     git merge $1
     git push origin $2
     git checkout $1
 }
-function gpll()
+function gitll()
 {
     git checkout $1
     git pull origin $1
@@ -39,13 +39,14 @@ alias freshmilk_austausch='thunar smb://192.168.0.106/dokumente/Austausch/Daniel
 #--- ROOT THINGS ---
 #------ systemd things ---
 alias list='systemctl list-units'
-alias units='systemctli list-unit-files'
+alias units='systemctl list-unit-files'
 alias start='systemctl start'
 alias restart='systemctl restart'
 alias stop='systemctl stop'
 alias enable='systemctl enable'
 alias disable='systemctl disable'
 alias status='systemctl status'
+alias reboot='systemctl reboot'
 
 #--- GAME THINGS ---
 alias wine='primusrun wine'
