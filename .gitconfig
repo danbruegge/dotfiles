@@ -22,7 +22,8 @@
     email = daniel@freshmilk.tv
 
 [core]
-    excludesfile = /home/dan/.gitignore-global
+    excludesfile = ~/.gitignore-global
+	pager = less -r
 
 [alias]
     undo=reset --hard

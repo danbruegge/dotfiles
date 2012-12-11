@@ -1,0 +1,7 @@
+[build-menu]
+FT_00_LB=_Flake8
+FT_00_CM=flake8 %f
+FT_00_WD=
+FT_01_LB=Kompilieren
+FT_01_CM=python -m py_compile "%f"
+FT_01_WD=
