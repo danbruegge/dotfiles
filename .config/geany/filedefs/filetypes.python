@@ -5,3 +5,6 @@ FT_00_WD=
 FT_01_LB=Kompilieren
 FT_01_CM=python -m py_compile "%f"
 FT_01_WD=
+EX_00_LB=_Ausführen
+EX_00_CM=python2 "%f"
+EX_00_WD=
