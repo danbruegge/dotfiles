@@ -1,0 +1,4 @@
+for root bashrc
+===============
+* add symlink from /home/dan/.dotfiles/.bashrc to /root/.bashrc as #root user
+* reload shell
