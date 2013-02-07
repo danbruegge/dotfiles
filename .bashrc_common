@@ -12,6 +12,12 @@ alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 
+#--- PYTHON-ALIAS ---
+alias pyclean='find . -name "*.pyc" -delete'
+
+#--- PHP-ALIAS ---
+alias runphp='php -S localhost:8000'
+
 #--- GIT-ALIAS ---
 function gitsh()
 {
