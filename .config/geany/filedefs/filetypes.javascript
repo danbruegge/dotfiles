@@ -52,3 +52,6 @@ FT_00_LB=JSHint
 FT_00_CM=jshint --config ~/.config/geany/jshint.conf %f
 FT_00_WD=%d
 error_regex=(.+): line ([0-9]+)
+FT_01_LB=Beautify
+FT_01_CM=uglifyjs --beautify --indent 4 %f -o /tmp/%f && geany /tmp/%f
+FT_01_WD=%d
