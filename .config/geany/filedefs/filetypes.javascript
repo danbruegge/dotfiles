@@ -55,6 +55,6 @@ error_regex=(.+): line ([0-9]+)
 FT_01_LB=Beautify
 FT_01_CM=uglifyjs --beautify --indent 4 %f -o /tmp/%f && geany /tmp/%f
 FT_01_WD=%d
-FT_02_LB=JSON
+FT_02_LB=JSON Pretty Print
 FT_02_CM=cat %f | python -mjson.tool > /tmp/%f && geany /tmp/%f
 FT_02_WD=%d

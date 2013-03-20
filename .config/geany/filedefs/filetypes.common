@@ -4,3 +4,8 @@
 # which characters should be skipped when moving (or included when deleting) to word boundaries
 # should always include space and tab (\s\t)
 whitespace_chars=\s\t!\"#%&'()*+,./:;<=>?@[\\]^`{|}~
+
+[build-menu]
+FT_00_LB=JSON Pretty Print
+FT_00_CM=cat %f | python -mjson.tool > /tmp/%f && geany /tmp/%f
+FT_00_WD=%d
