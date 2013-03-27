@@ -1,12 +1,8 @@
 {
 	"installed_packages":
 	[
-		"BracketHighlighter",
 		"Emmet",
-		"jQuery",
-		"JsFormat",
 		"LESS",
-		"Package Control",
-		"SublimeLinter"
+		"Package Control"
 	]
 }
