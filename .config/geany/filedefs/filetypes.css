@@ -68,3 +68,6 @@ context_action_cmd=
 #width=4
 # 0 is spaces, 1 is tabs, 2 is tab & spaces
 #type=1
+
+[lexer_properties]
+lexer.css.less.language=1
