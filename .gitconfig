@@ -18,8 +18,8 @@
     pretty = oneline
 
 [user]
-    name = daniel
-    email = daniel@freshmilk.tv
+	name = haengebruegge
+	email = me@haengebruegge.de
 
 [core]
     excludesfile = ~/.gitignore-global
