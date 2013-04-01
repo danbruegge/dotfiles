@@ -23,3 +23,5 @@ set textwidth=79
 set background=dark
 
 set mouse=a
+
+set cursorline
