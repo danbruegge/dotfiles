@@ -22,5 +22,8 @@ alias disable='systemctl disable'
 alias status='systemctl status'
 alias reboot='systemctl reboot'
 
+#--- WLAN ---
+alias scan='iw dev wlan0 scan | grep SSID'
+
 #--- LOAD BASH COMMON ---
 . /home/dan/.bashrc_common
