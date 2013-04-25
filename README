@@ -2,3 +2,5 @@ for root bashrc
 ===============
 * add symlink from /home/dan/.dotfiles/.bashrc to /root/.bashrc as #root user
 * reload shell
+* for Thunar:
+  * ln -s /home/dan/.dotfiles/.config/Thunar/ ../.config/Thunar

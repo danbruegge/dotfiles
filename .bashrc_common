@@ -17,7 +17,7 @@ alias dotfiles="cd ~/.dotfiles"
 alias pyclean='find . -name "*.pyc" -delete'
 
 #--- PHP-ALIAS ---
-alias runphp='php -S localhost:8000'
+alias runphp='php -S localhost:8001'
 
 #--- GIT-ALIAS ---
 function gitsh()
