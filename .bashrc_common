@@ -39,23 +39,6 @@ alias gti='git'
 alias gut='git'
 alias gitignore='vim .gitignore'
 
-#--- NETWORK ---
-alias freshmilk='thunar smb://192.168.0.106/'
-alias freshmilknettv='thunar smb://192.168.0.123/'
-alias freshmilk_austausch='thunar smb://192.168.0.106/dokumente/Austausch/Daniel/'
-
-#--- ROOT THINGS ---
-#------ systemd things ---
-alias list='systemctl list-units'
-alias units='systemctl list-unit-files'
-alias start='systemctl start'
-alias restart='systemctl restart'
-alias stop='systemctl stop'
-alias enable='systemctl enable'
-alias disable='systemctl disable'
-alias status='systemctl status'
-alias reboot='systemctl reboot'
-
 #--- GAME THINGS ---
 alias p='primusrun'
 alias wine='p wine'
