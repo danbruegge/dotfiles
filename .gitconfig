@@ -17,9 +17,8 @@
 [format]
     pretty = oneline
 
-[user]
-	name = haengebruegge
-	email = me@haengebruegge.de
+[include]   
+    path = ~/.gitconfig_user
 
 [core]
     excludesfile = ~/.gitignore-global
