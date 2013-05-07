@@ -3,6 +3,7 @@
 <action>
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
+	<unique-id>1367782884887571-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
@@ -12,6 +13,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout -all</name>
+	<unique-id>1367782884887587-2</unique-id>
 	<command>for f in *.png; do pngout $f; done</command>
 	<description></description>
 	<patterns>*</patterns>
@@ -20,6 +22,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout</name>
+	<unique-id>1367782884887596-3</unique-id>
 	<command>pngout %f</command>
 	<description></description>
 	<patterns>*.png</patterns>
@@ -28,6 +31,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim</name>
+	<unique-id>1367782884887603-4</unique-id>
 	<command>jpegoptim %f</command>
 	<description></description>
 	<patterns>*.jpg</patterns>
@@ -36,6 +40,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim -all</name>
+	<unique-id>1367782884887611-5</unique-id>
 	<command>jpegoptim *.jpg</command>
 	<description></description>
 	<patterns>*</patterns>
