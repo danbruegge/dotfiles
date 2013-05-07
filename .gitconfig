@@ -17,8 +17,8 @@
 [format]
     pretty = oneline
 
-[include]
-    path=~/.gitconfig_user
+[include]   
+    path = ~/.gitconfig_user
 
 [core]
     excludesfile = ~/.gitignore-global

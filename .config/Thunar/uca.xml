@@ -13,7 +13,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout -all</name>
-	<unique-id>1367782884887587-2</unique-id>
+	<unique-id>1367817685237832-2</unique-id>
 	<command>for f in *.png; do pngout $f; done</command>
 	<description></description>
 	<patterns>*</patterns>
