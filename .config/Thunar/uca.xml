@@ -3,7 +3,7 @@
 <action>
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
-	<unique-id>1367817685237807-1</unique-id>
+	<unique-id>1367782884887571-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
@@ -22,7 +22,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout</name>
-	<unique-id>1367817685237846-3</unique-id>
+	<unique-id>1367782884887596-3</unique-id>
 	<command>pngout %f</command>
 	<description></description>
 	<patterns>*.png</patterns>
@@ -31,7 +31,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim</name>
-	<unique-id>1367817685237859-4</unique-id>
+	<unique-id>1367782884887603-4</unique-id>
 	<command>jpegoptim %f</command>
 	<description></description>
 	<patterns>*.jpg</patterns>
@@ -40,7 +40,7 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim -all</name>
-	<unique-id>1367817685237872-5</unique-id>
+	<unique-id>1367782884887611-5</unique-id>
 	<command>jpegoptim *.jpg</command>
 	<description></description>
 	<patterns>*</patterns>
