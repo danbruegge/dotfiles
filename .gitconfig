@@ -29,3 +29,5 @@
     i=git remote -v && git branch -a -v && git status
 [push]
 	default = simple
+[merge]
+	conflictstyle = diff3
