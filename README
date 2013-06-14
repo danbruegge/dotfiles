@@ -4,3 +4,5 @@ for root bashrc
 * reload shell
 * for Thunar:
   * ln -s /home/dan/.dotfiles/.config/Thunar/ ../.config/Thunar
+* for Pip:
+  * ln -s /home/dan/.dotfiles/.pip/ ../.pip
