@@ -25,3 +25,6 @@ set background=dark
 set mouse=a
 
 set cursorline
+
+" search
+set hlsearch
