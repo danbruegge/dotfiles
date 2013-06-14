@@ -13,8 +13,8 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout -all</name>
-	<unique-id>1367817685237832-2</unique-id>
-	<command>for f in *.png; do pngout $f; done</command>
+	<unique-id>1369725324085745-9</unique-id>
+	<command>xfce4-terminal -e &quot;for f in *.png; do pngout $f; done&quot;</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
@@ -22,8 +22,8 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Pngout</name>
-	<unique-id>1367782884887596-3</unique-id>
-	<command>pngout %f</command>
+	<unique-id>1369725315093668-8</unique-id>
+	<command>xfce4-terminal -e &quot;pngout %f&quot;</command>
 	<description></description>
 	<patterns>*.png</patterns>
 	<image-files/>
@@ -31,8 +31,8 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim</name>
-	<unique-id>1367782884887603-4</unique-id>
-	<command>jpegoptim %f</command>
+	<unique-id>1369725274293601-6</unique-id>
+	<command>xfce4-terminal -e &quot;jpegoptim %f&quot;</command>
 	<description></description>
 	<patterns>*.jpg</patterns>
 	<image-files/>
@@ -40,8 +40,8 @@
 <action>
 	<icon>insert-image</icon>
 	<name>Jpegoptim -all</name>
-	<unique-id>1367782884887611-5</unique-id>
-	<command>jpegoptim *.jpg</command>
+	<unique-id>1369725308613674-7</unique-id>
+	<command>xfce4-terminal -e &quot;jpegoptim *.jpg&quot;</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
