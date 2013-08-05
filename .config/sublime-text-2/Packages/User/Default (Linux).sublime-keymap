@@ -1,2 +1,7 @@
 [
+    { "keys": ["ctrl+e"], "command": "toggle_comment", "args": { "block": false } },
+
+    { "keys": ["ctrl+d"], "command": "duplicate_line" },
+
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} }
 ]
