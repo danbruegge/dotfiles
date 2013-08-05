@@ -1,22 +1,17 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-
-    "rulers": [79],
-
-	"translate_tabs_to_spaces": true,
-
-	"indent_to_bracket": true,
-
-    "highlight_line": true,
-
-    "trim_trailing_white_space_on_save": true,
-
-    "ensure_newline_at_eof_on_save": true,
-
-    "highlight_modified_tabs": true,
-
+	"ensure_newline_at_eof_on_save": true,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"indent_to_bracket": true,
+	"rulers":
+	[
+		79
+	],
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }
