@@ -11,7 +11,9 @@ alias ping='ping -c 5'
 alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
-alias dotfiles="cd ~/.dotfiles"
+alias dotfiles='cd ~/.dotfiles'
+
+alias curlajax='curl -H "X-Requested-With: XMLHttpRequest"'
 
 #--- PYTHON-ALIAS ---
 alias pyclean='find . -name "*.pyc" -delete'
