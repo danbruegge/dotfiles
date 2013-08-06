@@ -3,5 +3,8 @@
 
     { "keys": ["ctrl+d"], "command": "duplicate_line" },
 
-    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} }
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+
+    // flask8-lint
+    { "keys": ["ctrl+alt+8"], "command": "flake8-python2" }
 ]

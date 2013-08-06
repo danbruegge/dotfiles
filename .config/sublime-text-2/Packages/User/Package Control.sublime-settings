@@ -3,6 +3,7 @@
 	[
 		"Djaneiro",
 		"JSHint Gutter",
-		"Package Control"
+		"Package Control",
+		"Python Flake8 Lint"
 	]
 }
