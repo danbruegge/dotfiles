@@ -2,7 +2,7 @@
 	"installed_packages":
 	[
 		"Djaneiro",
-		"Package Control",
-		"SublimeLinter"
+		"JSHint Gutter",
+		"Package Control"
 	]
 }
