@@ -44,6 +44,7 @@ alias gitignore='vim .gitignore'
 #--- GAME THINGS ---
 alias p='primusrun'
 alias wine='p wine'
+alias steam='p steam'
 alias playonlinux='p playonlinux'
 alias minecraft='p minecraft'
 alias stalker='WINEPREFIX=~/.wine-stalker wine ~/.wine-stalker/drive_c/Program\ Files/THQ/S.T.A.L.K.E.R.\ -\ Shadow\ of\ Chernobyl/bin/XR_3DA.exe'
