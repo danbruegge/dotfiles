@@ -2,8 +2,8 @@
 	"installed_packages":
 	[
 		"Djaneiro",
-		"JSHint Gutter",
+		"LESS",
 		"Package Control",
-		"Python Flake8 Lint"
+		"SublimeLinter"
 	]
 }
