@@ -10,6 +10,7 @@ PS1='\[\e[1;31m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;31m\]]\$\[\e[0m\] '
 #------ pacman related ---
 alias pacnew='find / -name *.pacnew'
 alias pacsave='find / -name *.pacsave'
+alias paccleanup='pacman -Rsn `pacman -Qdtq`'
 
 #------ systemd things ---
 alias list='systemctl list-units'
