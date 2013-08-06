@@ -1,0 +1,16 @@
+[Configuration]
+LastActiveMode=THUNAR_RENAMER_MODE_BOTH
+LastActiveRenamer=ThunarSbrReplaceRenamer
+
+[ThunarSbrInsertRenamer]
+Offset=0
+Mode=THUNAR_SBR_INSERT_MODE_OVERWRITE
+OffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
+Text=arrow
+
+[ThunarSbrReplaceRenamer]
+Regexp=FALSE
+Replacement=-right
+CaseSensitive=FALSE
+Pattern=rechts
+
