@@ -1,7 +1,9 @@
 {
 	"installed_packages":
 	[
+		"Base16 Color Schemes",
 		"Djaneiro",
+		"Emmet",
 		"LESS",
 		"Package Control",
 		"SublimeLinter"

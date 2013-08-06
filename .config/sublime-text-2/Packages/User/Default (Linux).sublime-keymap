@@ -3,5 +3,23 @@
 
     { "keys": ["ctrl+d"], "command": "duplicate_line" },
 
-    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} }
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+
+
+    // ------------------------------------------------------------------------
+    {
+        "keys": [
+            "ctrl+shift+e"
+        ],
+        "args": {
+            "action": "expand_abbreviation"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.expand_abbreviation"
+            }
+        ]
+    }
+    // ------------------------------------------------------------------------
 ]
