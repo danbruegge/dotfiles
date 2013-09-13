@@ -10,7 +10,7 @@ Text=arrow
 
 [ThunarSbrReplaceRenamer]
 Regexp=FALSE
-Replacement=-right
+Replacement=
 CaseSensitive=FALSE
-Pattern=rechts
+Pattern=_
 
