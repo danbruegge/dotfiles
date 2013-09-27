@@ -23,6 +23,10 @@ alias disable='systemctl disable'
 alias status='systemctl status'
 alias reboot='systemctl reboot'
 
+#--- system ---
+alias sysinfo='grep . /etc/{hostname,locale.conf,vconsole.conf,modules-load.d/*.conf};readlink /etc/localtime'
+alias sysinfod='hostnamectl;localectl;timedatectl'
+
 #--- WLAN ---
 alias scan='iw dev wlan0 scan | grep SSID'
 
