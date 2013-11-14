@@ -25,9 +25,10 @@
 	pager = less -r
 
 [alias]
-    undo=reset --hard
-    i=git remote -v && git branch -a -v && git status
+    undo=reset --hard HEAD^
+    info=git remote -v && git branch -a -v && git status
 [push]
 	default = simple
 [merge]
 	conflictstyle = diff3
+    tool = meld
