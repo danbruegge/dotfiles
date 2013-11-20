@@ -16,6 +16,7 @@ alias dotfiles='cd ~/.dotfiles'
 alias curlajax='curl -H "X-Requested-With: XMLHttpRequest"'
 
 #--- PYTHON-ALIAS ---
+alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
 
 #--- PHP-ALIAS ---
