@@ -1,43 +1,43 @@
 #--- ALIAS ---
+alias c='clear'
 alias ls='ls -hH --color=auto'
-alias lsal='ls -al'
+alias ll='ls -la'
+alias ..='cd ../'
+alias ...='cd ../../'
 alias vi='vim'
 alias diff='colordiff'
 alias grep='grep --color=auto'
 alias df='df -h'
-alias du='du -c -h'
-alias mkdir='mkdir -p -v'
+alias du='du -ch'
+alias mkdir='mkdir -pv'
 alias ping='ping -c 5'
 alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
 
+# set screensaver off #
+alias soff='xset s off'
+# set screensaver on #
+alias son='xset s on'
+
+# request a page with a ajax header (search engine testing) #
 alias curlajax='curl -H "X-Requested-With: XMLHttpRequest"'
+# get web server headers #
+alias header='curl -I'
+
+alias now='date +"%T"'
 
 #--- PYTHON-ALIAS ---
 alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
+# shortcut for the short . runserver #
+alias run='. runserver.sh'
 
 #--- PHP-ALIAS ---
 alias runphp='php -S localhost:8001'
 
 #--- GIT-ALIAS ---
-function gitsh()
-{
-    git checkout $2
-    git merge $1
-    git push origin $2
-    git checkout $1
-}
-function gitll()
-{
-    git checkout $1
-    git pull origin $1
-    git checkout $2
-    git merge $1
-}
-
 alias gti='git'
 alias gut='git'
 alias gitignore='vim .gitignore'

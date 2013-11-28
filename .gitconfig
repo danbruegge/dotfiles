@@ -23,6 +23,7 @@
 [core]
     excludesfile = ~/.gitignore-global
 	pager = less -r
+    editor = vim
 
 [alias]
     undo=reset --hard HEAD^
