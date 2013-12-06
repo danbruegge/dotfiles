@@ -15,6 +15,7 @@ alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
+alias editor='export EDITOR="vim"'
 
 # set screensaver off #
 alias soff='xset s off'
