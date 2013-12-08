@@ -22,6 +22,9 @@ hi Normal ctermfg=white ctermbg=black
     " syntax highlighting for vim
 syntax on
 
+	" colorscheme, solarized
+colorscheme solarized
+
 	" set filetype plugin on
 filetype plugin on
 
