@@ -16,15 +16,8 @@ set enc=utf-8
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
-    " set background for gui and xterm
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
-
-	" no transparent background on xterm
-hi Normal ctermfg=white ctermbg=black
+    " set background style 
+set background=dark
 
     " syntax highlighting for vim
 syntax on
