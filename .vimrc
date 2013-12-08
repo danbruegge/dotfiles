@@ -22,8 +22,13 @@ set background=dark
     " syntax highlighting for vim
 syntax on
 
+	" set terminal colors
+set t_Co=256
+
 	" colorscheme, solarized
-colorscheme solarized
+if has('gui_running')
+	colorscheme solarized
+endif
 
 	" set filetype plugin on
 filetype plugin on
