@@ -1,4 +1,11 @@
 " ---
+" pathogen
+" ---
+
+execute pathogen#infect()
+
+
+" ---
 " vim common
 " ---
 
@@ -49,10 +56,3 @@ set colorcolumn=+1
 
 	" display/highlight current line
 set cursorline
-
-
-" ---
-" pathogen
-" ---
-
-execute pathogen#infect()
