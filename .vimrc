@@ -26,13 +26,8 @@ set background=dark
     " syntax highlighting for vim
 syntax on
 
-	" set terminal colors
+    " set terminal colors
 set t_Co=256
-
-    " colorscheme, solarized
-if has('gui_running')
-	colorscheme solarized
-endif
 
     " Attempt to determine the type of a file based on its name and possibly
     " its contents. Use this to allow intelligent auto-indenting for each 
@@ -79,3 +74,5 @@ set statusline=2
     " to press <Enter> to continue"
 set cmdheight=2
 
+    " Markdown settings
+let g:vim_markdown_initial_foldlevel=2
