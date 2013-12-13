@@ -35,6 +35,9 @@ alias pyclean='find . -name "*.pyc" -delete'
 # shortcut for the short . runserver #
 alias run='. runserver.sh'
 
+# shortcut for bin/django
+alias dj='bin/django'
+
 #--- PHP-ALIAS ---
 alias runphp='php -S localhost:8001'
 
