@@ -74,5 +74,16 @@ set statusline=2
     " to press <Enter> to continue"
 set cmdheight=2
 
-    " Markdown settings
+" =============================================================================
+" Markdown settings
+" =============================================================================
+
+    " Don't fold the first 2 levels
 let g:vim_markdown_initial_foldlevel=2
+
+" =============================================================================
+" Tab settings
+" =============================================================================
+
+    " Show tabline with number 2
+set showtabline=2
