@@ -1,9 +1,15 @@
-#--- DEFAULTS ---
+# =============================================================================
+# DEFAULTS
+# =============================================================================
+
 export EDITOR=vim
 export TERMINAL=xfce4-terminal
 export BROWSER=firefox
 
-#--- ALIAS ---
+# =============================================================================
+# ALIAS
+# =============================================================================
+
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -la'
@@ -34,24 +40,37 @@ alias header='curl -I'
 
 alias now='date +"%T"'
 
-#--- PYTHON-ALIAS ---
+# =============================================================================
+# PYTHON-ALIAS
+# =============================================================================
+
 alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
+
 # shortcut for the short . runserver #
 alias run='. runserver.sh'
 
 # shortcut for bin/django
 alias dj='bin/django'
 
-#--- PHP-ALIAS ---
+# =============================================================================
+# PHP-ALIAS
+# =============================================================================
+
 alias runphp='php -S localhost:8001'
 
-#--- GIT-ALIAS ---
+# =============================================================================
+# GIT-ALIAS
+# =============================================================================
+
 alias gti='git'
 alias gut='git'
 alias gitignore='vim .gitignore'
 
-#--- GAME THINGS ---
+# =============================================================================
+# GAME THINGS
+# =============================================================================
+
 alias p='primusrun'
 alias wine='p wine'
 alias playonlinux='p playonlinux'
@@ -59,7 +78,10 @@ alias minecraft='p minecraft'
 alias stalker='WINEPREFIX=~/.wine-stalker wine ~/.wine-stalker/drive_c/Program\ Files/THQ/S.T.A.L.K.E.R.\ -\ Shadow\ of\ Chernobyl/bin/XR_3DA.exe'
 alias walkingdead='WINEARCH=win32 WINEPREFIX=/home/dan/.wine-twd/ wine C:\\windows\\command\\start.exe /Unix /home/dan/.wine-twd/dosdevices/c\:/Program\ Files/Telltale\ Games/The\ Walking\ Dead/The\ Walking\ Dead.lnk'
 
-#--- COLORED MAN PAGES ---
+# =============================================================================
+# COLORED MAN PAGES
+# =============================================================================
+
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -72,7 +94,10 @@ man() {
             man "$@"
 }
 
-#--- Good bash tips for everyone ---
+# =============================================================================
+# Good bash tips for everyone
+# =============================================================================
+
 function bashtips() {
 # copyright 2007 - 2010 Christopher Bratusek
 cat <<EOF
