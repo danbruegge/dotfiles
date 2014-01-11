@@ -17,7 +17,7 @@ set nocompatible
     " utf-8 encoding
 set enc=utf-8
 
-    " mave backup files to ~/.vim/sessions
+    " move backup files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
@@ -88,3 +88,10 @@ let g:vim_markdown_initial_foldlevel=2
 
     " Show tabline with number 2
 set showtabline=2
+
+" =============================================================================
+" Emmet settings
+" =============================================================================
+
+    "enable all function in all mode.
+let g:user_emmet_mode='a'
