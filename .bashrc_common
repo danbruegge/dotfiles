@@ -1,4 +1,15 @@
-#--- ALIAS ---
+# =============================================================================
+# DEFAULTS
+# =============================================================================
+
+export EDITOR=vim
+export TERMINAL=xfce4-terminal
+export BROWSER=firefox
+
+# =============================================================================
+# ALIAS
+# =============================================================================
+
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -la'
@@ -29,24 +40,37 @@ alias header='curl -I'
 
 alias now='date +"%T"'
 
-#--- PYTHON-ALIAS ---
+# =============================================================================
+# PYTHON-ALIAS
+# =============================================================================
+
 alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
+
 # shortcut for the short . runserver #
 alias run='. runserver.sh'
 
 # shortcut for bin/django
 alias dj='bin/django'
 
-#--- PHP-ALIAS ---
+# =============================================================================
+# PHP-ALIAS
+# =============================================================================
+
 alias runphp='php -S localhost:8001'
 
-#--- GIT-ALIAS ---
+# =============================================================================
+# GIT-ALIAS
+# =============================================================================
+
 alias gti='git'
 alias gut='git'
 alias gitignore='vim .gitignore'
 
-#--- GAME THINGS ---
+# =============================================================================
+# GAME THINGS
+# =============================================================================
+
 alias p='primusrun'
 alias wine='p wine'
 alias playonlinux='p playonlinux'
@@ -54,7 +78,10 @@ alias minecraft='p minecraft'
 alias stalker='WINEPREFIX=~/.wine-stalker wine ~/.wine-stalker/drive_c/Program\ Files/THQ/S.T.A.L.K.E.R.\ -\ Shadow\ of\ Chernobyl/bin/XR_3DA.exe'
 alias walkingdead='WINEARCH=win32 WINEPREFIX=/home/dan/.wine-twd/ wine C:\\windows\\command\\start.exe /Unix /home/dan/.wine-twd/dosdevices/c\:/Program\ Files/Telltale\ Games/The\ Walking\ Dead/The\ Walking\ Dead.lnk'
 
-#--- COLORED MAN PAGES ---
+# =============================================================================
+# COLORED MAN PAGES
+# =============================================================================
+
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -66,3 +93,58 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
+
+# =============================================================================
+# Good bash tips for everyone
+# =============================================================================
+
+function bashtips() {
+# copyright 2007 - 2010 Christopher Bratusek
+cat <<EOF
+DIRECTORIES
+-----------
+~-          Previous working directory
+pushd tmp   Push tmp && cd tmp
+popd        Pop && cd
+GLOBBING AND OUTPUT SUBSTITUTION
+--------------------------------
+ls a[b-dx]e Globs abe, ace, ade, axe
+ls a{c,bl}e Globs ace, able
+\$(ls)      \`ls\` (but nestable!)
+HISTORY MANIPULATION
+--------------------
+!!        Last command
+!?foo     Last command containing \`foo'
+^foo^bar^ Last command containing \`foo', but substitute \`bar'
+!!:0      Last command word
+!!:^      Last command's first argument
+!\$       Last command's last argument
+!!:*      Last command's arguments
+!!:x-y    Arguments x to y of last command
+C-s       search forwards in history
+C-r       search backwards in history
+LINE EDITING
+------------
+M-d     kill to end of word
+C-w     kill to beginning of word
+C-k     kill to end of line
+C-u     kill to beginning of line
+M-r     revert all modifications to current line
+C-]     search forwards in line
+M-C-]   search backwards in line
+C-t     transpose characters
+M-t     transpose words
+M-u     uppercase word
+M-l     lowercase word
+M-c     capitalize word
+COMPLETION
+----------
+M-/     complete filename
+M-~     complete user name
+M-@     complete host name
+M-\$    complete variable name
+M-!     complete command name
+M-^     complete history
+EOF
+}
+
