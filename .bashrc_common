@@ -13,6 +13,9 @@ export BROWSER=firefox
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -la'
+alias lo='ls . | xargs -n1 basename' # list files without extra informations
+alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra 
+                                            # informations
 alias ..='cd ../'
 alias ...='cd ../../'
 alias vi='vim'
