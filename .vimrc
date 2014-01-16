@@ -65,8 +65,12 @@ set number
 
     " set and display line ending
 set ruler
-set textwidth=79
-set colorcolumn=+1
+set textwidth=0     " prevent line break at the end of the line
+set wrapmargin=0
+set colorcolumn=80
+
+    " a long line is just a long line
+set nowrap
 
     " display/highlight current line
 set cursorline
