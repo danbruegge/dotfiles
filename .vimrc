@@ -44,6 +44,9 @@ filetype plugin on
     " Enable Omni completion, smart autocompletion
 set omnifunc=syntaxcomplete#Complete
 
+    " :h completeopt
+set completeopt=longest,menuone,preview
+
     " Better command-line completion
 set wildmenu
 
