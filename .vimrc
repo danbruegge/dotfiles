@@ -38,6 +38,12 @@ colorscheme molokai
     " filetype, and for plugins that are filetype specific.
 filetype plugin indent on
 
+    " Look at: ':h filetype-plugin'
+filetype plugin on
+
+    " Enable Omni completion, smart autocompletion
+set omnifunc=syntaxcomplete#Complete
+
     " Better command-line completion
 set wildmenu
 
