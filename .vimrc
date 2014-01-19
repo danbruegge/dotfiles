@@ -54,6 +54,9 @@ set showcmd
     " the mapping of <C-L> below)
 set hlsearch
 
+    " show search matches on type
+set incsearch
+
     " tabbing stuff
 set tabstop=8
 set expandtab
