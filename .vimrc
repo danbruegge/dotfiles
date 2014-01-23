@@ -95,7 +95,7 @@ set statusline=2
 set cmdheight=2
 
     " change options
-set cpoptions+=$
+set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
 " =============================================================================
 " Markdown settings
