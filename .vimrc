@@ -94,6 +94,9 @@ set statusline=2
     " to press <Enter> to continue"
 set cmdheight=2
 
+    " change options
+set cpoptions+=$
+
 " =============================================================================
 " Markdown settings
 " =============================================================================
