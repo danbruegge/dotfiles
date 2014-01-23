@@ -18,6 +18,7 @@ alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
                                             # informations
 alias ..='cd ../'
 alias ...='cd ../../'
+alias ....='cd ../../../'
 alias vi='vim'
 alias diff='colordiff'
 alias grep='grep --color=auto'
