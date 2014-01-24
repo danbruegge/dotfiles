@@ -97,6 +97,9 @@ set statusline=2
     " to press <Enter> to continue"
 set cmdheight=2
 
+    " change options
+set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
+
 " =============================================================================
 " Markdown settings
 " =============================================================================
