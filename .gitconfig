@@ -26,8 +26,16 @@
     editor = vim
 
 [alias]
-    undo=reset --hard HEAD^
-    info=git remote -v && git branch -a -v && git status
+    undo = reset --hard HEAD^
+    info = git remote -v && git branch -a -v && git status
+    ci = commit
+    cia = commit -am
+    st = status
+    br = branch
+    co = checkout
+    df = diff
+    lg = log
+
 [push]
 	default = simple
 [merge]

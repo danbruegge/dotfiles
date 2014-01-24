@@ -33,6 +33,9 @@ set t_Co=256
     " set colorscheme
 colorscheme molokai 
 
+    " h filetype-indent
+filetype indent on
+
     " Attempt to determine the type of a file based on its name and possibly
     " its contents. Use this to allow intelligent auto-indenting for each 
     " filetype, and for plugins that are filetype specific.
