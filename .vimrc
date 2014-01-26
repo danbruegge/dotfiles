@@ -100,6 +100,8 @@ set cmdheight=2
     " change options
 set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
+    " less with css
+autocmd BufNewFile,BufRead *.less       set ft=less.css
 " =============================================================================
 " Markdown settings
 " =============================================================================
