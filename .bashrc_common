@@ -19,6 +19,7 @@ alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
 alias ..='cd ../'
 alias ...='cd ../../'
 alias vi='vim'
+alias g='gvim --remote-silent'
 alias diff='colordiff'
 alias grep='grep --color=auto'
 alias df='df -h'
@@ -29,7 +30,6 @@ alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
-alias editor='export EDITOR="vim"'
 
 # set screensaver off #
 alias soff='xset s off'
