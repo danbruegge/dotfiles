@@ -18,6 +18,7 @@ alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
                                             # informations
 alias ..='cd ../'
 alias ...='cd ../../'
+alias ....='cd ../../../'
 alias vi='vim'
 alias g='gvim --remote-silent'
 alias diff='colordiff'
@@ -42,6 +43,12 @@ alias curlajax='curl -H "X-Requested-With: XMLHttpRequest"'
 alias header='curl -I'
 
 alias now='date +"%T"'
+
+# =============================================================================
+# PACKER-ALIAS
+# =============================================================================
+
+alias up='packer -Syu'
 
 # =============================================================================
 # PYTHON-ALIAS
