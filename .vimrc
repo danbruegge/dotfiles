@@ -3,9 +3,8 @@
 " =============================================================================
 
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " =============================================================================
 " vim common
@@ -28,9 +27,6 @@ set hidden
     
     " don't update the display while executing macors
 set lazyredraw
-
-    " let you know in which mode you're in
-set showmode
 
     " Better command-line completion
 set wildmenu
