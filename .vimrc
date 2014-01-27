@@ -2,8 +2,9 @@
 " pathogen
 " =============================================================================
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 
 " =============================================================================
@@ -65,6 +66,9 @@ set hlsearch
 
     " show search matches on type
 set incsearch
+
+    " set the search scan to wrap lines
+set wrapscan
 
     " tabbing stuff
 set tabstop=8
