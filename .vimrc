@@ -13,7 +13,27 @@ execute pathogen#infect()
     " Set 'nocompatible' to ward off unexpected things that your distro might
     " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
+
+    " filetype stuff
+filetype on
+filetype plugin on
+filetype indent on
 	
+    " syntax highlighting for vim
+syntax on
+
+    " hide a unsaved buffer, so you can open a new buffer with :e
+set hidden
+    
+    " don't update the display while executing macors
+set lazyredraw
+
+    " let you know in which mode you're in
+set showmode
+
+    " Better command-line completion
+set wildmenu
+
     " utf-8 encoding
 set enc=utf-8
 
@@ -24,34 +44,17 @@ set dir=~/.vim/sessions
     " set background style 
 set background=dark
 
-    " syntax highlighting for vim
-syntax on
-
     " set terminal colors
 set t_Co=256
 
     " set colorscheme
 colorscheme molokai 
 
-    " h filetype-indent
-filetype indent on
-
-    " Attempt to determine the type of a file based on its name and possibly
-    " its contents. Use this to allow intelligent auto-indenting for each 
-    " filetype, and for plugins that are filetype specific.
-filetype plugin indent on
-
-    " Look at: ':h filetype-plugin'
-filetype plugin on
-
     " Enable Omni completion, smart autocompletion
 set omnifunc=syntaxcomplete#Complete
 
     " :h completeopt
 set completeopt=longest,menuone,preview
-
-    " Better command-line completion
-set wildmenu
 
     " Show partial commands in the last line of the screen
 set showcmd
@@ -102,6 +105,8 @@ set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
     " less with css
 autocmd BufNewFile,BufRead *.less       set ft=less.css
+
+
 " =============================================================================
 " Markdown settings
 " =============================================================================
@@ -109,12 +114,6 @@ autocmd BufNewFile,BufRead *.less       set ft=less.css
     " Don't fold the first 2 levels
 let g:vim_markdown_initial_foldlevel=2
 
-" =============================================================================
-" Tab settings
-" =============================================================================
-
-    " Show tabline with number 2
-set showtabline=2
 
 " =============================================================================
 " Emmet settings
