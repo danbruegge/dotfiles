@@ -93,8 +93,11 @@ set nowrap
     " display/highlight current line
 set cursorline
 
+    " Set the status line the way derek wyatt likes it
+set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+
     " Always display the status line
-set statusline=2
+set laststatus=2
 
     " Set the command window height to 2 lines, to avoid many cases of having
     " to press <Enter> to continue"
@@ -109,6 +112,7 @@ autocmd BufNewFile,BufRead *.less       set ft=less.css
     " the stuff at the end of a file, to tell vim some options. For example:
     "    # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 set modeline
+
 
 " =============================================================================
 " Markdown settings
