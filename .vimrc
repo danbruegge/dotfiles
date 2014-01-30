@@ -28,6 +28,16 @@ set hidden
     " don't update the display while executing macors
 set lazyredraw
 
+    " Keep some stuff in the history
+set history=100
+
+    " When the page starts to scroll, keep the cursor 8 lines from the top and
+    " 8 lines from the bottom
+set scrolloff=8
+
+    " Allow the cursor to go in to 'invalid' places
+set virtualedit=all
+
     " Better command-line completion
 set wildmenu
 
@@ -89,6 +99,9 @@ set colorcolumn=80
 
     " a long line is just a long line
 set nowrap
+
+    " Automatically read a file that has changed on disk
+set autoread
 
     " display/highlight current line
 set cursorline
