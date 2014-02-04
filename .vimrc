@@ -36,7 +36,7 @@ set history=100
 set scrolloff=8
 
     " Allow the cursor to go in to 'invalid' places
-set virtualedit=all
+"set virtualedit=all
 
     " Better command-line completion
 set wildmenu
