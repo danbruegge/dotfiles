@@ -172,6 +172,11 @@ let g:user_emmet_mode='a'
 " Syntastic stuff 
 " =============================================================================
 
+nmap <F8> :SyntasticCheck<cr>
+
+    " Dont check on save
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
     " Args for checkers
 let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
 
