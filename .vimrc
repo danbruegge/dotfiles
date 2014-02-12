@@ -167,3 +167,13 @@ let g:vim_markdown_initial_foldlevel=2
 
     "enable all function in all mode.
 let g:user_emmet_mode='a'
+
+" =============================================================================
+" Syntastic stuff 
+" =============================================================================
+
+    " Args for checkers
+let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
+
+    " Standard checker for python
+let g:syntastic_python_checkers=['flake8']
