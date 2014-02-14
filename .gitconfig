@@ -22,22 +22,24 @@
 
 [core]
     excludesfile = ~/.gitignore-global
-	pager = less -r
+    pager = less -r
     editor = vim
 
 [alias]
     undo = reset --hard HEAD^
     info = git remote -v && git branch -a -v && git status
     ci = commit
+    cim = commit -m
     cia = commit -am
     st = status
     br = branch
     co = checkout
+    cof
     df = diff
     lg = log
 
 [push]
-	default = simple
+    default = simple
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
     tool = meld
