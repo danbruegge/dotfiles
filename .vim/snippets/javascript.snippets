@@ -56,6 +56,19 @@ snippet o
 	{
 		${1}: ${2}
 	}
-# console stuff
+# integer
+snippet int
+	parseInt(${1}, 10)
+# console log 
 snippet log
 	console.log(${1});
+# helper - check if object exist
+snippet exist
+	if (${1}.length > 0) {
+		${2}
+	}
+# helper - check if object is defined
+snippet defined
+	if (typeof ${1} !== 'undefined') {
+		${2}
+	}

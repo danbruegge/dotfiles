@@ -182,3 +182,6 @@ let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
 
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8']
+
+    " Standard checker for javascript 
+let g:syntastic_javascript_checkers=['jshint']
