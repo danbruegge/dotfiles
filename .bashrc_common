@@ -32,6 +32,7 @@ alias bashrc='vim ~/.bashrc && . ~/.bashrc'
 alias bashrc_common='vim ~/.bashrc_common && . ~/.bashrc'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
+alias wp='cd ~/workspace/projects/'
 
 # set screensaver off #
 alias soff='xset s off'
