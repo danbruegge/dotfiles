@@ -129,8 +129,7 @@ set cmdheight=2
 set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
     " less with css
-autocmd BufNewFile,BufRead *.less
-set filetype=less.css
+autocmd BufNewFile,BufRead *.less set filetype=less.css
 
     " the stuff at the end of a file, to tell vim some options. For example:
     "    # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
