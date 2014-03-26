@@ -1,15 +1,32 @@
 " =============================================================================
-" pathogen
+" vundle
 " =============================================================================
 
-filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+    " set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+    " alternatively, pass a path where Vundle should install plugins
+    " "let path = '~/some/path/here'
+    " "call vundle#rc(path)
+
+    " let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+
 
 " =============================================================================
 " vim common
 " =============================================================================
-	
+
     " Set 'nocompatible' to ward off unexpected things that your distro might
     " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
