@@ -155,6 +155,8 @@ set modeline
     " System default for mappings
 let mapleader=","
 
+    " Solve the snipmate issue?
+set nopaste
 
 " =============================================================================
 " Working with split windows
