@@ -1,5 +1,7 @@
+" vim:fdm=marker
+"
 " =============================================================================
-" vundle
+" vundle {{{
 " =============================================================================
 
     " set the runtime path to include Vundle and initialize
@@ -22,9 +24,10 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 
+" }}}
 
 " =============================================================================
-" vim common
+" vim common {{{
 " =============================================================================
 
     " Set 'nocompatible' to ward off unexpected things that your distro might
@@ -155,9 +158,10 @@ set modeline
     " System default for mappings
 let mapleader=","
 
+" }}}
 
 " =============================================================================
-" Working with split windows
+" Working with split windows {{{
 " =============================================================================
 
     " Open a new verstical split and switch over to it
@@ -169,33 +173,37 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" }}}
 
 " =============================================================================
-" Simple key mappings, that are time saver
+" Simple key mappings, that are time saver {{{
 " =============================================================================
 
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
 
+" }}}
 
 " =============================================================================
-" Markdown settings
+" Markdown settings {{{
 " =============================================================================
 
     " Don't fold the first 2 levels
 let g:vim_markdown_initial_foldlevel=2
 
+" }}}
 
 " =============================================================================
-" Emmet settings
+" Emmet settings {{{
 " =============================================================================
 
     "enable all function in all mode.
 let g:user_emmet_mode='a'
 
+" }}}
 
 " =============================================================================
-" Syntastic stuff 
+" Syntastic stuff {{{
 " =============================================================================
 
 nmap <F8> :SyntasticCheck<cr>
@@ -211,3 +219,5 @@ let g:syntastic_python_checkers=['flake8']
 
     " Standard checker for javascript 
 let g:syntastic_javascript_checkers=['jshint']
+
+" }}}
