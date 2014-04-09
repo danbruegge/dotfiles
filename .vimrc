@@ -20,7 +20,9 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
+Plugin 'edsono/vim-matchit'
 
 
 " =============================================================================
@@ -213,3 +215,10 @@ let g:syntastic_python_checkers=['flake8']
 
     " Standard checker for javascript 
 let g:syntastic_javascript_checkers=['jshint']
+
+
+" =============================================================================
+" Clean up html
+" =============================================================================
+
+vmap <F7> :!tidy -q -i --show-errors 0<cr>
