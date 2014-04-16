@@ -169,8 +169,11 @@ set nopaste
 " Working with split windows {{{
 " =============================================================================
 
-    " Open a new verstical split and switch over to it
+    " Open a new vertical split and switch over to it
 nnoremap <leader>w <C-w>v<C-w>l
+
+    " Open a new empty vertical split and switch over to it
+nnoremap <leader>n <C-w>n<C-w>L
 
     " Makes jumping between splited windows easier
 nnoremap <C-h> <C-w>h
@@ -186,6 +189,9 @@ nnoremap <C-l> <C-w>l
 
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
+
+    " Simple sort lines
+vmap <leader>s :sort<cr>
 
 " }}}
 
