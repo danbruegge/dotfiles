@@ -193,6 +193,16 @@ nmap <c-cr> i<cr><Esc>
     " Simple sort lines
 vmap <leader>s :sort<cr>
 
+    " force filetype to html on keystroke...fix my snipmate problem in html
+    " files with django/jinja stuff
+nmap <leader>h :set ft=html<cr>
+
+    " copy to system clipboard
+vmap <leader>c "+y
+
+    " paste from system clipboard
+imap <leader>v <C-r>*
+
 " }}}
 
 " =============================================================================
@@ -210,6 +220,9 @@ let g:vim_markdown_initial_foldlevel=2
 
     "enable all function in all mode.
 let g:user_emmet_mode='a'
+
+    " simpler key stroke for <c-y>,
+imap <leader>y <c-y>,
 
 " }}}
 
