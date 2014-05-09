@@ -4,15 +4,18 @@
 " vundle {{{
 " =============================================================================
 
+set nocompatible
+filetype off
+
     " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
     " alternatively, pass a path where Vundle should install plugins
     " "let path = '~/some/path/here'
     " "call vundle#rc(path)
 
     " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mattn/emmet-vim'
@@ -25,6 +28,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'edsono/vim-matchit'
+
+call vundle#end()
 
 " }}}
 
