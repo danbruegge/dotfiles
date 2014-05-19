@@ -227,7 +227,7 @@ let g:vim_markdown_initial_foldlevel=2
 let g:user_emmet_mode='a'
 
     " simpler key stroke for <c-y>,
-imap <leader>y <c-y>,
+imap <leader>e <c-y>,
 
 " }}}
 
