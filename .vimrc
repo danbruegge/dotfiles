@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'edsono/vim-matchit'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
