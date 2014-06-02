@@ -13,7 +13,7 @@ fi
 
 (sleep 1 && . ~/.screenlayout/2monitors.sh) &
 thunar --daemon &
-keepassx &
+dropbox &
 export SDL_VIDEO_FULLSCREEN_HEAD=1 
 exec dbus-launch --exit-with-session startxfce4
 #exec dbus-launch --exit-with-session startkde
