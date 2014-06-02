@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'edsono/vim-matchit'
+" --- Install powerline fonts...with packer -S powerline-fonts-git
 Plugin 'bling/vim-airline'
 
 call vundle#end()
@@ -257,5 +258,17 @@ let g:syntastic_javascript_checkers=['jshint']
 " =============================================================================
 
 vmap <F7> :!tidy -q -i --show-errors 0<cr>
+
+" }}}
+
+" =============================================================================
+" Airline stuff {{{
+" =============================================================================
+
+let g:airline_theme = 'tomorrow'
+let g:airline_enable_syntastic  = 1
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline#extensions#whitespace#checks = []
 
 " }}}
