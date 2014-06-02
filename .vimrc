@@ -30,6 +30,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'edsono/vim-matchit'
 " --- Install powerline fonts...with packer -S powerline-fonts-git
 Plugin 'bling/vim-airline'
+" https://github.com/zoeesilcock/vim-caniuse
+" Plugin 'zoeesilcock/vim-caniusa'
 
 call vundle#end()
 
