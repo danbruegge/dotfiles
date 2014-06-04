@@ -27,11 +27,9 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
-Plugin 'edsono/vim-matchit'
-" --- Install powerline fonts...with packer -S powerline-fonts-git
+Plugin 'tmhedberg/matchit'
 Plugin 'bling/vim-airline'
-" https://github.com/zoeesilcock/vim-caniuse
-" Plugin 'zoeesilcock/vim-caniusa'
+" Plugin 'zoeesilcock/vim-caniusa' " https://github.com/zoeesilcock/vim-caniuse
 
 call vundle#end()
 
