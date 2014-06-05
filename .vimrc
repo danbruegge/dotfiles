@@ -124,7 +124,7 @@ set cindent
 set number 
 
     " relative to the current line
-set relativenumber
+" set relativenumber
 
     " set and display line ending
 set ruler
