@@ -17,6 +17,7 @@ call vundle#begin()
     " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'tomasr/molokai'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/AutoComplPop'
