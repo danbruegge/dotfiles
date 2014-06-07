@@ -18,4 +18,4 @@ ln -s /home/dan/.dotfiles/.jshintrc /home/dan/.jshintrc
 for autostart stuff
 -------------------
 ln -s /home/dan/.dotfiles/.config/autostart/dropbox.desktop /home/dan/.config/autostart/dropbox.desktop
-ln -s /home/dan/.dotfiles/.config/autostart/keepassx.desktop /home/dan/.config/autostart/keepassx.desktop
+ln -s /home/dan/.dotfiles/.config/autostart/Keepassx.desktop /home/dan/.config/autostart/Keepassx.desktop
