@@ -13,7 +13,10 @@ fi
 
 (sleep 1 && . ~/.screenlayout/2monitors.sh) &
 thunar --daemon &
-dropbox &
+
+# disable touchpad while typing
+syndaemon -t -k -i 2 &
+
 export SDL_VIDEO_FULLSCREEN_HEAD=1 
 exec dbus-launch --exit-with-session startxfce4
 #exec dbus-launch --exit-with-session startkde
