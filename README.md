@@ -19,3 +19,7 @@ for autostart stuff
 -------------------
 ln -s /home/dan/.dotfiles/.config/autostart/dropbox.desktop /home/dan/.config/autostart/dropbox.desktop
 ln -s /home/dan/.dotfiles/.config/autostart/Keepassx.desktop /home/dan/.config/autostart/Keepassx.desktop
+
+remove .ssh/known_hosts from git
+--------------------------------
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/known_hosts' --prune-empty --tag-name-filter cat -- --all
