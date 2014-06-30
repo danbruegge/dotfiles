@@ -212,6 +212,12 @@ vmap <leader>c "+y
     " paste from system clipboard
 imap <leader>v <C-r>*
 
+    " disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " }}}
 
 " =============================================================================
