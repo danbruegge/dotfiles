@@ -196,6 +196,9 @@ nnoremap <C-l> <C-w>l
 " Simple key mappings, that are time saver {{{
 " =============================================================================
 
+    " Add alternative for <Esc> in insert mode
+imap jk <Esc>
+
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
 
