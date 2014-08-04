@@ -197,7 +197,7 @@ nnoremap <C-l> <C-w>l
 " =============================================================================
 
     " Add alternative for <Esc> in insert mode
-imap jk <Esc>
+imap jj <Esc>
 
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
