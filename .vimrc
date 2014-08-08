@@ -228,7 +228,7 @@ noremap <Right> <NOP>
 " =============================================================================
 
     " Don't fold the first 2 levels
-let g:vim_markdown_initial_foldlevel=2
+let g:vim_markdown_initial_foldlevel=6
 
 " }}}
 
