@@ -31,6 +31,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/matchit'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'zoeesilcock/vim-caniusa' " https://github.com/zoeesilcock/vim-caniuse
 
 call vundle#end()
@@ -167,7 +168,10 @@ autocmd BufNewFile,BufRead *.less set filetype=less.css
 set modeline
 
     " System default for mappings
-let mapleader=","
+let mapleader="\<Space>"
+
+    " Timeout leader key waits after pressing
+set timeoutlen=250
 
     " Solve the snipmate issue?
 set nopaste
@@ -179,7 +183,7 @@ set nopaste
 " =============================================================================
 
     " Open a new vertical split and switch over to it
-nnoremap <leader>w <C-w>v<C-w>l
+" nnoremap <leader>w <C-w>v<C-w>l
 
     " Open a new empty vertical split and switch over to it
 nnoremap <leader>n <C-w>n<C-w>L
@@ -199,6 +203,12 @@ nnoremap <C-l> <C-w>l
     " Add alternative for <Esc> in insert mode
 imap jj <Esc>
 
+    " Save file
+nnoremap <leader>w :w<cr>
+
+    "  Open file
+nnoremap <leader>o :CtrlP<cr>
+
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
 
@@ -210,10 +220,10 @@ vmap <leader>s :sort<cr>
 nmap <leader>h :set ft=html<cr>
 
     " copy to system clipboard
-vmap <leader>c "+y
+vmap <leader>y "+y
 
     " paste from system clipboard
-imap <leader>v <C-r>*
+imap <leader>p <C-r>*
 
     " disable arrow keys
 noremap <Up> <NOP>
