@@ -170,9 +170,6 @@ set modeline
     " System default for mappings
 let mapleader="\<Space>"
 
-    " Timeout leader key waits after pressing
-set timeoutlen=250
-
     " Solve the snipmate issue?
 set nopaste
 
