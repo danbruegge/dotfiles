@@ -14,11 +14,18 @@ snippet f
 	function ${1}(${2}) {
 		${3}
 	}
+
 # function;
 snippet f;
 	function ${1}(${2}) {
 		${3}
 	};
+
+# function,
+snippet f,
+	function ${1}(${2}) {
+		${3}
+	},
 
 # function, with strict and self
 snippet ff
@@ -29,7 +36,8 @@ snippet ff
 		var self = this;
 
 		${3}
-	},
+	}
+
 # if
 snippet if
 	if (${1}) {
