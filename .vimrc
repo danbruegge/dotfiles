@@ -32,6 +32,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/matchit'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'jdonaldson/vaxe'
 " Plugin 'zoeesilcock/vim-caniusa' " https://github.com/zoeesilcock/vim-caniuse
 
 call vundle#end()
