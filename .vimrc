@@ -20,7 +20,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mattn/emmet-vim'
-Plugin 'vim-scripts/AutoComplPop'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -93,11 +92,8 @@ set t_Co=256
     " set colorscheme
 colorscheme molokai 
 
-    " Enable Omni completion, smart autocompletion
-set omnifunc=syntaxcomplete#Complete
-
     " :h completeopt
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 
     " Show partial commands in the last line of the screen
 set showcmd
