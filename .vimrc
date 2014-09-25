@@ -287,3 +287,12 @@ let g:airline_right_sep = ' '
 let g:airline#extensions#whitespace#checks = []
 
 " }}}
+
+" =============================================================================
+" SnipMate stuff {{{
+" =============================================================================
+
+imap <c-tab> <esc>a<Plug>snipMateNextOrTrigger
+smap <c-tab> <Plug>snipMateNextOrTrigger
+
+" }}}

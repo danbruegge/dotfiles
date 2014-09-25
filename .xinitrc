@@ -18,5 +18,6 @@ thunar --daemon &
 syndaemon -t -k -i 2 &
 
 export SDL_VIDEO_FULLSCREEN_HEAD=1 
+# exec dbus-launch --exit-with-session gnome-session
 exec dbus-launch --exit-with-session startxfce4
-#exec dbus-launch --exit-with-session startkde
+# exec dbus-launch --exit-with-session startkde
