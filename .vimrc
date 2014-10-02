@@ -165,7 +165,8 @@ autocmd BufNewFile,BufRead *.less set filetype=less.css
 set modeline
 
     " System default for mappings
-let mapleader="\<Space>"
+" let mapleader="\<Space>"
+let mapleader=","
 
     " Solve the snipmate issue?
 set nopaste
@@ -228,6 +229,17 @@ noremap <Right> <NOP>
 " }}}
 
 " =============================================================================
+" Spellchecking {{{
+" =============================================================================
+
+au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.txt     setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
+
+" }}}
+
+" =============================================================================
 " Markdown settings {{{
 " =============================================================================
 
@@ -244,7 +256,7 @@ let g:vim_markdown_initial_foldlevel=6
 let g:user_emmet_mode='a'
 
     " simpler key stroke for <c-y>,
-imap <leader>e <c-y>,
+" imap <leader>e <c-y>,
 
 " }}}
 
