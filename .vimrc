@@ -32,6 +32,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jdonaldson/vaxe'
+Plugin 'lervag/vim-latex'
 " Plugin 'zoeesilcock/vim-caniusa' " https://github.com/zoeesilcock/vim-caniuse
 
 call vundle#end()
@@ -195,36 +196,44 @@ nnoremap <C-l> <C-w>l
 " Simple key mappings, that are time saver {{{
 " =============================================================================
 
+" imap -----------------------------------------------------------------------
     " Add alternative for <Esc> in insert mode
 imap jj <Esc>
 
+    " paste from system clipboard
+imap <leader>p <C-r>*
+
+" vmap -----------------------------------------------------------------------
+    " Simple sort lines
+vmap <leader>s :sort<cr>
+
+    " copy to system clipboard
+vmap <leader>y "+y
+
+" nmap -----------------------------------------------------------------------
+    " Add new line on current position with <CTRL><ENTER>
+nmap <c-cr> i<cr><Esc>
+
+    " force filetype to html on keystroke...fix my snipmate problem in html
+    " files with django/jinja stuff
+nmap <leader>h :set ft=html<cr>
+
+nmap <leader>1 :w !wc -w<cr>
+
+" nnoremap -------------------------------------------------------------------
     " Save file
 nnoremap <leader>w :w<cr>
 
     "  Open file
 nnoremap <leader>o :CtrlP<cr>
 
-    " Add new line on current position with <CTRL><ENTER>
-nmap <c-cr> i<cr><Esc>
-
-    " Simple sort lines
-vmap <leader>s :sort<cr>
-
-    " force filetype to html on keystroke...fix my snipmate problem in html
-    " files with django/jinja stuff
-nmap <leader>h :set ft=html<cr>
-
-    " copy to system clipboard
-vmap <leader>y "+y
-
-    " paste from system clipboard
-imap <leader>p <C-r>*
-
     " disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " }}}
 
@@ -235,6 +244,7 @@ noremap <Right> <NOP>
 au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
 au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
 au BufNewFile,BufRead,BufEnter   *.txt     setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.tex     setlocal spell    spelllang=de_de
 au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
 
 " }}}
