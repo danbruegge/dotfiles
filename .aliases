@@ -26,6 +26,7 @@ alias aliases='vim ~/.aliases && . ~/.aliases'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
 alias wp='cd ~/workspace/projects/'
+alias wg='cd ~/workspace/games/'
 
 # set screensaver off #
 alias soff='xset s off'

@@ -77,23 +77,19 @@ set wildmenu
     " When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
 
-    " utf-8 encoding
-set enc=utf-8
+set encoding=utf-8
 
     " move backup files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
-    " set background style 
 set background=dark
 
     " set terminal colors
 set t_Co=256
 
-    " set colorscheme
 colorscheme molokai 
 
-    " :h completeopt
 set completeopt=longest,menuone
 
     " Show partial commands in the last line of the screen

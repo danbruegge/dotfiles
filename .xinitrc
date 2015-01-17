@@ -15,7 +15,8 @@ fi
 thunar --daemon &
 
 # disable touchpad while typing
-syndaemon -t -k -i 2 &
+# syndaemon -t -k -i 2 &
+# connman-notify &
 
 export SDL_VIDEO_FULLSCREEN_HEAD=1 
 # exec dbus-launch --exit-with-session gnome-session
