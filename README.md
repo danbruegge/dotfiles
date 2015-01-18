@@ -23,3 +23,5 @@ ln -s /home/dan/.dotfiles/.config/autostart/Keepassx.desktop /home/dan/.config/a
 remove .ssh/known_hosts from git
 --------------------------------
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/known_hosts' --prune-empty --tag-name-filter cat -- --all
+
+ln -s /home/dan/.dotfiles/.screenlayout/ /home/dan/.screenlayout
