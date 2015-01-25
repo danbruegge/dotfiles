@@ -1,41 +1,29 @@
 " vim:fdm=marker
 "
 " =============================================================================
-" vundle {{{
+" vim-plug {{{
 " =============================================================================
 
-set nocompatible
-filetype off
+call plug#begin('~/.vim/bundle')
 
-    " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-    " alternatively, pass a path where Vundle should install plugins
-    " "let path = '~/some/path/here'
-    " "call vundle#rc(path)
+Plug 'tomasr/molokai'
+Plug 'vim-scripts/loremipsum'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tmhedberg/matchit'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'garbas/vim-snipmate', { 'on': 'snipMateNextOrTrigger' }
+Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
+Plug 'lervag/vim-latex', { 'for': 'tex' }
+Plug 'plasticboy/vim-markdown', { 'for': 'md' }
+Plug 'mattn/emmet-vim', { 'for': ['css', 'less'] }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'jdonaldson/vaxe', { 'for': 'hx' }
 
-    " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'tomasr/molokai'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mattn/emmet-vim'
-Plugin 'vim-scripts/loremipsum'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/matchit'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jdonaldson/vaxe'
-Plugin 'lervag/vim-latex'
-" Plugin 'zoeesilcock/vim-caniusa' " https://github.com/zoeesilcock/vim-caniuse
-
-call vundle#end()
+call plug#end()
 
 " }}}
 
