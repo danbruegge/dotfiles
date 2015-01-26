@@ -8,20 +8,18 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/loremipsum'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
-Plug 'garbas/vim-snipmate', { 'on': 'snipMateNextOrTrigger' }
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
-Plug 'lervag/vim-latex', { 'for': 'tex' }
-Plug 'plasticboy/vim-markdown', { 'for': 'md' }
-Plug 'mattn/emmet-vim', { 'for': ['css', 'less'] }
+Plug 'garbas/vim-snipmate', { 'on': '<Plug>snipMateNextOrTrigger' }
+Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
+Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'jdonaldson/vaxe', { 'for': 'hx' }
+Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 
 call plug#end()
 
