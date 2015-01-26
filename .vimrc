@@ -14,7 +14,12 @@ Plug 'tmhedberg/matchit'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
-Plug 'garbas/vim-snipmate', { 'on': '<Plug>snipMateNextOrTrigger' }
+Plug 'garbas/vim-snipmate', { 
+    'on': [
+        '<Plug>snipMateNextOrTrigger', 
+        'snipMateNextOrTrigger'
+    ]
+}
 Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
