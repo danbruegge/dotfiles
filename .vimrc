@@ -6,6 +6,16 @@
 
 call plug#begin('~/.vim/bundle')
 
+function! BuildYCM(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.force
+        !./install.sh
+    endif
+endfunction
+
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
@@ -13,13 +23,12 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
-Plug 'garbas/vim-snipmate', { 
-    'on': [
-        '<Plug>snipMateNextOrTrigger', 
-        'snipMateNextOrTrigger'
-    ]
-}
+Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
+" Plug 'garbas/vim-snipmate'
 Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
@@ -158,6 +167,10 @@ let mapleader=","
 
     " Solve the snipmate issue?
 set nopaste
+
+    " Open the help window on the Vertical Left side
+autocmd FileType help wincmd L
+autocmd FileType h wincmd L
 
 " }}}
 
