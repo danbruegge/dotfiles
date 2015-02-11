@@ -73,6 +73,8 @@ set scrolloff=8
 
     " Better command-line completion
 set wildmenu
+set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
+set wildmode=list:full
 
     " When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
@@ -283,7 +285,7 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
 
     " Standard checker for python
-let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_checkers=['flake8', 'python']
 
     " Standard checker for javascript 
 let g:syntastic_javascript_checkers=['jshint']
