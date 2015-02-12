@@ -34,7 +34,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
