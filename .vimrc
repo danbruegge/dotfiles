@@ -74,8 +74,8 @@ set scrolloff=8
 
     " Better command-line completion
 set wildmenu
-set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
-set wildmode=list:full
+set wildignore+=*.dll,*.o,*.pyc,*.pyo,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif
+set wildignore+=*$py.class,*.class,*/*.dSYM/*,*.dylib,*.DAT
 
     " When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
