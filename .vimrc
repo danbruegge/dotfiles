@@ -238,6 +238,8 @@ noremap <Right> <NOP>
 
 nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
+nnoremap <c-c> :bp\|bd #<cr>
+
 " }}}
 
 " =============================================================================
