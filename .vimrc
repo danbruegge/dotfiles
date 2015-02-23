@@ -35,6 +35,7 @@ Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
