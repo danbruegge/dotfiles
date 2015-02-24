@@ -17,6 +17,8 @@ function! BuildYCM(info)
 endfunction
 
 Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
+
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -92,7 +94,8 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-colorscheme molokai 
+" colorscheme molokai
+colorscheme base16-default
 
 set completeopt=longest,menuone
 
