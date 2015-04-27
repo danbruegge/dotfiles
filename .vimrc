@@ -16,28 +16,34 @@ function! BuildYCM(info)
     endif
 endfunction
 
+" visuals
 Plug 'tomasr/molokai'
-Plug 'chriskempson/base16-vim'
+" Plug 'veloce/vim-aldmeris'
+Plug 'bling/vim-airline'
 
+" dependings?!
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+
+" editor sugar
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/syntastic'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
-Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
-" Plug 'garbas/vim-snipmate'
-Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mileszs/ack.vim'
+
+" languages
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
+" Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
+Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less', 'scss'] }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
@@ -55,13 +61,13 @@ set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
-	
+
     " syntax highlighting for vim
 syntax on
 
     " hide a unsaved buffer, so you can open a new buffer with :e
 set hidden
-    
+
     " don't update the display while executing macors
 set lazyredraw
 
@@ -94,15 +100,14 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-" colorscheme molokai
-colorscheme base16-default
+colorscheme molokai
 
 set completeopt=longest,menuone
 
     " Show partial commands in the last line of the screen
 set showcmd
 
-    " Highlight searches (use <C-L> to temporarily turn off highlighting; see 
+    " Highlight searches (use <C-L> to temporarily turn off highlighting; see
     " the mapping of <C-L> below)
 set hlsearch
 
@@ -125,7 +130,7 @@ set smartindent
 set cindent
 
     " line numbers
-set number 
+set number
 
     " relative to the current line
 " set relativenumber
@@ -163,6 +168,13 @@ set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
     " less with css
 autocmd BufNewFile,BufRead *.less set filetype=less.css
+
+    " sass with css
+autocmd BufNewFile,BufRead *.scss set filetype=scss.css
+autocmd FileType scss set iskeyword+=-
+
+    " node-blade syntax highlighting
+autocmd BufNewFile,BufRead *.blade set filetype=blade.css
 
     " the stuff at the end of a file, to tell vim some options. For example:
     "    # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -234,6 +246,9 @@ nnoremap <leader>w :w<cr>
     "  Open file
 nnoremap <leader>o :CtrlP<cr>
 
+    " Open buffer list
+nnoremap <leader>b :CtrlPBuffer<cr>
+
     " disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -263,7 +278,8 @@ au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
 " =============================================================================
 
     " Don't fold the first 2 levels
-let g:vim_markdown_initial_foldlevel=6
+" let g:vim_markdown_initial_foldlevel=6
+let g:vim_markdown_folding_disabled=1
 
 " }}}
 
@@ -271,7 +287,7 @@ let g:vim_markdown_initial_foldlevel=6
 " Emmet settings {{{
 " =============================================================================
 
-    "enable all function in all mode.
+    " enable all function in all mode.
 let g:user_emmet_mode='a'
 
     " simpler key stroke for <c-y>,
@@ -294,7 +310,7 @@ let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8', 'python']
 
-    " Standard checker for javascript 
+    " Standard checker for javascript
 let g:syntastic_javascript_checkers=['jshint']
 
 " }}}
@@ -312,10 +328,11 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " =============================================================================
 
 let g:airline_theme = 'tomorrow'
-let g:airline_enable_syntastic  = 1
+" let g:airline_enable_syntastic  = 1
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline#extensions#whitespace#checks = []
+let g:airline#extensions#syntastic#enabled = 1
 
 " }}}
 
@@ -325,5 +342,14 @@ let g:airline#extensions#whitespace#checks = []
 
 imap <c-tab> <esc>a<Plug>snipMateNextOrTrigger
 smap <c-tab> <Plug>snipMateNextOrTrigger
+
+" }}}
+
+" =============================================================================
+" Ctrlp stuff {{{
+" =============================================================================
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_show_hidden = 1
 
 " }}}

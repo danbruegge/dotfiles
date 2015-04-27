@@ -13,7 +13,7 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias vi='vim'
-alias v='gvim --remote-silent'
+alias v='gvim'
 alias diff='colordiff'
 alias grep='grep --color=auto'
 alias df='df -h'
@@ -69,6 +69,7 @@ alias runphp='php -S localhost:8001'
 # GIT-ALIAS
 # =============================================================================
 
+alias gg='git'
 alias gti='git'
 alias gut='git'
 alias gitignore='vim .gitignore'

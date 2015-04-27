@@ -27,16 +27,18 @@
 
 [alias]
     undo = reset --hard HEAD^
-    info = git remote -v && git branch -a -v && git status
     ci = commit
     cim = commit -m
     cia = commit -am
     st = status
     br = branch
     co = checkout
-    cof
+    cob = checkout -b
     df = diff
     lg = log
+    ec = config --global -e # open gitconfig in editor
+    pl = pull
+    ps = push
 
 [push]
     default = simple
