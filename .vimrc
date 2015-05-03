@@ -44,6 +44,7 @@ Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 
 call plug#end()
 
@@ -84,7 +85,8 @@ set scrolloff=8
     " Better command-line completion
 set wildmenu
 set wildignore+=*.dll,*.o,*.pyc,*.pyo,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif
-set wildignore+=*$py.class,*.class,*/*.dSYM/*,*.dylib,*.DAT
+set wildignore+=*$py.class,*.class,*/*.dSYM/*,*.dylib,*.DAT,*.scssc
+set wildignore+=*/node_modules/*
 
     " When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
