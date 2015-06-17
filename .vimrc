@@ -40,7 +40,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'css', 'less', 'scss'] }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -169,11 +170,11 @@ set cmdheight=2
 set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
     " less with css
-autocmd BufNewFile,BufRead *.less set filetype=less.css
-
-    " sass with css
-autocmd BufNewFile,BufRead *.scss set filetype=scss.css
-autocmd FileType scss set iskeyword+=-
+" autocmd BufNewFile,BufRead *.less set filetype=less.css
+"
+"     " sass with css
+" autocmd BufNewFile,BufRead *.scss set filetype=scss.css
+" autocmd FileType scss set iskeyword+=-
 
     " node-blade syntax highlighting
 autocmd BufNewFile,BufRead *.blade set filetype=blade.css
@@ -183,8 +184,8 @@ autocmd BufNewFile,BufRead *.blade set filetype=blade.css
 set modeline
 
     " System default for mappings
-" let mapleader="\<Space>"
-let mapleader=","
+let mapleader="\<Space>"
+" let mapleader=","
 
     " Solve the snipmate issue?
 set nopaste
@@ -218,11 +219,9 @@ nnoremap <C-l> <C-w>l
 " =============================================================================
 
 " imap -----------------------------------------------------------------------
-    " Add alternative for <Esc> in insert mode
-imap jj <Esc>
 
     " paste from system clipboard
-imap <leader>p <C-r>*
+imap <leader>p <c-r>*
 
 " vmap -----------------------------------------------------------------------
     " Simple sort lines
@@ -252,6 +251,10 @@ nnoremap <leader>o :CtrlP<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
 
     " disable arrow keys
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -342,8 +345,8 @@ let g:airline#extensions#syntastic#enabled = 1
 " SnipMate stuff {{{
 " =============================================================================
 
-imap <c-tab> <esc>a<Plug>snipMateNextOrTrigger
-smap <c-tab> <Plug>snipMateNextOrTrigger
+imap <leader><tab> <esc>a<Plug>snipMateNextOrTrigger
+smap <leader><tab> <Plug>snipMateNextOrTrigger
 
 " }}}
 
