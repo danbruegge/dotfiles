@@ -311,9 +311,7 @@ nmap <F8> :SyntasticCheck<cr>
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
     " Args for checkers
-" let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
-    " use the zalando jshintrc
-let g:syntastic_javascript_jslint_args='--config ~/workspace/shop/webapp/.jshintrc'
+let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
 
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8', 'python']
