@@ -18,7 +18,6 @@ endfunction
 
 " visuals
 Plug 'tomasr/molokai'
-" Plug 'veloce/vim-aldmeris'
 Plug 'bling/vim-airline'
 
 " dependings?!
@@ -33,11 +32,12 @@ Plug 'tmhedberg/matchit'
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mileszs/ack.vim'
-
-" languages
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
+" Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
+Plug 'SirVer/ultisnips'
+
+" languages
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss'] }
@@ -46,6 +46,7 @@ Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 
 call plug#end()
 
@@ -221,7 +222,7 @@ nnoremap <C-l> <C-w>l
 " imap -----------------------------------------------------------------------
 
     " paste from system clipboard
-imap <leader>p <c-r>*
+" imap <leader>p <c-r>*
 
 " vmap -----------------------------------------------------------------------
     " Simple sort lines
@@ -310,7 +311,9 @@ nmap <F8> :SyntasticCheck<cr>
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
     " Args for checkers
-let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
+" let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
+    " use the zalando jshintrc
+let g:syntastic_javascript_jslint_args='--config ~/workspace/shop/webapp/.jshintrc'
 
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8', 'python']
@@ -333,11 +336,12 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " =============================================================================
 
 let g:airline_theme = 'tomorrow'
-" let g:airline_enable_syntastic  = 1
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline#extensions#whitespace#checks = []
 let g:airline#extensions#syntastic#enabled = 1
+    " cut long branch names
+let g:airline#extensions#branch#displayed_head_limit = 25
 
 " }}}
 
@@ -345,8 +349,9 @@ let g:airline#extensions#syntastic#enabled = 1
 " SnipMate stuff {{{
 " =============================================================================
 
-imap <leader><tab> <esc>a<Plug>snipMateNextOrTrigger
-smap <leader><tab> <Plug>snipMateNextOrTrigger
+" imap <leader><tab> <esc>a<Plug>snipMateNextOrTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:ycm_key_list_select_completion = ['<Down>']
 
 " }}}
 
