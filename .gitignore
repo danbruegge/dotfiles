@@ -3,3 +3,4 @@ accels.scm
 .vim/bundle
 .vim/sessions
 .ssh/known_hosts
+.config/Thunar/renamerrc
