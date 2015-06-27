@@ -17,7 +17,7 @@
 [format]
     pretty = oneline
 
-[include]   
+[include]
     path = ~/.gitconfig_user
 
 [core]

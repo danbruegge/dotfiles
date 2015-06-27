@@ -2,5 +2,6 @@ accels.scm
 .vim/.netrwhist
 .vim/bundle
 .vim/sessions
+.vim/autoload/plug.vim.old
 .ssh/known_hosts
 .config/Thunar/renamerrc
