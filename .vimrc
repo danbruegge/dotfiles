@@ -16,13 +16,13 @@ function! BuildYCM(info)
     endif
 endfunction
 
-" visuals
-Plug 'tomasr/molokai'
-Plug 'bling/vim-airline'
-
 " dependings?!
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+
+" visuals
+Plug 'tomasr/molokai'
+Plug 'bling/vim-airline'
 
 " editor sugar
 Plug 'vim-scripts/loremipsum'
@@ -340,6 +340,8 @@ let g:airline#extensions#whitespace#checks = []
 let g:airline#extensions#syntastic#enabled = 1
     " cut long branch names
 let g:airline#extensions#branch#displayed_head_limit = 25
+
+let g:airline#extensions#tabline#enabled = 1
 
 " }}}
 
