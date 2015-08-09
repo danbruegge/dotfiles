@@ -16,13 +16,14 @@ function! BuildYCM(info)
     endif
 endfunction
 
+" dependings?!
+Plug 'tomtom/tlib_vim'
+Plug 'morhetz/gruvbox'
+Plug 'MarcWeber/vim-addon-mw-utils'
+
 " visuals
 Plug 'tomasr/molokai'
 Plug 'bling/vim-airline'
-
-" dependings?!
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
 
 " editor sugar
 Plug 'vim-scripts/loremipsum'
@@ -31,10 +32,8 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'mileszs/ack.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-" Plug 'garbas/vim-snipmate', { 'on': ['<Plug>snipMateNextOrTrigger', 'snipMateNextOrTrigger'] }
 Plug 'SirVer/ultisnips'
 
 " languages
@@ -43,9 +42,9 @@ Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+" Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 
 call plug#end()
@@ -104,7 +103,8 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme gruvbox
 
 set completeopt=longest,menuone
 
@@ -307,6 +307,9 @@ let g:user_emmet_mode='a'
 
 nmap <F8> :SyntasticCheck<cr>
 
+    " always put errors to the loc list (:lopen or :lclose)
+let g:syntastic_always_populate_loc_list = 1
+
     " Dont check on save
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
@@ -340,6 +343,8 @@ let g:airline#extensions#whitespace#checks = []
 let g:airline#extensions#syntastic#enabled = 1
     " cut long branch names
 let g:airline#extensions#branch#displayed_head_limit = 25
+
+let g:airline#extensions#tabline#enabled = 1
 
 " }}}
 
