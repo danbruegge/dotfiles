@@ -294,9 +294,7 @@ let g:syntastic_python_checkers=['flake8', 'python']
 
     " Standard checker for javascript
 let g:syntastic_javascript_checkers=['jshint']
-" let g:syntastic_javascript_jslint_args='-c ~/.jshintrc'
-   " use the zalando jshintrc
-let g:syntastic_javascript_jslint_args='-c ~/workspace/shop/webapp/.jshintrc'
+let g:syntastic_javascript_jslint_args='-c ~/.jshintrc'
 
     " Standard checker for typescript
 let g:syntastic_typescript_checkers=['tslint']
