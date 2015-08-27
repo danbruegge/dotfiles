@@ -18,11 +18,10 @@ endfunction
 
 " dependings?!
 Plug 'tomtom/tlib_vim'
-Plug 'morhetz/gruvbox'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
-Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 Plug 'bling/vim-airline'
 
 " editor sugar
