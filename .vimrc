@@ -180,6 +180,11 @@ set nopaste
 autocmd FileType help wincmd L
 autocmd FileType h wincmd L
 
+    " Removes the delay after hiting <esc><S-o>
+    " https://github.com/vim/vim/issues/24
+    " It is related to terminal only. In gVim all is fine.
+set timeout timeoutlen=3000 ttimeoutlen=100
+
 " }}}
 
 " =============================================================================
