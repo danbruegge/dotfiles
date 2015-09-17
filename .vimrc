@@ -39,7 +39,7 @@ Plug 'ryanoasis/vim-devicons'
 " languages
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss', 'stylus'] }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
@@ -256,11 +256,9 @@ nnoremap <c-c> :bp\|bd #<cr>
 " Spellchecking {{{
 " =============================================================================
 
-au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   *.txt     setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   *.tex     setlocal spell    spelllang=de_de
-au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
+nmap <silent> <f5> :set spell!<cr>
+
+set spelllang=en_us
 
 " }}}
 
@@ -291,7 +289,7 @@ nmap <F8> :SyntasticCheck<cr>
 let g:syntastic_always_populate_loc_list = 1
 
     " Dont check on save
-let g:syntastic_mode_map = { 'mode': 'passive' }
+" let g:syntastic_mode_map = { 'mode': 'passive' }
 
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8', 'python']
