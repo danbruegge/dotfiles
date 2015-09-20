@@ -25,3 +25,7 @@ remove .ssh/known_hosts from git
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/known_hosts' --prune-empty --tag-name-filter cat -- --all
 
 ln -s /home/dan/.dotfiles/.screenlayout/ /home/dan/.screenlayout
+
+for vim
+-------
+cd ~/.fonts && curl -fLo DroidSansMonoForPowerlinePlusNerdFileTypes.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline%20Plus%20Nerd%20File%20Types.otf

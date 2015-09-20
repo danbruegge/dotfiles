@@ -18,11 +18,10 @@ endfunction
 
 " dependings?!
 Plug 'tomtom/tlib_vim'
-Plug 'morhetz/gruvbox'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
-Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 Plug 'bling/vim-airline'
 
 " editor sugar
@@ -30,22 +29,25 @@ Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
-Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
+Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'SirVer/ultisnips'
+Plug 'ryanoasis/vim-devicons'
 
 " languages
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss'] }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-" Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+" Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 call plug#end()
 
@@ -80,9 +82,6 @@ set history=100
     " 8 lines from the bottom
 set scrolloff=8
 
-    " Allow the cursor to go in to 'invalid' places
-"set virtualedit=all
-
     " Better command-line completion
 set wildmenu
 set wildignore+=*.dll,*.o,*.pyc,*.pyo,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif
@@ -103,7 +102,6 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-" colorscheme molokai
 colorscheme gruvbox
 
 set completeopt=longest,menuone
@@ -157,9 +155,6 @@ set autoread
     " display/highlight current line
 set cursorline
 
-    " Set the status line the way derek wyatt likes it
-"set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-
     " Always display the status line
 set laststatus=2
 
@@ -169,16 +164,6 @@ set cmdheight=2
 
     " change options
 set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
-
-    " less with css
-" autocmd BufNewFile,BufRead *.less set filetype=less.css
-"
-"     " sass with css
-" autocmd BufNewFile,BufRead *.scss set filetype=scss.css
-" autocmd FileType scss set iskeyword+=-
-
-    " node-blade syntax highlighting
-autocmd BufNewFile,BufRead *.blade set filetype=blade.css
 
     " the stuff at the end of a file, to tell vim some options. For example:
     "    # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -194,6 +179,11 @@ set nopaste
     " Open the help window on the Vertical Left side
 autocmd FileType help wincmd L
 autocmd FileType h wincmd L
+
+    " Removes the delay after hiting <esc><S-o>
+    " https://github.com/vim/vim/issues/24
+    " It is related to terminal only. In gVim all is fine.
+set timeout timeoutlen=3000 ttimeoutlen=100
 
 " }}}
 
@@ -218,11 +208,6 @@ nnoremap <C-l> <C-w>l
 " =============================================================================
 " Simple key mappings, that are time saver {{{
 " =============================================================================
-
-" imap -----------------------------------------------------------------------
-
-    " paste from system clipboard
-" imap <leader>p <c-r>*
 
 " vmap -----------------------------------------------------------------------
     " Simple sort lines
@@ -283,8 +268,6 @@ au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
 " Markdown settings {{{
 " =============================================================================
 
-    " Don't fold the first 2 levels
-" let g:vim_markdown_initial_foldlevel=6
 let g:vim_markdown_folding_disabled=1
 
 " }}}
@@ -295,9 +278,6 @@ let g:vim_markdown_folding_disabled=1
 
     " enable all function in all mode.
 let g:user_emmet_mode='a'
-
-    " simpler key stroke for <c-y>,
-" imap <leader>e <c-y>,
 
 " }}}
 
@@ -313,14 +293,16 @@ let g:syntastic_always_populate_loc_list = 1
     " Dont check on save
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
-    " Args for checkers
-let g:syntastic_javascript_jslint_args='--config ~/.jshintrc'
-
     " Standard checker for python
 let g:syntastic_python_checkers=['flake8', 'python']
 
     " Standard checker for javascript
 let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_javascript_jslint_args='-c ~/.jshintrc'
+
+    " Standard checker for typescript
+let g:syntastic_typescript_checkers=['tslint']
+let g:syntastic_typescript_tslint_args='-c ~/.tslint.json'
 
 " }}}
 
@@ -349,10 +331,9 @@ let g:airline#extensions#tabline#enabled = 1
 " }}}
 
 " =============================================================================
-" SnipMate stuff {{{
+" UltiSnip stuff {{{
 " =============================================================================
 
-" imap <leader><tab> <esc>a<Plug>snipMateNextOrTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:ycm_key_list_select_completion = ['<Down>']
 
