@@ -339,7 +339,7 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 let g:airline_theme = 'tomorrow'
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
-let g:airline#extensions#whitespace#checks = []
+" let g:airline#extensions#whitespace#checks = []
 let g:airline#extensions#syntastic#enabled = 1
     " cut long branch names
 let g:airline#extensions#branch#displayed_head_limit = 25
