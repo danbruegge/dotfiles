@@ -3,9 +3,19 @@ snippet strict
 'use strict';
 endsnippet
 
-# jshint basic
-snippet hint
+# jshint global variables
+snippet global
 /* global ${1} */
+endsnippet
+
+# jslint options
+snippet lint
+/* jslint ${1} */
+endsnippet
+
+# jshint options
+snippet hint
+/* jshint ${1} */
 endsnippet
 
 # iife
@@ -90,6 +100,13 @@ snippet case
 case ${1}:
     ${2}
     break;
+endsnippet
+
+# empty block
+snippet b
+{
+    ${1}
+}
 endsnippet
 
 # object
