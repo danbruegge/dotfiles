@@ -3,4 +3,8 @@ accels.scm
 .vim/bundle
 .vim/sessions
 .vim/autoload/plug.vim.old
+.nvim/.netrwhist
+.nvim/bundle
+.nvim/sessions
+.nvim/autoload/plug.vim.old
 .ssh/known_hosts
