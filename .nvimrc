@@ -193,13 +193,13 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 " nnoremap <leader>w <C-w>v<C-w>l
 
     " Open a new empty vertical split and switch over to it
-nnoremap <leader>n <C-w>n<C-w>L
+nnoremap <leader>n <c-w>n<c-w>L
 
     " Makes jumping between splited windows easier
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " }}}
 
