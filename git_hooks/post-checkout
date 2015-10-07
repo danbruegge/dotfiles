@@ -2,8 +2,10 @@
 
 if [ -f ~/.ssh/id_rsa ]; then
     chmod 0600 ~/.ssh/id_rsa
+    echo "Permission of id_rsa changed"
 fi
 
 if [ -f ~/.ssh/id_rsa_zalando ]; then
     chmod 0600 ~/.ssh/id_rsa_zalando
+    echo "Permission of id_rsa_zalando changed"
 fi
