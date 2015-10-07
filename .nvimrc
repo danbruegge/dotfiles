@@ -4,7 +4,7 @@
 " vim-plug {{{
 " =============================================================================
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.nvim/bundle')
 
 function! BuildYCM(info)
     " info is a dictionary with 3 fields
@@ -196,10 +196,10 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 nnoremap <leader>n <c-w>n<c-w>L
 
     " Makes jumping between splited windows easier
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap <a-h> <c-w>h
+nnoremap <a-j> <c-w>j
+nnoremap <a-k> <c-w>k
+nnoremap <a-l> <c-w>l
 
 " }}}
 

@@ -21,7 +21,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 Plug 'bling/vim-airline'
 
 " editor sugar
@@ -100,7 +100,9 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-colorscheme gruvbox
+colorscheme molokai
+let g:molokai_original=1
+let g:rehash256=1
 
 set completeopt=longest,menuone
 
