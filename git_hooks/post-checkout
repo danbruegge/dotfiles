@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "### Change permissions"
+
 if [ -f ~/.ssh/id_rsa ]; then
     chmod 0600 ~/.ssh/id_rsa
     echo "Permission of id_rsa changed"
