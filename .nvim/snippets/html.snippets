@@ -1,0 +1,47 @@
+# ===========================
+# Jinja/Django template stuff
+# ===========================
+# variable tag
+snippet vt 
+	{{ ${1} }}
+# block tag
+snippet bt 
+	{% ${1} %}
+# extends
+snippet extends
+	{% extends '${1}' %}
+# if
+snippet if
+	{% if ${1:true} %}
+		${2}
+	{% endif %}
+# else
+snippet else
+	{% else %}
+		${1}
+# else if
+snippet elif
+	{% elif ${1:true} %}
+		${2}
+# for 
+snippet for 
+	{% for ${1:item} in ${2:items} %}
+		${3}
+	{% endfor %}
+# block
+snippet block
+	{% block ${1:content} %}
+		${2}
+	{% endblock $1 %}
+# include
+snippet include
+	{% include '${1}' %}
+# import
+snippet import
+	{% import '${1}' as ${2} %}
+# load
+snippet load
+	{% load ${1} %}
+# language
+snippet _
+	{{ _('${1}') }}

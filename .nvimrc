@@ -4,7 +4,7 @@
 " vim-plug {{{
 " =============================================================================
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.nvim/bundle')
 
 function! BuildYCM(info)
     " info is a dictionary with 3 fields
@@ -21,7 +21,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
-Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 Plug 'bling/vim-airline'
 
 " editor sugar
@@ -100,9 +100,7 @@ set background=dark
     " set terminal colors
 set t_Co=256
 
-colorscheme molokai
-let g:molokai_original=1
-let g:rehash256=1
+colorscheme gruvbox
 
 set completeopt=longest,menuone
 
@@ -195,13 +193,13 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 " nnoremap <leader>w <C-w>v<C-w>l
 
     " Open a new empty vertical split and switch over to it
-nnoremap <leader>n <C-w>n<C-w>L
+nnoremap <leader>n <c-w>n<c-w>L
 
     " Makes jumping between splited windows easier
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <a-h> <c-w>h
+nnoremap <a-j> <c-w>j
+nnoremap <a-k> <c-w>k
+nnoremap <a-l> <c-w>l
 
 " }}}
 
@@ -318,7 +316,7 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 let g:airline_theme = 'tomorrow'
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
-" let g:airline#extensions#whitespace#checks = []
+let g:airline#extensions#whitespace#checks = []
 let g:airline#extensions#syntastic#enabled = 1
     " cut long branch names
 let g:airline#extensions#branch#displayed_head_limit = 25
