@@ -12,6 +12,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
+Plug 'sjl/badwolf'
 Plug 'bling/vim-airline'
 
 " editor sugar
