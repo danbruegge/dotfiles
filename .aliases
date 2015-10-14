@@ -53,7 +53,7 @@ alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
 
 # shortcut for the short . runserver #
-alias run='. runserver.sh'
+alias run='. local.sh'
 
 # shortcut for bin/django
 alias dj='bin/django'
