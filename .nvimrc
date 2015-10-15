@@ -6,22 +6,13 @@
 
 call plug#begin('~/.nvim/bundle')
 
-function! BuildYCM(info)
-    " info is a dictionary with 3 fields
-    " - name:   name of the plugin
-    " - status: 'installed', 'updated', or 'unchanged'
-    " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status == 'installed' || a:info.force
-        !./install.py
-    endif
-endfunction
-
 " dependings?!
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
+Plug 'sjl/badwolf'
 Plug 'bling/vim-airline'
 
 " editor sugar
@@ -32,7 +23,7 @@ Plug 'tmhedberg/matchit'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
 
@@ -54,10 +45,6 @@ call plug#end()
 " =============================================================================
 " vim common {{{
 " =============================================================================
-
-    " Set 'nocompatible' to ward off unexpected things that your distro might
-    " have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
 
     " filetype stuff
 filetype on
@@ -89,7 +76,7 @@ set wildignore+=*/node_modules/*
     " When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
 
-set encoding=utf-8
+" set encoding=utf-8
 
     " move backup files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
