@@ -18,7 +18,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # DEFAULTS
 # =============================================================================
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERMINAL=xfce4-terminal
 export BROWSER=firefox
 
