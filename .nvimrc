@@ -214,6 +214,9 @@ nmap <leader>1 :w !wc -w<cr>
 nmap [l :lprevious<cr>
 nmap ]l :lnext<cr>
 
+nmap <left> :bprevious<cr>
+nmap <right> :bnext<cr>
+
 " nnoremap -------------------------------------------------------------------
     " Save file
 nnoremap <leader>w :w<cr>
@@ -231,8 +234,6 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
