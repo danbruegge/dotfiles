@@ -79,8 +79,8 @@ set showfulltag
 " set encoding=utf-8
 
     " move backup files to ~/.vim/sessions
-set backupdir=~/.vim/sessions
-set dir=~/.vim/sessions
+set backupdir=~/.nvim/sessions
+set dir=~/.nvim/sessions
 
 set background=dark
 
