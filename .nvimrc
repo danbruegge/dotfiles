@@ -16,13 +16,13 @@ Plug 'sjl/badwolf'
 Plug 'bling/vim-airline'
 
 " editor sugar
+Plug 'benekastah/neomake'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
@@ -37,6 +37,9 @@ Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
+
+" TODO:
+" Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
 
 call plug#end()
 
@@ -269,23 +272,19 @@ let g:user_emmet_mode='a'
 " }}}
 
 " =============================================================================
-" Syntastic stuff {{{
+" Neomake stuff {{{
 " =============================================================================
 
-nmap <F8> :SyntasticCheck<cr>
-
-    " always put errors to the loc list (:lopen or :lclose)
-let g:syntastic_always_populate_loc_list = 1
-
-    " Dont check on save
-" let g:syntastic_mode_map = { 'mode': 'passive' }
-
-    " Standard checker for python
-let g:syntastic_python_checkers=['flake8', 'python']
+autocmd! BufWritePost * Neomake
 
     " Standard checker for javascript
-let g:syntastic_javascript_checkers=['jshint']
-let g:syntastic_javascript_jslint_args='-c ~/.jshintrc'
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': [
+        \ '--verbose',
+        \ '-c', '~/.jshintrc'
+    \ ],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+\ }
 
 " }}}
 
