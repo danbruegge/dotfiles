@@ -4,7 +4,7 @@
 " vim-plug {{{
 " =============================================================================
 
-call plug#begin('~/.nvim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 " dependings?!
 Plug 'tomtom/tlib_vim'
@@ -81,8 +81,8 @@ set showfulltag
 " set encoding=utf-8
 
     " move backup files to ~/.vim/sessions
-set backupdir=~/.nvim/sessions
-set dir=~/.nvim/sessions
+set backupdir=~/.config/nvim/sessions
+set dir=~/.config/nvim/sessions
 
 set background=dark
 
