@@ -5,6 +5,7 @@ accels.scm
 .vim/autoload/plug.vim.old
 .config/nvim/.netrwhist
 .config/nvim/bundle
+.config/nvim/session
 .config/nvim/sessions
 .config/nvim/autoload/plug.vim.old
 .ssh/known_hosts
