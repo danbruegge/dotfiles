@@ -103,6 +103,9 @@ set number
 set ruler
 set colorcolumn=80
 
+    " a long line is just a long line
+set nowrap
+
     " display/highlight current line
 set cursorline
 
