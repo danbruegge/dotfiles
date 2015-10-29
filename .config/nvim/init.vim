@@ -277,13 +277,8 @@ let g:user_emmet_mode='a'
 autocmd! BufWritePost * Neomake
 
     " Standard checker for javascript
-let g:neomake_javascript_jshint_maker = {
-    \ 'args': [
-        \ '--verbose',
-        \ '-c', '~/.jshintrc'
-    \ ],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-\ }
+"let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['jshint']
 
 " }}}
 
