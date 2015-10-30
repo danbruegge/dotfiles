@@ -63,6 +63,9 @@
     # reset
     undo = reset --hard HEAD^
 
+    # push current branch
+    pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
+
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
