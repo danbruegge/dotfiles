@@ -50,6 +50,8 @@
     # log
     l = log
     lt = log -10 HEAD # last ten
+    ls = log --stat # log stat
+    lst = log -10 --stat # log status last ten
     last = log --pretty -1 HEAD
 
     # stash
