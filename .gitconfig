@@ -1,14 +1,17 @@
 [color]
     ui = True
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
+
 [color "status"]
     added = yellow
     changed = green
@@ -27,21 +30,29 @@
 
 [alias]
     undo = reset --hard HEAD^
+    last = log --pretty -1 HEAD
     ci = commit
     cim = commit -m
     cia = commit -am
-    st = status
+    st = status -s
     br = branch
     co = checkout
     cob = checkout -b
-    df = diff
+    df = diff --word-diff
+    dlc = diff --cached HEAD^ # diff last commit
     lg = log
+    lt = log -10 HEAD # last ten
     ec = config --global -e # open gitconfig in editor
     pl = pull
     ps = push
+    ss = stash save
+    sp = stash pop
+    sa = stash apply
+    sl = stash list
 
 [push]
     default = simple
+
 [merge]
     conflictstyle = diff3
     tool = meld
