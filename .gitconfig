@@ -29,26 +29,40 @@
     editor = nvim
 
 [alias]
-    undo = reset --hard HEAD^
-    last = log --pretty -1 HEAD
+    st = status -s
+    br = branch
+    ec = config --global -e # open gitconfig in editor
+
+    # checkout
+    co = checkout
+    cob = checkout -b
+
+    # diff
+    d = diff
+    ds = diff --stat
+    dlc = diff --cached HEAD^ # diff last commit
+
+    # commit
     ci = commit
     cim = commit -m
     cia = commit -am
-    st = status -s
-    br = branch
-    co = checkout
-    cob = checkout -b
-    df = diff --word-diff
-    dlc = diff --cached HEAD^ # diff last commit
-    lg = log
+
+    # log
+    l = log
     lt = log -10 HEAD # last ten
-    ec = config --global -e # open gitconfig in editor
-    pl = pull
-    ps = push
+    last = log --pretty -1 HEAD
+
+    # stash
     ss = stash save
     sp = stash pop
     sa = stash apply
     sl = stash list
+
+    # reset
+    undo = reset --hard HEAD^
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
 
 [push]
     default = simple
