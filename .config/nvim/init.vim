@@ -129,6 +129,9 @@ autocmd FileType h wincmd L
     " It is related to terminal only. In gVim all is fine.
 set timeout timeoutlen=3000 ttimeoutlen=100
 
+    " always look for file changes
+set autoread
+
 " }}}
 
 " =============================================================================
