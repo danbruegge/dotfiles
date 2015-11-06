@@ -1,14 +1,17 @@
 [color]
     ui = True
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
+
 [color "status"]
     added = yellow
     changed = green
@@ -26,22 +29,49 @@
     editor = nvim
 
 [alias]
-    undo = reset --hard HEAD^
+    st = status -s
+    br = branch
+    ec = config --global -e # open gitconfig in editor
+
+    # checkout
+    co = checkout
+    cob = checkout -b
+
+    # diff
+    d = diff
+    ds = diff --stat
+    dlc = diff --cached HEAD^ # diff last commit
+
+    # commit
     ci = commit
     cim = commit -m
     cia = commit -am
-    st = status
-    br = branch
-    co = checkout
-    cob = checkout -b
-    df = diff
-    lg = log
-    ec = config --global -e # open gitconfig in editor
-    pl = pull
-    ps = push
+
+    # log
+    l = log
+    lt = log -10 HEAD # last ten
+    ls = log --stat # log stat
+    lst = log -10 --stat # log status last ten
+    last = log --pretty -1 HEAD
+
+    # stash
+    ss = stash save
+    sp = stash pop
+    sa = stash apply
+    sl = stash list
+
+    # reset
+    undo = reset --hard HEAD^
+
+    # push current branch
+    pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
 
 [push]
     default = simple
+
 [merge]
     conflictstyle = diff3
     tool = meld

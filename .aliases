@@ -22,6 +22,7 @@ alias ping='ping -c 5'
 alias tree='tree -C'
 alias bashrc='nvim ~/.bashrc && . ~/.bashrc'
 alias aliases='nvim ~/.aliases && . ~/.aliases'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
 alias wp='cd ~/workspace/projects/'
@@ -53,7 +54,7 @@ alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
 
 # shortcut for the short . runserver #
-alias run='. runserver.sh'
+alias run='. local.sh'
 
 # shortcut for bin/django
 alias dj='bin/django'
