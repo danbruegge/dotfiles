@@ -132,6 +132,9 @@ set timeout timeoutlen=3000 ttimeoutlen=100
     " always look for file changes
 set autoread
 
+    " need for vaxe and autocomplete
+set autowrite
+
 " }}}
 
 " =============================================================================
@@ -279,5 +282,14 @@ let g:ycm_key_list_select_completion = ['<Down>']
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_show_hidden = 1
+
+" }}}
+
+" =============================================================================
+" vaxe stuff {{{
+" =============================================================================
+
+let g:vaxe_cache_server = 1
+let g:vaxe_lime_target = "linux -neko -64"
 
 " }}}
