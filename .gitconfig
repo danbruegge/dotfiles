@@ -30,11 +30,9 @@
 
 [alias]
     st = status -s
-    br = branch
     ec = config --global -e # open gitconfig in editor
 
     # checkout
-    co = checkout
     cob = checkout -b
 
     # diff
@@ -43,9 +41,11 @@
     dlc = diff --cached HEAD^ # diff last commit
 
     # commit
-    ci = commit
     cim = commit -m
     cia = commit -am
+
+    # merge
+    mm = merge master
 
     # log
     l = log
