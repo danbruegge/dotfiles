@@ -176,6 +176,8 @@ nmap <leader>h :set ft=html<cr>
 
 nmap <leader>1 :w !wc -w<cr>
 
+nmap <leader><cr> <F9>
+
 nmap [l :lprevious<cr>
 nmap ]l :lnext<cr>
 

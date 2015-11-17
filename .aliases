@@ -72,7 +72,7 @@ alias runphp='php -S localhost:8001'
 alias gg='git'
 alias gti='git'
 alias gut='git'
-alias gitignore='vim .gitignore'
+alias gitignore='nvim .gitignore'
 
 # =============================================================================
 # GAME THINGS
