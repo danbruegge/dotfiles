@@ -61,7 +61,8 @@
     sl = stash list
 
     # reset
-    undo = reset --hard HEAD^
+    undo = reset HEAD^
+    kill = reset --hard HEAD^
 
     # push current branch
     pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
