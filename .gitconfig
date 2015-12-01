@@ -40,7 +40,7 @@
     cob = checkout -b
 
     # diff
-    d = diff
+    d = diff --word-diff
     ds = diff --stat
     dlc = diff --cached HEAD^ # diff last commit
 
