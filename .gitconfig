@@ -32,7 +32,11 @@
     st = status -s
     ec = config --global -e # open gitconfig in editor
 
+    # branch
+    br = branch
+
     # checkout
+    cm = checkout master
     cob = checkout -b
 
     # diff
