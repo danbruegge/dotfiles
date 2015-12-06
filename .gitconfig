@@ -32,11 +32,15 @@
     st = status -s
     ec = config --global -e # open gitconfig in editor
 
+    # branch
+    br = branch
+
     # checkout
+    cm = checkout master
     cob = checkout -b
 
     # diff
-    d = diff
+    d = diff --word-diff
     ds = diff --stat
     dlc = diff --cached HEAD^ # diff last commit
 
@@ -61,7 +65,8 @@
     sl = stash list
 
     # reset
-    undo = reset --hard HEAD^
+    undo = reset HEAD^
+    kill = reset --hard HEAD^
 
     # push current branch
     pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
