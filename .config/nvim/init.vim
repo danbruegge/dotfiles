@@ -32,7 +32,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'jdonaldson/vaxe'
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
