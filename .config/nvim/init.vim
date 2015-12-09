@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
