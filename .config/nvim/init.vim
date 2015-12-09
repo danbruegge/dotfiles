@@ -20,7 +20,6 @@ Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
-Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Valloric/YouCompleteMe'
@@ -190,10 +189,7 @@ nmap <right> :bnext<cr>
 nnoremap <leader>w :w<cr>
 
     "  Open file
-nnoremap <leader>o :CtrlP<cr>
-
-    " Open buffer list
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>o :FZF<cr>
 
     " disable arrow keys
 inoremap <Up> <NOP>
@@ -275,15 +271,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:ycm_key_list_select_completion = ['<Down>']
-
-" }}}
-
-" =============================================================================
-" Ctrlp stuff {{{
-" =============================================================================
-
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_show_hidden = 1
 
 " }}}
 
