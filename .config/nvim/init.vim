@@ -28,7 +28,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " languages
 Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
+Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -170,10 +170,6 @@ vmap <leader>y "+y
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
 
-    " force filetype to html on keystroke...fix my snipmate problem in html
-    " files with django/jinja stuff
-nmap <leader>h :set ft=html<cr>
-
 nmap <leader>1 :w !wc -w<cr>
 
 nmap <leader><cr> <F9>
@@ -218,6 +214,9 @@ nmap <silent> <f5> :set spell!<cr>
 " =============================================================================
 
 let g:vim_markdown_folding_disabled=1
+
+map <leader>h1 VypVr=
+map <leader>h2 VypVr-
 
 " }}}
 
