@@ -20,7 +20,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR=nvim
 export TERMINAL=xfce4-terminal
-export BROWSER=firefox
+export BROWSER=firefox-beta
 
 # =============================================================================
 # GET GLOBAL BASHRC STUFF 
