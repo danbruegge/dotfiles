@@ -25,6 +25,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
 
 " languages
 Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
