@@ -15,14 +15,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # =============================================================================
-# DEFAULTS
-# =============================================================================
-
-export EDITOR=nvim
-export TERMINAL=xfce4-terminal
-export BROWSER=firefox-beta
-
-# =============================================================================
 # GET GLOBAL BASHRC STUFF 
 # =============================================================================
 
@@ -91,5 +83,3 @@ M-!     complete command name
 M-^     complete history
 EOF
 }
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
