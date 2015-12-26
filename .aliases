@@ -12,6 +12,7 @@ alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
                                             # informations
 alias lod='ls -ad .* | xargs -n1 basename'  # list only dotfiles without extra
                                             # informations
+alias lsm='find / -type l -ls' # list all symlinks
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
