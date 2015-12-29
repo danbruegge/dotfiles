@@ -21,10 +21,10 @@
     pretty = oneline
 
 [include]
-    path = ~/.gitconfig_user
+    path = ~/.dotfiles/custom/gitconfig_user
 
 [core]
-    excludesfile = ~/.gitignore-global
+    excludesfile = ~/dotfiles/custom/gitignore_global
     pager = less -r
     editor = nvim
 

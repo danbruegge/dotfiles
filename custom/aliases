@@ -12,6 +12,7 @@ alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
                                             # informations
 alias lod='ls -ad .* | xargs -n1 basename'  # list only dotfiles without extra
                                             # informations
+alias lsm='find / -type l -ls' # list all symlinks
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -24,7 +25,7 @@ alias rmd='rm -rf' # to remove a dir
 alias ping='ping -c 5'
 alias tree='tree -C'
 alias bashrc='nvim ~/.bashrc && . ~/.bashrc'
-alias aliases='nvim ~/.aliases && . ~/.aliases'
+alias aliases='nvim ~/.dotfiles/custom/aliases && . ~/.bashrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias reload='. ~/.bashrc'
 alias dotfiles='cd ~/.dotfiles'
