@@ -32,7 +32,6 @@ fi
 # GET ALIASES
 # =============================================================================
 
-echo $ALIASES
 if [ -f $ALIASES ]; then
     . $ALIASES
 fi
