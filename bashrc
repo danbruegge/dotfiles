@@ -89,3 +89,5 @@ M-!     complete command name
 M-^     complete history
 EOF
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
