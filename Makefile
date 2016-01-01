@@ -1,6 +1,7 @@
 user=dan
 base=/home/$(user)/
 dotfiles=$(base).dotfiles/
+thishost=$(shell hostname)
 
 install:
 	ln -sfT $(dotfiles)bash_profile $(base).bash_profile
@@ -11,7 +12,13 @@ install:
 	ln -sfT $(dotfiles)gitconfig $(base).gitconfig
 	ln -sfT $(dotfiles)screenlayout $(base).screenlayout
 	ln -sfT $(dotfiles)ssh $(base).ssh
-	ln -sfT $(dotfiles)xinitrc $(base).xinitrc
+	@echo $(thishost)
+ifeq ($(thishost),neth)
+	ln -sfT $(dotfiles)xinitrc_neth $(base).xinitrc
+endif
+ifeq ($(thishost),dore)
+	ln -sfT $(dotfiles)xinitrc_dore $(base).xinitrc
+endif
 	ln -sfT $(dotfiles)config/Thunar $(base).config/Thunar
 	ln -sfT $(dotfiles)config/nvim $(base).config/nvim
 
