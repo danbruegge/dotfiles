@@ -12,7 +12,6 @@ install:
 	ln -sfT $(dotfiles)gitconfig $(base).gitconfig
 	ln -sfT $(dotfiles)screenlayout $(base).screenlayout
 	ln -sfT $(dotfiles)ssh $(base).ssh
-	@echo $(thishost)
 ifeq ($(thishost),neth)
 	ln -sfT $(dotfiles)xinitrc_neth $(base).xinitrc
 endif
