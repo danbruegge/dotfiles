@@ -6,6 +6,9 @@
 #--- PROMPT ---
 PS1='\[\e[1;31m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;31m\]]\$\[\e[0m\] '
 
+#--- VARIABLES ---
+CUSTOM=/home/dan/.dotfiles/custom
+
 #--- ROOT ONLY ---
 #------ pacman related ---
 alias pacnew='find / -name *.pacnew'
@@ -38,14 +41,14 @@ alias scan='iw dev wlan0 scan | grep SSID'
 # GET GLOBAL BASHRC STUFF 
 # =============================================================================
 
-if [ -f ~dan/.bashrc_global ]; then
-    . ~dan/.bashrc_global
+if [ -f $CUSTOM/bashrc_global ]; then
+    . $CUSTOM/bashrc_global
 fi
 
 # =============================================================================
 # GET ALIASES
 # =============================================================================
 
-if [ -f ~dan/.aliases ]; then
-    . ~dan/.aliases
+if [ -f $CUSTOM/aliases ]; then
+    . $CUSTOM/aliases
 fi
