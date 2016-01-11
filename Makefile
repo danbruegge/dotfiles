@@ -17,7 +17,8 @@ install:
 	ln -sfT $(dotfiles)config/nvim $(base).config/nvim
 
 install-root:
-	ln -sf $(dotfiles)bashrc_root /root/.bashrc
+	ln -sfT $(dotfiles)config/nvim /root/.config/nvim
+	ln -sfT $(dotfiles)bashrc_root /root/.bashrc
 
 root:
 	su -c 'make install-root'
