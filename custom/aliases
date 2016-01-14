@@ -57,6 +57,13 @@ alias up='packer -Syu'
 alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
 
+# pip upgrade all packages
+PIPFREEZ='pip freeze --local'
+CUT='cut -d = -f 1'
+GREP='grep -v "^\-e"'
+PIPINSTALL='pip install -U'
+alias pip_upgrade='$PIPFREEZ | $GREP | $CUT | xargs -n1 $PIPINSTALL'
+
 # shortcut for the short . runserver #
 alias run='. local.sh'
 
