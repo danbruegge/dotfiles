@@ -15,7 +15,7 @@ install:
 	ln -sfT $(dotfiles)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT $(dotfiles)config/Thunar $(base).config/Thunar
 	ln -sfT $(dotfiles)config/nvim $(base).config/nvim
-	ln -sfT $(dotfiles)git_hooks $(dotfiles).git/hooks
+	ln -sf $(dotfiles)git_hooks $(dotfiles).git/hooks
 
 install-root:
 	ln -sfT $(dotfiles)config/nvim /root/.config/nvim
