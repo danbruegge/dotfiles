@@ -22,7 +22,8 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
@@ -33,7 +34,7 @@ Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'jdonaldson/vaxe'
+" Plug 'jdonaldson/vaxe'
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
@@ -280,6 +281,14 @@ let g:ycm_key_list_select_completion = ['<Down>']
 
 let g:vaxe_cache_server = 1
 let g:vaxe_lime_target = "linux -neko -64"
+
+" }}}
+
+" =============================================================================
+" Deoplete stuff {{{
+" =============================================================================
+
+let g:deoplete#enable_at_startup = 1
 
 " }}}
 
