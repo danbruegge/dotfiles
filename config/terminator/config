@@ -1,0 +1,40 @@
+[global_config]
+  borderless = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 1
+  inactive_color_offset = 0.9
+  suppress_multiple_term_dialog = True
+  title_font = Source Code Pro 9
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#444444"
+  title_inactive_fg_color = "#cccccc"
+  title_receive_bg_color = "#775555"
+  title_receive_fg_color = "#cccccc"
+  title_transmit_bg_color = "#111111"
+  title_transmit_fg_color = "#eeeeee"
+  title_use_system_font = False
+  window_state = maximise
+[keybindings]
+  layout_launcher = ""
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    alternate_screen_scroll = False
+    background_darkness = 0.79
+    background_image = None
+    background_type = transparent
+    cursor_color = "#ffffff"
+    font = Source Code Pro 11
+    foreground_color = "#eeeeee"
+    icon_bell = False
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollbar_position = hidden
+    use_system_font = False
