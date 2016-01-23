@@ -3,6 +3,12 @@
 #
 [[ $- != *i* ]] && return
 
+if [ -e /usr/share/terminfo/x/xterm-256color ] \
+    && [ "$COLORTERM" == "xfce4-terminal" ];
+then
+    export TERM=xterm-256color
+fi
+
 #--- PROMPT ---
 PS1='\[\e[1;32m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;32m\]]\$\[\e[0m\] '
 
