@@ -1,8 +1,8 @@
 URxvt*scrollBar:       false
 URxvt*saveLines:       32767
 URxvt.colorUL:         #a9c9bc
-URxvt*cursorColor:     orange
-URxvt*cursorBlink:     true
+URxvt*cursorColor:     green
+URxvt*cursorBlink:     false
 URxvt*geometry:        90x26
 URxvt*title:           rxvt-256color
 URxvt*tintColor:       #636363
@@ -12,12 +12,12 @@ URxvt*jumpScroll:      true
 URxvt*secondaryScroll: true
 URxvt*urgentOnBell:    true
 
-URxvt*font:            xft:Source Code Pro:pixelsize=13
-URxvt*boldFont:        xft:Source Code Pro:pixelsize=13
+URxvt*font:            xft:SourceCodePro:size=11
+URxvt*boldFont:        xft:SourceCodePro:size=11
 
 ! special
 *.foreground:   #babdb6
-*.background:   #222222
+*.background:   #111111
 *.cursorColor:  #babdb6
 
 ! black
@@ -51,4 +51,3 @@ URxvt*boldFont:        xft:Source Code Pro:pixelsize=13
 ! white
 *.color7:       #d3d7cf
 *.color15:      #eeeeec
-
