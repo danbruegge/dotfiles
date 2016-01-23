@@ -3,8 +3,8 @@
 <action>
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
-	<unique-id>1367782884887571-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<unique-id>1453126912537255-3</unique-id>
+	<command>terminator --working-directory=%f</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
 	<startup-notify/>

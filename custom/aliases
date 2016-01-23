@@ -2,6 +2,7 @@
 # MAIN-ALIAS
 # =============================================================================
 
+alias sa='cat ~/.dotfiles/custom/aliases' # cat aliases
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -l'

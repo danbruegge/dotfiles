@@ -12,10 +12,14 @@ install:
 	ln -sfT $(dotfiles)gitconfig $(base).gitconfig
 	ln -sfT $(dotfiles)screenlayout $(base).screenlayout
 	ln -sfT $(dotfiles)ssh $(base).ssh
+	ln -sfT $(dotfiles)tmux.conf $(base).tmux.conf
+	ln -sfT $(dotfiles)tern-project $(base).tern-project
+	ln -sfT $(dotfiles)Xresources $(base).Xresources
 	ln -sfT $(dotfiles)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT $(dotfiles)config/Thunar $(base).config/Thunar
 	ln -sfT $(dotfiles)config/nvim $(base).config/nvim
-	ln -sf $(dotfiles)git_hooks $(dotfiles).git/hooks
+	ln -sfT $(dotfiles)config/terminator $(base).config/terminator
+	ln -sfT $(dotfiles)git_hooks $(dotfiles).git/hooks
 
 install-root:
 	ln -sfT $(dotfiles)config/nvim /root/.config/nvim
