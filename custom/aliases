@@ -33,6 +33,9 @@ alias dotfiles='cd ~/.dotfiles'
 alias wp='cd ~/workspace/projects/'
 alias wg='cd ~/workspace/games/'
 
+# get 256-colors in tmux
+# alias tmux='tmux -2'
+
 # set screensaver off #
 alias soff='xset s off'
 # set screensaver on #

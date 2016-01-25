@@ -1,5 +1,5 @@
 URxvt*scrollBar:       false
-URxvt*saveLines:       32767
+URxvt*saveLines:       10000
 URxvt.colorUL:         #a9c9bc
 URxvt*cursorColor:     green
 URxvt*cursorBlink:     false
@@ -11,9 +11,22 @@ URxvt*pastableTabs:    true
 URxvt*jumpScroll:      true
 URxvt*secondaryScroll: true
 URxvt*urgentOnBell:    true
+URxvt*selectToClipboard: true
+URxvt.urlLauncher: /usr/bin/firefox-beta-bin
+URxvt.letterSpace: -1
 
-URxvt*font:            xft:SourceCodePro:size=11
-URxvt*boldFont:        xft:SourceCodePro:size=11
+URxvt.depth: 32
+URxvt.background: [80]#111111
+
+Xft.antialias:  1
+Xft.hinting:    1
+Xft.autohint:   0
+Xft.hintstyle:  hintmedium
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+URxvt*font:            xft:SourceCodePro:size=11:style=Regular
+URxvt*boldFont:        xft:SourceCodePro:size=11:style=Semibold
 
 ! special
 *.foreground:   #babdb6
