@@ -13,6 +13,7 @@ Notes
 =====
 Orage Clock
 -----------
-Free Mono Bold 14
+* Font-Package: `ttf-freefont`
+* Free Mono Bold 14
 
     %R | %a:%d:%b | w:%V
