@@ -17,3 +17,7 @@ Orage Clock
 * Free Mono Bold 14
 
     %R | %a:%d:%b | w:%V
+
+Xfce Panel
+----------
+Height: 28px
