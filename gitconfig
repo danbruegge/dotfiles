@@ -71,6 +71,9 @@
     # push current branch
     pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
 
+    # list info
+    i = !git branch && git st
+
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
