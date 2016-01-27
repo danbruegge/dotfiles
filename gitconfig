@@ -72,7 +72,18 @@
     pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
 
     # list info
-    i = !git branch && git st
+    i = !echo "----" && \
+        echo "= Branch" && \
+        echo "----" && \
+        git br && \
+        echo "----" && \
+        echo "= Last ten" && \
+        echo "----" && \
+        git lt && \
+        echo "----" && \
+        echo "= Status" && \
+        echo "----" && \
+        git st
 
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
