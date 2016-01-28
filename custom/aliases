@@ -33,6 +33,8 @@ alias dotfiles='cd ~/.dotfiles'
 alias wp='cd ~/workspace/projects/'
 alias wg='cd ~/workspace/games/'
 
+alias dead_symlinks='find -L . -type l'
+
 # get 256-colors in tmux
 # alias tmux='tmux -2'
 
