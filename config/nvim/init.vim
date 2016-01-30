@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
