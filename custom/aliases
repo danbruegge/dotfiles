@@ -2,6 +2,7 @@
 # MAIN-ALIAS
 # =============================================================================
 
+alias sa='cat ~/.dotfiles/custom/aliases' # cat aliases
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -l'
@@ -32,6 +33,11 @@ alias dotfiles='cd ~/.dotfiles'
 alias wp='cd ~/workspace/projects/'
 alias wg='cd ~/workspace/games/'
 
+alias dead_symlinks='find -L . -type l'
+
+# get 256-colors in tmux
+# alias tmux='tmux -2'
+
 # set screensaver off #
 alias soff='xset s off'
 # set screensaver on #
@@ -56,6 +62,13 @@ alias up='packer -Syu'
 
 alias pyserver='python2 -m SimpleHTTPServer'
 alias pyclean='find . -name "*.pyc" -delete'
+
+# pip upgrade all packages
+PIPFREEZ='pip freeze --local'
+CUT='cut -d = -f 1'
+GREP='grep -v "^\-e"'
+PIPINSTALL='pip install -U'
+alias pip_upgrade='$PIPFREEZ | $GREP | $CUT | xargs -n1 $PIPINSTALL'
 
 # shortcut for the short . runserver #
 alias run='. local.sh'

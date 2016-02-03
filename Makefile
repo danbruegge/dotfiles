@@ -1,23 +1,33 @@
 user=dan
 base=/home/$(user)/
-dotfiles=$(base).dotfiles/
+df=$(base).dotfiles/
 thishost=$(shell hostname)
 
+dead-symlinks:
+	find -L $(SEARCHPATH) -type l
+
 install:
-	ln -sfT $(dotfiles)bash_profile $(base).bash_profile
-	ln -sfT $(dotfiles)bashrc $(base).bashrc
-	ln -sfT $(dotfiles)eslintrc $(base).eslintrc
-	ln -sfT $(dotfiles)jshintrc $(base).jshintrc
-	ln -sfT $(dotfiles)pip $(base).pip
-	ln -sfT $(dotfiles)gitconfig $(base).gitconfig
-	ln -sfT $(dotfiles)screenlayout $(base).screenlayout
-	ln -sfT $(dotfiles)ssh $(base).ssh
-	ln -sfT $(dotfiles)xinitrc_$(thishost) $(base).xinitrc
-	ln -sfT $(dotfiles)config/Thunar $(base).config/Thunar
-	ln -sfT $(dotfiles)config/nvim $(base).config/nvim
+	ln -sfT $(df)bash_profile $(base).bash_profile
+	ln -sfT $(df)bashrc $(base).bashrc
+	ln -sfT $(df)eslintrc $(base).eslintrc
+	ln -sfT $(df)jshintrc $(base).jshintrc
+	ln -sfT $(df)pip $(base).pip
+	ln -sfT $(df)gitconfig $(base).gitconfig
+	ln -sfT $(df)screenlayout $(base).screenlayout
+	ln -sfT $(df)ssh $(base).ssh
+	ln -sfT $(df)tmux.conf $(base).tmux.conf
+	ln -sfT $(df)tern-project $(base).tern-project
+	ln -sfT $(df)Xresources $(base).Xresources
+	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
+	ln -sfT $(df)config/Thunar $(base).config/Thunar
+	ln -sfT $(df)config/nvim $(base).config/nvim
+	ln -sfT $(df)git_hooks $(df).git/hooks
+	SEARCHPATH=~/ make dead-symlinks
 
 install-root:
-	ln -sf $(dotfiles)bashrc_root /root/.bashrc
+	ln -sfT $(df)config/nvim /root/.config/nvim
+	ln -sfT $(df)bashrc_root /root/.bashrc
+	SEARCHPATH=/root/ make dead-symlinks
 
 root:
 	su -c 'make install-root'

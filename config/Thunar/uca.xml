@@ -3,8 +3,8 @@
 <action>
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
-	<unique-id>1367782884887571-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<unique-id>1453836195253064-2</unique-id>
+	<command>xfce4-terminal --maximize --working-directory=%f</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
 	<startup-notify/>
