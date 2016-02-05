@@ -12,7 +12,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " editor sugar
 Plug 'benekastah/neomake'
@@ -253,7 +254,7 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " Airline stuff {{{
 " =============================================================================
 
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'distinguished'
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline#extensions#whitespace#enabled = 0
