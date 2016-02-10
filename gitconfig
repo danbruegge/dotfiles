@@ -28,6 +28,9 @@
     pager = less -r
     editor = nvim
 
+[diff]
+    algorithm = patience
+
 [alias]
     st = status -s
     ec = config --global -e # open gitconfig in editor
