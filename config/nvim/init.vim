@@ -12,8 +12,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
@@ -251,18 +250,15 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " }}}
 
 " =============================================================================
-" Airline stuff {{{
+" Lightline stuff {{{
 " =============================================================================
 
-let g:airline_theme = 'distinguished'
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline#extensions#whitespace#enabled = 0
-" let g:airline#extensions#syntastic#enabled = 1
-    " cut long branch names
-let g:airline#extensions#branch#displayed_head_limit = 25
-
-let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"⭤":""}',
+    \ }
+\ }
 
 " }}}
 
