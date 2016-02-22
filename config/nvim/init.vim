@@ -200,6 +200,9 @@ nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 nnoremap <c-c> :bp\|bd #<cr>
 
+" buffer stuff
+nnoremap <leader>b :ls<cr>:b<space>
+
 " }}}
 
 " =============================================================================
