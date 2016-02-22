@@ -25,6 +25,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
+    " devicons needs this package: `nerd-fonts-git`
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 
@@ -258,7 +259,6 @@ let g:airline_theme = 'distinguished'
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline#extensions#whitespace#enabled = 0
-" let g:airline#extensions#syntastic#enabled = 1
     " cut long branch names
 let g:airline#extensions#branch#displayed_head_limit = 25
 
