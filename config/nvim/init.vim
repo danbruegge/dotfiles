@@ -12,8 +12,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
@@ -202,6 +201,9 @@ nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 nnoremap <c-c> :bp\|bd #<cr>
 
+" buffer stuff
+nnoremap <leader>b :ls<cr>:b<space>
+
 " }}}
 
 " =============================================================================
@@ -252,17 +254,27 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " }}}
 
 " =============================================================================
-" Airline stuff {{{
+" Lightline stuff {{{
 " =============================================================================
 
-let g:airline_theme = 'distinguished'
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline#extensions#whitespace#enabled = 0
-    " cut long branch names
-let g:airline#extensions#branch#displayed_head_limit = 25
+let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"⭤":""}',
+    \ },
+    \ 'component_function': {
+    \   'filetype': 'MyFiletype',
+    \   'fileformat': 'MyFileformat',
+    \ }
+\ }
 
-let g:airline#extensions#tabline#enabled = 1
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 " }}}
 
@@ -297,13 +309,5 @@ let g:deoplete#enable_at_startup = 1
 " =============================================================================
 
 let $FZF_DEFAULT_COMMAND = 'find .'
-
-" }}}
-
-" =============================================================================
-" DEOPLETE stuff {{{
-" =============================================================================
-
-let g:deoplete#enable_at_startup = 1
 
 " }}}
