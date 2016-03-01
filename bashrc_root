@@ -52,3 +52,5 @@ fi
 if [ -f $CUSTOM/aliases ]; then
     . $CUSTOM/aliases
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
