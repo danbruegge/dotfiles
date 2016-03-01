@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
+    " devicons needs this package: `nerd-fonts-git`
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 
@@ -199,6 +200,9 @@ noremap <Down> <NOP>
 nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 nnoremap <c-c> :bp\|bd #<cr>
+
+" buffer stuff
+nnoremap <leader>b :ls<cr>:b<space>
 
 " }}}
 
