@@ -46,4 +46,13 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
+<action>
+	<icon>text-editor</icon>
+	<name>Open with Neovim</name>
+	<unique-id>1456996562453023-3</unique-id>
+	<command>xfce4-terminal --maximize -e &quot;nvim %f&quot;</command>
+	<description></description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
 </actions>
