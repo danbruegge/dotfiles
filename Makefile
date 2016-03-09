@@ -21,6 +21,7 @@ install:
 	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT $(df)config/Thunar $(base).config/Thunar
 	ln -sfT $(df)config/nvim $(base).config/nvim
+	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
 	ln -sf $(df)git_hooks $(df).git/hooks
 	SEARCHPATH=~/ make dead-symlinks
 
