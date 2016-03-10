@@ -22,6 +22,7 @@ install:
 	ln -sfT $(df)config/Thunar $(base).config/Thunar
 	ln -sfT $(df)config/nvim $(base).config/nvim
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
+	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sf $(df)git_hooks $(df).git/hooks
 	SEARCHPATH=~/ make dead-symlinks
 

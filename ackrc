@@ -1,0 +1,18 @@
+# always sort the files
+--sort-files
+
+# always color, even if piping to another program
+--color
+
+# added file types
+--type-set=md=.markdown,.md
+
+# expand file types
+--type-add
+css=.sass,.scss
+
+# ignore directories
+--ignore-dir=node_modules
+
+# PRIMEFORCE RELATED
+--ignore-dir={tomcat,target}
