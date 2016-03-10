@@ -97,5 +97,3 @@
 [merge]
     conflictstyle = diff3
     tool = meld
-[gitreview]
-	remote = origin
