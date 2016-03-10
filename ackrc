@@ -15,4 +15,5 @@ css=.sass,.scss
 --ignore-dir=node_modules
 
 # PRIMEFORCE RELATED
---ignore-dir={tomcat,target}
+--ignore-dir=tomcat
+--ignore-dir=target
