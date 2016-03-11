@@ -27,6 +27,7 @@ Plug 'SirVer/ultisnips'
     " devicons needs this package: `nerd-fonts-git`
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
 
 " languages
 Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
@@ -309,5 +310,19 @@ let g:deoplete#enable_at_startup = 1
 " =============================================================================
 
 let $FZF_DEFAULT_COMMAND = 'find .'
+
+" }}}
+
+" =============================================================================
+" Ack/Ag stuff {{{
+" =============================================================================
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+let g:ack_qhandler = 'botright copen 25'
+let g:ack_autoclose = 1
+let g:ack_autofold_results = 1
 
 " }}}
