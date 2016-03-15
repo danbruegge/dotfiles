@@ -1,19 +1,22 @@
 {
     "ecmaFeatures": {
-        "modules": true
+        "modules": 1
     },
     "parserOptions": {
         "sourceType": "module",
     },
     "env": {
-        "browser": true,
-        "es6": true,
-        "mocha": true,
-        "node": true,
-        "amd": true,
+        "browser": 1,
+        "es6": 1,
+        "mocha": 1,
+        "node": 1,
+        "amd": 1,
     },
     "extends": "eslint:recommended",
-    "globals": {},
+    "globals": {
+        "angular": 1,
+        "CarNet": 1
+    },
     "rules": {
         "brace-style": [2, "1tbs"],
         "comma-style": [2, "last"],
@@ -21,7 +24,7 @@
         "no-constant-condition": 2,
         "quotes": [2, "single"],
         "semi": [2, "always"],
-        "keyword-spacing": [2, "always"],
+        "keyword-spacing": 2,
         "space-before-blocks": [2, "always"],
         "strict": [2, "never"],
     },
