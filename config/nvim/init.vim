@@ -317,12 +317,16 @@ let $FZF_DEFAULT_COMMAND = 'find .'
 " Ack/Ag stuff {{{
 " =============================================================================
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 let g:ack_qhandler = 'botright copen 25'
 let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
+
+" }}}
+
+" =============================================================================
+" Startify stuff {{{
+" =============================================================================
+
+let g:startify_change_to_dir = 0
 
 " }}}
