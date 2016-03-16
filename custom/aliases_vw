@@ -2,7 +2,12 @@
 # PRIMEFORCE STUFF
 # =============================================================================
 
-vw_func () {
+function vw_install () {
+    mvn clean install -DskipTests
+}
+
+function vw_main () {
+    origin=$PWD;
     base_path=/home/dan/workspace/vw/cwp4/;
     [[ $PWD/ != $base_path ]]; cd $base_path;
 
@@ -13,11 +18,8 @@ vw_func () {
         con )
             ssh -L 29418:10.0.11.21:29418 gw.csc-fra
         ;;
-        install )
-            mvn clean install -DskipTests
-        ;;
         build )
-            mvn clean install -DskipTests
+            vw_install
             ./../build_portlets.sh
         ;;
         deploy )
@@ -31,9 +33,13 @@ vw_func () {
         utils )
             cd utilities/projects
         ;;
+        mci )
+            cd $origin
+            vw_install
+        ;;
         dev )
             nvim "${@:2}"
         ;;
     esac
 }
-alias vw=vw_func
+alias vw=vw_main
