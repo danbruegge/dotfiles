@@ -30,12 +30,10 @@ function vw_main () {
             cd liferay-portal-6.2.10.14/tomcat/bin/
             ./catalina.sh run
         ;;
-        utils )
-            cd utilities/projects
-        ;;
-        mci )
+        war )
             cd $origin
             vw_install
+            cp target/*.war ../liferay-portal-6.2.10.14/deploy/
         ;;
         dev )
             nvim "${@:2}"
