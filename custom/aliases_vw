@@ -1,0 +1,39 @@
+# =============================================================================
+# PRIMEFORCE STUFF
+# =============================================================================
+
+vw_func () {
+    base_path=/home/dan/workspace/vw/cwp4/;
+    [[ $PWD/ != $base_path ]]; cd $base_path;
+
+    case $1 in
+        tmux )
+            tmux new -s vw "${@:2}"
+        ;;
+        con )
+            ssh -L 29418:10.0.11.21:29418 gw.csc-fra
+        ;;
+        install )
+            mvn clean install -DskipTests
+        ;;
+        build )
+            mvn clean install -DskipTests
+            ./../build_portlets.sh
+        ;;
+        deploy )
+            ./../deploy_d5.sh
+        ;;
+        run )
+            ./../prepare.sh
+            cd liferay-portal-6.2.10.14/tomcat/bin/
+            ./catalina.sh run
+        ;;
+        utils )
+            cd utilities/projects
+        ;;
+        dev )
+            nvim "${@:2}"
+        ;;
+    esac
+}
+alias vw=vw_func
