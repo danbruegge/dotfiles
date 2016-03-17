@@ -2,11 +2,15 @@
 # PRIMEFORCE STUFF
 # =============================================================================
 
+function vw_install () {
+    mvn clean install -DskipTests
+}
+
 function vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
     liferay="${base_path}liferay-portal-6.2.10.14/"
-    liferay_bin="${liferay}tomcat/bin"
+    liferay_bin="${liferay}tomcat/bin/"
 
     [[ $PWD/ != $base_path ]]; cd $base_path;
 
@@ -18,6 +22,7 @@ function vw_main () {
             ssh -L 29418:10.0.11.21:29418 gw.csc-fra
         ;;
         build )
+            vw_install
             ./../build_portlets.sh
             ./../deploy_d5.sh
         ;;
@@ -30,7 +35,7 @@ function vw_main () {
         ;;
         war )
             cd $origin
-            mvn clean install -DskipTests
+            vw_install
             cp target/*.war "${liferay}deploy/"
         ;;
         help )
