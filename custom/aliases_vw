@@ -2,41 +2,47 @@
 # PRIMEFORCE STUFF
 # =============================================================================
 
-function vw_install () {
-    mvn clean install -DskipTests
-}
-
 function vw_main () {
     origin=$PWD;
-    base_path=/home/dan/workspace/vw/cwp4/;
+    base_path="/home/dan/workspace/vw/cwp4/";
+    liferay="${base_path}liferay-portal-6.2.10.14/"
+    liferay_bin="${liferay}tomcat/bin"
+
     [[ $PWD/ != $base_path ]]; cd $base_path;
 
     case $1 in
-        tmux )
+        env )
             tmux new -s vw "${@:2}"
         ;;
-        con )
+        ssh )
             ssh -L 29418:10.0.11.21:29418 gw.csc-fra
         ;;
         build )
-            vw_install
             ./../build_portlets.sh
-        ;;
-        deploy )
             ./../deploy_d5.sh
         ;;
         run )
-            ./../prepare.sh
-            cd liferay-portal-6.2.10.14/tomcat/bin/
+            ln -sfT "${base_path}../setenv.sh" "${liferay_bin}setenv.sh"
+            chmod +x "${liferay_bin}catalina.sh"
+
+            cd $liferay_bin
             ./catalina.sh run
         ;;
         war )
             cd $origin
-            vw_install
-            cp target/*.war ../liferay-portal-6.2.10.14/deploy/
+            mvn clean install -DskipTests
+            cp target/*.war "${liferay}deploy/"
         ;;
-        dev )
-            nvim "${@:2}"
+        help )
+            echo "env:      Starts tmux, with a session name";
+            echo "ssh:      Opens a tunnel for Git stuff";
+            echo "build:    Builds all portlets one by one and and runs the"\
+                "deploy script";
+            echo "run:      Creates a symlink for setenv.sh, set the correct"\
+                "rights calls catalina.sh with the 'run' command";
+            echo "war:      Runs a mvn clean install and copies *.war files to"\
+                "liferay deploy folder";
+            echo "help:     Prints this text";
         ;;
     esac
 }
