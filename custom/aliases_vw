@@ -38,6 +38,10 @@ function vw_main () {
             vw_install
             cp target/*.war "${liferay}deploy/"
         ;;
+        gulp )
+            cd utilities/instant-deploy
+            ./node_modules/.bin/gulp
+        ;;
         help )
             echo "env:      Starts tmux, with a session name";
             echo "ssh:      Opens a tunnel for Git stuff";
@@ -47,6 +51,7 @@ function vw_main () {
                 "rights calls catalina.sh with the 'run' command";
             echo "war:      Runs a mvn clean install and copies *.war files to"\
                 "liferay deploy folder";
+            echo "gulp:     Starts gulp, for frontend dev";
             echo "help:     Prints this text";
         ;;
     esac
