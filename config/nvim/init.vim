@@ -317,9 +317,14 @@ let $FZF_DEFAULT_COMMAND = 'find .'
 " Ack/Ag stuff {{{
 " =============================================================================
 
+let g:ack_apply_qmappings = 1
 let g:ack_qhandler = 'botright copen 25'
+let g:ackhighlight = 1
 let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
+
+" search, but don't open the first result immediately
+map <leader>fs :Ack! ""<left>
 
 " }}}
 
