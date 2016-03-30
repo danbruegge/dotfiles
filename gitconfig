@@ -39,7 +39,7 @@
     br = branch
 
     # checkout
-    cm = checkout master
+    com = checkout master
     cob = checkout -b
 
     # diff
