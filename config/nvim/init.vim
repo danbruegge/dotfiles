@@ -36,7 +36,7 @@ Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', '
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'jdonaldson/vaxe'
-Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 
