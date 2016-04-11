@@ -233,6 +233,8 @@ map <leader>h2 VypVr-
     " enable all function in all mode.
 let g:user_emmet_mode='a'
 
+autocmd FileType html,css,less,scss,sass EmmetInstall
+
 " }}}
 
 " =============================================================================
