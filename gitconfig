@@ -41,6 +41,7 @@
     # checkout
     com = checkout master
     cob = checkout -b
+    cof = checkout -f
 
     # diff
     d = diff --word-diff
