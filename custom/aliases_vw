@@ -5,8 +5,8 @@
 function vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
-    liferay="${base_path}liferay-portal-6.2.10.14/"
-    liferay_bin="${liferay}tomcat/bin/"
+    liferay="${base_path}liferay-portal-6.2.10.14/";
+    liferay_bin="${liferay}tomcat/bin/";
 
     [[ $PWD/ != $base_path ]]; cd $base_path;
 
@@ -39,6 +39,32 @@ function vw_main () {
             cd utilities/instant-deploy
             ./node_modules/.bin/gulp
         ;;
+        zip )
+            zipDir="cwp4-$(date +'%Y%m%d')";
+
+            echo "Create zip dir ...";
+            cd ../
+            if [ ! -d "$zipDir" ]; then
+                cp -vr cwp4 $zipDir
+            fi
+            cd $zipDir
+
+            echo "Remove .git ...";
+            rm -rf .git
+            echo "Remove liferay ...";
+            find . -name "liferay-portal-*" -type d -exec rm -rf {} \;
+            echo "Remove *.war files ...";
+            find . -name "*.war" -type f -delete
+
+            echo "Zip dir ...";
+            cd ../
+            zip -r "${zipDir}.zip" "${zipDir}/"
+
+            echo "Remove zipDir ...";
+            rm -rf $zipDir
+
+            cd $base_path
+        ;;
         help )
             echo "env:      Starts tmux, with a session name";
             echo "ssh:      Opens a tunnel for Git stuff";
@@ -49,6 +75,8 @@ function vw_main () {
             echo "war:      Runs a mvn clean install and copies *.war files to"\
                 "liferay deploy folder";
             echo "gulp:     Starts gulp, for frontend dev";
+            echo "zip:      Creates a copy of 'cwp4', removes odd stuff and "\
+                "creates a zip file";
             echo "help:     Prints this text";
         ;;
     esac
