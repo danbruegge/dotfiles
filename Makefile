@@ -21,6 +21,7 @@ install:
 	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT $(df)config/Thunar $(base).config/Thunar
 	ln -sfT $(df)config/nvim $(base).config/nvim
+	ln -sfT $(df)config/ranger $(base).config/ranger
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
 	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sf $(df)git_hooks $(df).git/hooks
@@ -28,6 +29,7 @@ install:
 
 install-root:
 	ln -sfT $(df)config/nvim /root/.config/nvim
+	ln -sfT $(df)config/ranger /root/.config/ranger
 	ln -sfT $(df)bashrc_root /root/.bashrc
 	SEARCHPATH=/root/ make dead-symlinks
 
