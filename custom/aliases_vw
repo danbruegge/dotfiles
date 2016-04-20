@@ -19,7 +19,11 @@ function vw_main () {
         ;;
         build )
             source ../setenv.sh
-            ./../build_portlets.sh
+            echo "============================================================";
+            mvn clean install -DskipTests
+            echo "============================================================";
+            time ./../build_portlets.sh
+            echo "============================================================";
             ./../deploy_d5.sh
         ;;
         run )
@@ -27,7 +31,7 @@ function vw_main () {
             chmod +x "${liferay_bin}catalina.sh"
 
             cd $liferay_bin
-            sleep 6m && echo "--- go to website ---" &
+            sleep 4m && echo "=== go to website ===" &
             ./catalina.sh run
         ;;
         war )
