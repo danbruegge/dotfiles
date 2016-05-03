@@ -37,6 +37,7 @@ alias dead_symlinks='find -L . -type l'
 
 # get 256-colors in tmux
 # alias tmux='tmux -2'
+alias tm='tmux'
 
 # set screensaver off #
 alias soff='xset s off'
