@@ -23,6 +23,7 @@ install:
 	ln -sfT $(df)config/nvim $(base).config/nvim
 	ln -sfT $(df)config/ranger $(base).config/ranger
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
+	ln -sfT $(df)Xmodmap $(base).Xmodmap
 	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sf $(df)git_hooks $(df).git/hooks
 	SEARCHPATH=~/ make dead-symlinks
