@@ -51,6 +51,7 @@
     # commit
     cim = commit -m
     cia = commit -am
+    cam = commit --amend
 
     # merge
     mm = merge master
