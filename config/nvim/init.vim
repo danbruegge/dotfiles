@@ -6,7 +6,7 @@
 
 call plug#begin('~/.config/nvim/bundle')
 
-" dependings?!
+" dependencies?!
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
@@ -24,21 +24,21 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
-    " devicons needs this package: `nerd-fonts-git`
-Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons' " devicons needs this package: `nerd-fonts-git`
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 
 " languages
-Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-" Plug 'jdonaldson/vaxe'
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
+" Plug 'jdonaldson/vaxe'
+" Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] } "
+" ^- disabled. because of no use, currently.
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
