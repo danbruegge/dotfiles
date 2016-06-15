@@ -2,6 +2,15 @@
 # PRIMEFORCE STUFF
 # =============================================================================
 
+function cleanInstall () {
+    echo ${@:1}
+    mvn clean install -DskipTests ${@:1}
+}
+
+function deploy () {
+    ./../deploy_d5.sh
+}
+
 function vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
@@ -19,12 +28,9 @@ function vw_main () {
         ;;
         build )
             source ../setenv.sh
-            echo "============================================================";
-            mvn clean install -DskipTests
-            echo "============================================================";
-            time ./../build_portlets.sh
-            echo "============================================================";
-            ./../deploy_d5.sh
+            cleanInstall ${@:2}
+            deploy
+            # time ./../build_portlets.sh
         ;;
         run )
             ln -sfT "${base_path}../setenv.sh" "${liferay_bin}setenv.sh"
@@ -34,9 +40,12 @@ function vw_main () {
             sleep 4m && echo "=== go to website ===" &
             ./catalina.sh run
         ;;
+        deploy )
+            deploy;
+        ;;
         war )
             cd $origin
-            mvn clean install -DskipTests
+            cleanInstall ${@:2}
             cp target/*.war "${liferay}deploy/"
         ;;
         gulp )
@@ -68,6 +77,10 @@ function vw_main () {
             rm -rf $zipDir
 
             cd $base_path
+        ;;
+        update )
+            git checkout master
+            git pull -r origin master
         ;;
         help )
             echo "env:      Starts tmux, with a session name";

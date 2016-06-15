@@ -75,7 +75,6 @@
 
     # push and pull
     pl = pull
-    plrbm = pull -r origin master
     ps = push
 
     # push current branch
