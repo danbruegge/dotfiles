@@ -12,8 +12,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
 Plug 'nowk/genericdc'
+Plug 'itchyny/lightline.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
