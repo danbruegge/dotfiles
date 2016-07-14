@@ -14,7 +14,7 @@ function deploy () {
 function vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
-    liferay="${base_path}liferay-portal-6.2.10.14/";
+    liferay="${base_path}liferay-portal-6.2.10.14.3/";
     liferay_bin="${liferay}tomcat/bin/";
 
     [[ $PWD/ != $base_path ]]; cd $base_path;
@@ -29,15 +29,14 @@ function vw_main () {
         build )
             source ../setenv.sh
             cleanInstall ${@:2}
-            deploy
-            # time ./../build_portlets.sh
         ;;
         run )
+            deploy
             ln -sfT "${base_path}../setenv.sh" "${liferay_bin}setenv.sh"
             chmod +x "${liferay_bin}catalina.sh"
 
             cd $liferay_bin
-            sleep 4m && echo "=== go to website ===" &
+            sleep 8m && echo $'\n=== go to website ===\n' &
             ./catalina.sh run
         ;;
         deploy )
@@ -82,6 +81,10 @@ function vw_main () {
             git checkout master
             git pull -r origin master
         ;;
+        cert )
+            echo "Pass: changeit";
+            su -c "cd /usr/lib/jvm/java-7-openjdk/jre/lib/security && keytool -import -trustcacerts -alias ROOT-DBS -file wilhelm.cer -keystore cacerts"
+        ;;
         help )
             echo "env:      Starts tmux, with a session name";
             echo "ssh:      Opens a tunnel for Git stuff";
@@ -94,6 +97,8 @@ function vw_main () {
             echo "gulp:     Starts gulp, for frontend dev";
             echo "zip:      Creates a copy of 'cwp4', removes odd stuff and "\
                 "creates a zip file";
+            echo "update:   Checkouts to master and rebase the current master";
+            echo "cert:     Re-add the java cert";
             echo "help:     Prints this text";
         ;;
     esac
