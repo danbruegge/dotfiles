@@ -1,6 +1,6 @@
-#
+#!/bin/bash
 # ~/.bashrc
-#
+
 [[ $- != *i* ]] && return
 
 if [ -e /usr/share/terminfo/x/xterm-256color ] \
@@ -15,7 +15,7 @@ PS1='\[\e[1;32m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;32m\]]\$\[\e[0m\] '
 # =============================================================================
 # CUSTOM VARIABLES
 # =============================================================================
-ALIASES=$HOME/.dotfiles/custom/aliases
+ALIASES=( "main" "vw" )
 BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
 
 # =============================================================================
@@ -30,22 +30,15 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # GET GLOBAL BASHRC STUFF
 # =============================================================================
 
-if [ -f $BASHRCGLOBAL ]; then
-    . $BASHRCGLOBAL
-fi
+[ -f "$BASHRCGLOBAL" ] && source "$BASHRCGLOBAL"
 
 # =============================================================================
 # GET ALIASES
 # =============================================================================
-
-if [ -f $ALIASES ]; then
-    . $ALIASES
-fi
-
-# extra
-if [ -f $ALIASES\_vw ]; then
-    . $ALIASES\_vw
-fi
+for i in "${ALIASES[@]}"; do
+    f="$HOME/.dotfiles/custom/aliases/$i"
+    [ -f "$f" ] && source "$f"
+done
 
 # =============================================================================
 # Force Libreoffice to use gtk2
