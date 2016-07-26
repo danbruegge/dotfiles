@@ -7,7 +7,8 @@
 PS1='\[\e[1;31m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;31m\]]\$\[\e[0m\] '
 
 #--- VARIABLES ---
-CUSTOM=/home/dan/.dotfiles/custom
+ALIASES=$HOME/.dotfiles/custom/aliases/main
+BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
 
 #--- ROOT ONLY ---
 #------ pacman related ---
@@ -38,19 +39,15 @@ alias sysinfod='hostnamectl;localectl;timedatectl'
 alias scan='iw dev wlan0 scan | grep SSID'
 
 # =============================================================================
-# GET GLOBAL BASHRC STUFF 
+# GET GLOBAL BASHRC STUFF
 # =============================================================================
 
-if [ -f $CUSTOM/bashrc_global ]; then
-    . $CUSTOM/bashrc_global
-fi
+[ -f "$BASHRCGLOBAL" ] && source "$BASHRCGLOBAL"
 
 # =============================================================================
 # GET ALIASES
 # =============================================================================
 
-if [ -f $CUSTOM/aliases ]; then
-    . $CUSTOM/aliases
-fi
+[ -f "$ALIASES" ] && source "$ALIASES"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
