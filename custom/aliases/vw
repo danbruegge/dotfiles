@@ -36,7 +36,7 @@ function vw_main () {
             chmod +x "${liferay_bin}catalina.sh"
 
             cd $liferay_bin
-            sleep 8m && echo $'\n=== go to website ===\n' &
+            # sleep 8m && echo $'\n=== go to website ===\n' &
             ./catalina.sh run
         ;;
         deploy )

@@ -2,7 +2,7 @@
 # MAIN-ALIAS
 # =============================================================================
 
-alias sa='cat ~/.dotfiles/custom/aliases' # cat aliases
+alias sa='cat ~/.dotfiles/custom/aliases/main' # cat aliases
 alias c='clear'
 alias ls='ls -hH --color=auto'
 alias ll='ls -l'
@@ -93,16 +93,10 @@ alias gut='git'
 alias gitignore='nvim .gitignore'
 
 # =============================================================================
-# GAME THINGS
+# STEAM THINGS
 # =============================================================================
 
-# alias steam="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' steam"
-# alias p='primusrun'
-# alias wine='p wine'
-# alias playonlinux='p playonlinux'
-# alias minecraft='p minecraft'
-# alias stalker='WINEPREFIX=~/.wine-stalker wine ~/.wine-stalker/drive_c/Program\ Files/THQ/S.T.A.L.K.E.R.\ -\ Shadow\ of\ Chernobyl/bin/XR_3DA.exe'
-# alias walkingdead='WINEARCH=win32 WINEPREFIX=/home/dan/.wine-twd/ wine C:\\windows\\command\\start.exe /Unix /home/dan/.wine-twd/dosdevices/c\:/Program\ Files/Telltale\ Games/The\ Walking\ Dead/The\ Walking\ Dead.lnk'
+# alias steam="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam"
 
 # =============================================================================
 # HAXE STUFF
