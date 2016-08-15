@@ -3,7 +3,6 @@
 # =============================================================================
 
 function cleanInstall () {
-    echo ${@:1}
     mvn clean install -DskipTests ${@:1}
 }
 
@@ -20,9 +19,9 @@ function vw_main () {
     [[ $PWD/ != $base_path ]]; cd $base_path;
 
     case $1 in
-        env )
-            tmux new -s vw "${@:2}"
-        ;;
+        # env )
+        #    tmux new -s vw "${@:2}"
+        # ;;
         ssh )
             ssh -L 29418:10.0.11.21:29418 gw.csc-fra
         ;;
@@ -36,7 +35,6 @@ function vw_main () {
             chmod +x "${liferay_bin}catalina.sh"
 
             cd $liferay_bin
-            # sleep 8m && echo $'\n=== go to website ===\n' &
             ./catalina.sh run
         ;;
         deploy )
