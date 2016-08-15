@@ -90,20 +90,20 @@ function vw_main () {
             su -c "cd /usr/lib/jvm/java-7-openjdk/jre/lib/security && keytool -import -trustcacerts -alias ROOT-DBS -file wilhelm.cer -keystore cacerts"
         ;;
         help )
-            echo "env:      Starts tmux, with a session name";
-            echo "ssh:      Opens a tunnel for Git stuff";
-            echo "build:    Builds all portlets one by one and and runs the"\
-                "deploy script";
-            echo "run:      Creates a symlink for setenv.sh, set the correct"\
-                "rights calls catalina.sh with the 'run' command";
-            echo "war:      Runs a mvn clean install and copies *.war files to"\
-                "liferay deploy folder";
-            echo "gulp:     Starts gulp, for frontend dev";
-            echo "zip:      Creates a copy of 'cwp4', removes odd stuff and "\
-                "creates a zip file";
-            echo "update:   Checkouts to master and rebase the current master";
-            echo "cert:     Re-add the java cert";
-            echo "help:     Prints this text";
+            echo "vw [action] [pass_command] -- change to project directory";
+            echo "";
+            echo "Simplify working with the cwp4 project";
+            echo "";
+            echo "  ssh                       Opens a tunnel for Git stuff";
+            echo "  build [mvn options]       Call setenv.sh and start makeInstall.";
+            echo "  run                       Creates symlink for setenv.sh, set the correct rights. Calls catalina.sh with the 'run' command";
+            echo "  war [mvn options]         Runs a mvn clean install and copies *.war files to liferay deploy folder";
+            echo "  gulp                      Starts gulp, for frontend dev";
+            echo "  zip                       Creates a copy of 'cwp4', removes odd stuff and creates a zip file";
+            echo "  update [git branch]       Checkout to master and rebase the current master";
+            echo "  cert                      Re-add the java cert";
+            echo "  help                      Prints this text";
+            echo "";
         ;;
     esac
 }
