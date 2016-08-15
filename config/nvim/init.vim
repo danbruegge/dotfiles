@@ -34,10 +34,12 @@ Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 " Plug 'jdonaldson/vaxe'
+" ^- disabled. because of no use, currently.
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] } "
 " ^- disabled. because of no use, currently.
 
