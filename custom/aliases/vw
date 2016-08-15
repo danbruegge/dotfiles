@@ -10,6 +10,13 @@ function deploy () {
     ./../deploy_d5.sh
 }
 
+function update () {
+    branch=${1-master};
+
+    git checkout $branch
+    git pull -r origin $branch
+}
+
 function vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
@@ -76,8 +83,7 @@ function vw_main () {
             cd $base_path
         ;;
         update )
-            git checkout master
-            git pull -r origin master
+            update $2
         ;;
         cert )
             echo "Pass: changeit";
