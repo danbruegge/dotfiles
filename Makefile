@@ -39,3 +39,7 @@ install-root:
 
 root:
 	su -c 'make install-root'
+
+tmux-colors:
+	chmod +x ./tmux/show-colors.sh
+	./tmux/show-colors.sh
