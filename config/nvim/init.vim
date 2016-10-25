@@ -141,6 +141,9 @@ set autoread
     " need for vaxe and autocomplete
 set autowrite
 
+    " disable 'ex' mode call
+map Q <NOP>
+
 " }}}
 
 " =============================================================================
