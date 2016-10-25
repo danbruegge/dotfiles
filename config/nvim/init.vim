@@ -38,6 +38,8 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 " Plug 'jdonaldson/vaxe'
 " ^- disabled. because of no use, currently.
 " Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] } "
@@ -345,5 +347,13 @@ map <leader>fs :Ack! ""<left>
 " =============================================================================
 
 let g:startify_change_to_dir = 0
+
+" }}}
+
+" =============================================================================
+" jsx stuff {{{
+" =============================================================================
+
+let g:jsx_ext_required = 0
 
 " }}}
