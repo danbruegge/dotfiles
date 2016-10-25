@@ -1,9 +1,13 @@
 {
     "ecmaFeatures": {
-        "modules": 1
+        "modules": 1,
     },
     "parserOptions": {
+        "ecmaVersion": 2017,
         "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
     },
     "env": {
         "browser": 1,
@@ -13,7 +17,11 @@
         "amd": 1,
         "jquery": 1,
     },
-    "extends": "eslint:recommended",
+    "plugins": [
+        "react"
+    ],
+    // "extends": ["eslint:recommended", "plugin:react/all"],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "globals": {
         "angular": 1,
         "CarNet": 1,
