@@ -38,6 +38,13 @@ alias sysinfod='hostnamectl;localectl;timedatectl'
 #--- WLAN ---
 alias scan='iw dev wlan0 scan | grep SSID'
 
+function wifiReconnect () {
+    ip link set wlp3s0 up
+    netctl restart fatalfail
+}
+
+alias wifire=wifiReconnect
+
 # =============================================================================
 # GET GLOBAL BASHRC STUFF
 # =============================================================================
