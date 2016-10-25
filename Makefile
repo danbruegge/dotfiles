@@ -19,6 +19,7 @@ install:
 	ln -sfT $(df)screenlayout $(base).screenlayout
 	ln -sfT $(df)ssh $(base).ssh
 	ln -sfT $(df)tmux.conf $(base).tmux.conf
+	ln -sfT $(df)tmux $(base).tmux
 	ln -sfT $(df)tern-project $(base).tern-project
 	ln -sfT $(df)Xresources $(base).Xresources
 	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
