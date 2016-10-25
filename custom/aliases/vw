@@ -2,69 +2,44 @@
 # PRIMEFORCE STUFF
 # =============================================================================
 
-function cleanInstall () {
-    mvn clean install -DskipTests ${@:1}
+cleanInstall () {
+    mvn clean install -DskipTests "${@:1}"
 }
 
-function deploy () {
-    ./../deploy_d5.sh
-}
-
-function update () {
+update () {
     branch=${1-master};
 
-    git checkout $branch
-    git pull -r origin $branch
+    git checkout "$branch"
+    git pull -r origin "$branch"
 }
 
-function vw_main () {
+vw_main () {
     origin=$PWD;
     base_path="/home/dan/workspace/vw/cwp4/";
     liferay="${base_path}liferay-portal-6.2.10.14.3/";
-    liferay_bin="${liferay}tomcat/bin/";
 
-    [[ $PWD/ != $base_path ]]; cd $base_path;
+    if [ "$PWD/" != "$base_path" ]; then
+        cd "$base_path" || exit
+    fi
 
     case $1 in
-        # env )
-        #    tmux new -s vw "${@:2}"
-        # ;;
         ssh )
             ssh -L 29418:10.0.11.21:29418 gw.csc-fra
         ;;
-        build )
-            source ../setenv.sh
-            cleanInstall ${@:2}
-        ;;
-        run )
-            deploy
-            ln -sfT "${base_path}../setenv.sh" "${liferay_bin}setenv.sh"
-            chmod +x "${liferay_bin}catalina.sh"
-
-            cd $liferay_bin
-            ./catalina.sh run
-        ;;
-        deploy )
-            deploy;
-        ;;
         war )
-            cd $origin
-            cleanInstall ${@:2}
+            cd "$origin" || exit
+            cleanInstall "${@:2}"
             cp target/*.war "${liferay}deploy/"
-        ;;
-        gulp )
-            cd utilities/instant-deploy
-            ./node_modules/.bin/gulp
         ;;
         zip )
             zipDir="cwp4-$(date +'%Y%m%d')";
 
             echo "Create zip dir ...";
-            cd ../
+            cd ../ || exit
             if [ ! -d "$zipDir" ]; then
-                cp -vr cwp4 $zipDir
+                cp -vr cwp4 "$zipDir"
             fi
-            cd $zipDir
+            cd "$zipDir" || exit
 
             echo "Remove .git ...";
             rm -rf .git
@@ -74,16 +49,16 @@ function vw_main () {
             find . -name "*.war" -type f -delete
 
             echo "Zip dir ...";
-            cd ../
+            cd ../ || exit
             zip -r "${zipDir}.zip" "${zipDir}/"
 
             echo "Remove zipDir ...";
-            rm -rf $zipDir
+            rm -rf "$zipDir"
 
-            cd $base_path
+            cd "$base_path" || exit
         ;;
         update )
-            update $2
+            update "$2"
         ;;
         cert )
             echo "Pass: changeit";
@@ -95,10 +70,7 @@ function vw_main () {
             echo "Simplify working with the cwp4 project";
             echo "";
             echo "  ssh                       Opens a tunnel for Git stuff";
-            echo "  build [mvn options]       Call setenv.sh and start makeInstall.";
-            echo "  run                       Creates symlink for setenv.sh, set the correct rights. Calls catalina.sh with the 'run' command";
             echo "  war [mvn options]         Runs a mvn clean install and copies *.war files to liferay deploy folder";
-            echo "  gulp                      Starts gulp, for frontend dev";
             echo "  zip                       Creates a copy of 'cwp4', removes odd stuff and creates a zip file";
             echo "  update [git branch]       Checkout to master and rebase the current master";
             echo "  cert                      Re-add the java cert";
