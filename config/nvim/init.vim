@@ -220,6 +220,9 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 nmap <silent> <f5> :set spell!<cr>
 
+    " set default spellchecking to DE
+setlocal spelllang=de_de
+
 " }}}
 
 " =============================================================================
