@@ -196,7 +196,7 @@ nmap <right> :bnext<cr>
 nnoremap <leader>w :w<cr>
 
     "  Open file
-nnoremap <leader>o :FZF<cr>
+nnoremap <leader>o :FZF!<cr>
 
     " disable arrow keys
 inoremap <Up> <NOP>
@@ -316,14 +316,6 @@ let g:vaxe_lime_target = "linux -neko -64"
 " =============================================================================
 
 let g:deoplete#enable_at_startup = 1
-
-" }}}
-
-" =============================================================================
-" FZF stuff {{{
-" =============================================================================
-
-let $FZF_DEFAULT_COMMAND = 'find .'
 
 " }}}
 
