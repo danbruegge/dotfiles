@@ -211,11 +211,10 @@ noremap <Down> <NOP>
 
 nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
-nnoremap <c-c>c :bp\|bd #<cr>
-nnoremap <c-c>a :%bd<cr>
-
 " buffer stuff
 nnoremap <leader>b :ls<cr>:b<space>
+nnoremap <c-c>c :bp\|bd #<cr>
+nnoremap <c-c>a :%bd<cr>
 
 " }}}
 
