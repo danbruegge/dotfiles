@@ -104,8 +104,11 @@ set softtabstop=4
 set smartindent
 set cindent
 
-    " line numbers
+    " set relativenumber as default and switch if in insert mode to number
 set number
+set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
     " set and display line ending
 set ruler
