@@ -37,5 +37,6 @@
         "keyword-spacing": 2,
         "space-before-blocks": [2, "always"],
         "strict": [2, "never"],
+        "react/prop-types": [2, { ignore: [ "children" ] }]
     },
 }
