@@ -327,6 +327,10 @@ let g:deoplete#enable_at_startup = 1
 " Ack/Ag stuff {{{
 " =============================================================================
 
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
 let g:ack_apply_qmappings = 1
 let g:ack_qhandler = 'botright copen 25'
 let g:ackhighlight = 1
