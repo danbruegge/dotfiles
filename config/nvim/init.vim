@@ -40,10 +40,6 @@ Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
-" Plug 'jdonaldson/vaxe'
-" ^- disabled. because of no use, currently.
-" Plug 'lervag/vim-latex', { 'for': ['plaintex', 'latextoc', 'tex'] } "
-" ^- disabled. because of no use, currently.
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
