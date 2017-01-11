@@ -24,8 +24,9 @@
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "globals": {
         "angular": 1,
-        "CarNet": 1,
-        "Liferay": 1,
+        "React": 1,
+        "ReactDOM": 1,
+        "PropTypes": 1,
     },
     "rules": {
         "brace-style": [2, "1tbs"],
