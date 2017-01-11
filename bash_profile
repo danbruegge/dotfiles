@@ -9,3 +9,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 export PATH=${PATH}:/opt/android-sdk/platform-tools/:/opt/android-sdk/tools/
+
+source "$HOME/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh"
