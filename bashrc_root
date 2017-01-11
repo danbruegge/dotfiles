@@ -7,8 +7,8 @@
 PS1='\[\e[1;31m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;31m\]]\$\[\e[0m\] '
 
 #--- VARIABLES ---
-ALIASES=$HOME/.dotfiles/custom/aliases/main
-BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
+ALIASES=( "main" "vw" )
+BASHRCGLOBAL=/home/dan/.dotfiles/custom/bashrc_global
 
 #--- ROOT ONLY ---
 #------ pacman related ---
@@ -48,13 +48,14 @@ alias wifire=wifiReconnect
 # =============================================================================
 # GET GLOBAL BASHRC STUFF
 # =============================================================================
-
 [ -f "$BASHRCGLOBAL" ] && source "$BASHRCGLOBAL"
 
 # =============================================================================
 # GET ALIASES
 # =============================================================================
-
-[ -f "$ALIASES" ] && source "$ALIASES"
+for i in "${ALIASES[@]}"; do
+    f="/home/dan/.dotfiles/custom/aliases/$i"
+    [ -f "$f" ] && source "$f"
+done
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
