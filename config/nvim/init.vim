@@ -31,13 +31,13 @@ Plug 'mileszs/ack.vim'
 
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'jsp', 'css', 'less', 'scss', 'stylus'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss'] }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'pug', 'jsp', 'css', 'less', 'scss', 'stylus'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss', 'stylus'] }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
+Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 
@@ -85,7 +85,7 @@ set dir=~/.config/nvim/sessions
 set background=dark
 
     " theme specific settings before enable it with `colorscheme gruvbox`
-set termguicolors
+"set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark='hard'
@@ -249,8 +249,6 @@ map <leader>h2 VypVr-
     " enable all function in all mode.
 let g:user_emmet_mode='a'
 
-autocmd FileType html,css,less,scss,sass EmmetInstall
-
 " }}}
 
 " =============================================================================
@@ -320,6 +318,8 @@ let g:vaxe_lime_target = "linux -neko -64"
 " =============================================================================
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_start_length = 1
+
 
 " }}}
 
