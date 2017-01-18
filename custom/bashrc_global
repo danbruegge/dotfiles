@@ -33,7 +33,9 @@ shopt -s autocd
 # NVM
 # =============================================================================
 
-source /usr/share/nvm/init-nvm.sh
+NVMINIT=/usr/share/nvm/init-nvm.sh
+
+[ -f "$NVMINIT" ] && source "$NVMINIT"
 
 # =============================================================================
 # GIT BASH COMPLETION
