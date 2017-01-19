@@ -41,4 +41,6 @@ NVMINIT=/usr/share/nvm/init-nvm.sh
 # GIT BASH COMPLETION
 # =============================================================================
 
-source $HOME/.dotfiles/git-completion.bash
+GITBASHCOMPLETION=/home/$USER/.dotfiles/git-completion.bash
+
+[ -f "$GITBASHCOMPLETION" ] && source "$GITBASHCOMPLETION"
