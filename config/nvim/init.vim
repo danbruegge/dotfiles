@@ -201,7 +201,7 @@ nmap <right> :bnext<cr>
 nnoremap <leader>w :w<cr>
 
     "  Open file
-nnoremap <leader>o :FZF!<cr>
+nnoremap <leader>o :FZF<cr>
 
     " disable arrow keys
 inoremap <Up> <NOP>
