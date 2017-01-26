@@ -9,14 +9,13 @@ then
     export TERM=xterm-256color
 fi
 
-#--- PROMPT ---
-PS1='\[\e[1;32m\][\u\[\e[0m\] \[\e[0;37m\]\W\[\e[0m\]\[\e[1;32m\]]\$\[\e[0m\] '
 
 # =============================================================================
 # CUSTOM VARIABLES
 # =============================================================================
 ALIASES=( "main" "vw" )
 BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
+USER_PROMPT=$HOME/.dotfiles/custom/prompt/user.sh
 
 # =============================================================================
 # XDG
@@ -25,6 +24,12 @@ BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# =============================================================================
+# PROMPT
+# =============================================================================
+
+[ -f "$USER_PROMPT" ] && source "$USER_PROMPT"
 
 # =============================================================================
 # GET GLOBAL BASHRC STUFF
