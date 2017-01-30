@@ -28,7 +28,6 @@ Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons' " devicons needs this package: `nerd-fonts-git`
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
-Plug 'jremmen/vim-ripgrep'
 
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
@@ -328,8 +327,8 @@ let g:deoplete#auto_complete_start_length = 1
 " Ack/Ag/Ripgrep stuff {{{
 " =============================================================================
 
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+    let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
 let g:ack_apply_qmappings = 1
@@ -339,7 +338,7 @@ let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
 
 " search, but don't open the first result immediately
-map <leader>fs :Rg ""<left>
+map <leader>fs :Ack! ""<left>
 
 " }}}
 
