@@ -25,17 +25,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
-Plug 'ryanoasis/vim-devicons' " devicons needs this package: `nerd-fonts-git`
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'pug', 'jsp', 'css', 'less', 'scss', 'stylus'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'scss', 'stylus'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'pug', 'jsp', 'css', 'scss'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['css', 'scss'] }
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
@@ -277,21 +274,11 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 let g:lightline = {
     \ 'colorscheme': 'gruvbox',
     \ 'component': {
-    \   'readonly': '%{&readonly?"⭤":""}',
+        \ 'readonly': '%{&readonly?"x":""}',
     \ },
-    \ 'component_function': {
-    \   'filetype': 'MyFiletype',
-    \   'fileformat': 'MyFileformat',
-    \ }
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '|', 'right': '|' }
 \ }
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
 
 " }}}
 
