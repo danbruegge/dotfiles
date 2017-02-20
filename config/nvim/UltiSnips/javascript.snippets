@@ -58,13 +58,6 @@ function ${1}(${2}) {
 }
 endsnippet
 
-# arrow function
-snippet fa
-(${1}) => {
-    ${2}
-}
-endsnippet
-
 # if
 snippet if
 if (${1}) {
@@ -191,6 +184,13 @@ class $1 {
 }
 endsnippet
 
+# arrow function
+snippet fa
+(${1}) => {
+    ${2}
+}
+endsnippet
+
 # testing ======================================================================
 snippet describe
 describe('$1', function () {
@@ -202,4 +202,22 @@ snippet it
 it('$1', function () {
     $2
 });
+endsnippet
+
+# react ========================================================================
+snippet scomponent
+const $1 = props => <div />;
+export default $1;
+endsnippet
+
+snippet component
+export default class $1 extends React.Component {
+    constructor (props) {
+        super(props);
+    }
+
+    render () {
+	return $2;
+    }
+}
 endsnippet
