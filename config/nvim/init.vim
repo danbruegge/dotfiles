@@ -31,8 +31,9 @@ Plug 'mileszs/ack.vim'
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'pug', 'jsp', 'css', 'scss'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
+Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['css', 'scss'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
@@ -342,5 +343,17 @@ let g:startify_change_to_dir = 0
 " =============================================================================
 
 let g:jsx_ext_required = 0
+
+" }}}
+
+" =============================================================================
+" css stuff {{{
+" =============================================================================
+
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 " }}}
