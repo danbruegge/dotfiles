@@ -35,8 +35,6 @@ alias wg='cd ~/workspace/games/'
 
 alias dead_symlinks='find -L . -type l'
 
-# get 256-colors in tmux
-# alias tmux='tmux -2'
 alias tm='tmux'
 tmx () {
     tmux source-file "$HOME/.tmux/$1.conf";
@@ -71,6 +69,12 @@ aa () {
     echo "# Upgradable:";
     arch-audit --upgradable
 }
+
+# =============================================================================
+# RIPGREP-ALIAS
+# =============================================================================
+
+alias rg='rg --type-add="jsx:*jsx"'
 
 # =============================================================================
 # PYTHON-ALIAS
