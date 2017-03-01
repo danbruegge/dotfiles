@@ -35,9 +35,9 @@ Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
+Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
