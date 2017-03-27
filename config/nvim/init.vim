@@ -278,8 +278,15 @@ let g:lightline = {
         \ 'readonly': '%{&readonly?"x":""}',
     \ },
     \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '|', 'right': '|' }
+    \ 'subseparator': { 'left': '|', 'right': '|' },
+    \ 'component_function': {
+        \ 'filename': 'LightLineFilename'
+    \ }
 \ }
+
+function! LightLineFilename()
+  return expand('%')
+endfunction
 
 " }}}
 
