@@ -109,3 +109,7 @@ EOF
 # export FZF_DEFAULT_COMMAND='ag -g ""'
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git/*" --files'
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[ -f /home/dan/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash ] && . /home/dan/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash
