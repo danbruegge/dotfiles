@@ -30,7 +30,7 @@ Plug 'mileszs/ack.vim'
 
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
-Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'pug', 'jsp', 'css', 'scss'] }
+Plug 'mattn/emmet-vim', { 'for': ['xhtml', 'html', 'htmldjango', 'javascript.jsx', 'css', 'scss'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss'] }
