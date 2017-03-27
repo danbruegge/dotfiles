@@ -36,7 +36,10 @@
     ec = config --global -e # open gitconfig in editor
 
     # branch
-    br = branch
+    bra = branch --all
+
+    # tags
+    tl = tag -l -n
 
     # checkout
     com = checkout master
@@ -47,6 +50,9 @@
     d = diff --word-diff
     ds = diff --stat
     dlc = diff --cached HEAD^ # diff last commit
+
+    # add
+    aa = add .
 
     # commit
     cim = commit -m
