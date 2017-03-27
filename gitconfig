@@ -2,7 +2,7 @@
     ui = True
 
 [color "branch"]
-    current = yellow reverse
+    current = yellow bold
     local = yellow
     remote = green
 
@@ -13,9 +13,9 @@
     new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+    added = yellow bold
+    changed = green bold
+    untracked = cyan bold
 
 [format]
     pretty = oneline
