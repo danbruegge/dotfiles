@@ -79,10 +79,6 @@
     undo = reset HEAD^
     kill = reset --hard HEAD^
 
-    # push and pull
-    pl = pull
-    ps = push
-
     # push current branch
     pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
 
@@ -90,15 +86,15 @@
     i = !echo "----" && \
         echo "= Branch" && \
         echo "----" && \
-        git br && \
+        git branch && \
         echo "----" && \
         echo "= Last ten" && \
         echo "----" && \
-        git lt && \
+        git log -10 HEAD && \
         echo "----" && \
         echo "= Status" && \
         echo "----" && \
-        git st
+        git status -s
 
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
