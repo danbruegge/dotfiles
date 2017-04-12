@@ -11,40 +11,22 @@
 	<directories/>
 </action>
 <action>
-	<icon>insert-image</icon>
-	<name>Pngout -all</name>
-	<unique-id>1369725324085745-9</unique-id>
-	<command>xfce4-terminal -e &quot;for f in *.png; do pngout $f; done&quot;</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>insert-image</icon>
+	<icon>image-x-generic</icon>
 	<name>Pngout</name>
-	<unique-id>1369725315093668-8</unique-id>
+	<unique-id>1491558798159744-4</unique-id>
 	<command>xfce4-terminal -e &quot;pngout %f&quot;</command>
 	<description></description>
 	<patterns>*.png</patterns>
 	<image-files/>
 </action>
 <action>
-	<icon>insert-image</icon>
+	<icon>image-x-generic</icon>
 	<name>Jpegoptim</name>
-	<unique-id>1369725274293601-6</unique-id>
+	<unique-id>1491558785529541-3</unique-id>
 	<command>xfce4-terminal -e &quot;jpegoptim %f&quot;</command>
 	<description></description>
 	<patterns>*.jpg</patterns>
 	<image-files/>
-</action>
-<action>
-	<icon>insert-image</icon>
-	<name>Jpegoptim -all</name>
-	<unique-id>1369725308613674-7</unique-id>
-	<command>xfce4-terminal -e &quot;jpegoptim *.jpg&quot;</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
 </action>
 <action>
 	<icon>text-editor</icon>
@@ -54,5 +36,23 @@
 	<description></description>
 	<patterns>*</patterns>
 	<text-files/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Optipng</name>
+	<unique-id>1491559032198076-8</unique-id>
+	<command>xfce4-terminal -e &quot;optipng %f&quot;</command>
+	<description>xfce4-terminal -e &quot;optipng %f&quot;</description>
+	<patterns>*.png</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Pngquant</name>
+	<unique-id>1491560021190896-12</unique-id>
+	<command>xfce4-terminal -e &quot;pngquant %f&quot;</command>
+	<description>xfce4-terminal -e &quot;pngquant %f&quot;</description>
+	<patterns>*.png</patterns>
+	<image-files/>
 </action>
 </actions>
