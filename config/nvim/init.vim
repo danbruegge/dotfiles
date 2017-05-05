@@ -216,6 +216,7 @@ nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
     " Simple sort lines
 vmap <leader>s :sort<cr>
+nmap <leader>si vi{:sort<cr>
 
 " }}}
 
