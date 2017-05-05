@@ -173,14 +173,11 @@ nnoremap <a-l> <c-w>l
 " Simple key mappings, that are time saver {{{
 " =============================================================================
 
-" vmap -----------------------------------------------------------------------
-    " Simple sort lines
-vmap <leader>s :sort<cr>
-
+" vmap ------------------------------------------------------------------------
     " copy to system clipboard
 vmap <leader>y "+y
 
-" nmap -----------------------------------------------------------------------
+" nmap ------------------------------------------------------------------------
     " Add new line on current position with <CTRL><ENTER>
 nmap <c-cr> i<cr><Esc>
 
@@ -194,14 +191,20 @@ nmap ]l :lnext<cr>
 nmap <left> :bprevious<cr>
 nmap <right> :bnext<cr>
 
-" nnoremap -------------------------------------------------------------------
+" nnoremap --------------------------------------------------------------------
     " Save file
 nnoremap <leader>w :w<cr>
 
     "  Open file
 nnoremap <leader>o :FZF<cr>
 
-    " disable arrow keys
+    " buffer stuff
+nnoremap <leader>b :ls<cr>:b<space>
+nnoremap <c-c>c :bp\|bd #<cr>
+nnoremap <c-c>a :%bd<cr>
+
+" mixed -----------------------------------------------------------------------
+" disable arrow keys
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
@@ -211,10 +214,8 @@ noremap <Down> <NOP>
 
 nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
-" buffer stuff
-nnoremap <leader>b :ls<cr>:b<space>
-nnoremap <c-c>c :bp\|bd #<cr>
-nnoremap <c-c>a :%bd<cr>
+    " Simple sort lines
+vmap <leader>s :sort<cr>
 
 " }}}
 
