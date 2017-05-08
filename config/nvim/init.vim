@@ -17,6 +17,7 @@ Plug 'itchyny/lightline.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
