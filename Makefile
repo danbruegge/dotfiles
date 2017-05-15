@@ -15,7 +15,6 @@ install:
 	ln -sfT $(df)eslintrc $(base).eslintrc
 	ln -sfT $(df)pip $(base).pip
 	ln -sfT $(df)gitconfig $(base).gitconfig
-	ln -sfT $(df)ssh $(base).ssh
 	ln -sfT $(df)tmux.conf $(base).tmux.conf
 	ln -sfT $(df)tmux $(base).tmux
 	ln -sfT $(df)tern-project $(base).tern-project
@@ -28,6 +27,7 @@ install:
 	ln -sfT $(df)Xmodmap $(base).Xmodmap
 	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sf $(df)git_hooks $(df).git/hooks
+	ln -sfT ~/Cloud/Documents/ssh-config $(base).ssh
 	SEARCHPATH=~/ make show-dead-symlinks
 
 install-root:
