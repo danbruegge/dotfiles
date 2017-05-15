@@ -7,4 +7,5 @@ config/nvim/session
 config/nvim/sessions
 config/ranger/bookmarks
 config/ranger/history
+config/ranger/tagged
 ssh/known_hosts
