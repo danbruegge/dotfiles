@@ -10,23 +10,23 @@ show-dead-symlinks:
 	find -L $(SEARCHPATH) -type l
 
 install:
+	ln -sf $(df)git_hooks $(df).git/hooks
+	ln -sfT $(df)Xmodmap $(base).Xmodmap
+	ln -sfT $(df)Xresources $(base).Xresources
+	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sfT $(df)bash_profile $(base).bash_profile
 	ln -sfT $(df)bashrc $(base).bashrc
-	ln -sfT $(df)eslintrc $(base).eslintrc
-	ln -sfT $(df)pip $(base).pip
-	ln -sfT $(df)gitconfig $(base).gitconfig
-	ln -sfT $(df)tmux.conf $(base).tmux.conf
-	ln -sfT $(df)tmux $(base).tmux
-	ln -sfT $(df)tern-project $(base).tern-project
-	ln -sfT $(df)Xresources $(base).Xresources
-	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT $(df)config/Thunar $(base).config/Thunar
 	ln -sfT $(df)config/nvim $(base).config/nvim
 	ln -sfT $(df)config/ranger $(base).config/ranger
+	ln -sfT $(df)eslintrc $(base).eslintrc
+	ln -sfT $(df)gitconfig $(base).gitconfig
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
-	ln -sfT $(df)Xmodmap $(base).Xmodmap
-	ln -sfT $(df)ackrc $(base).ackrc
-	ln -sf $(df)git_hooks $(df).git/hooks
+	ln -sfT $(df)pip $(base).pip
+	ln -sfT $(df)tern-project $(base).tern-project
+	ln -sfT $(df)tmux $(base).tmux
+	ln -sfT $(df)tmux.conf $(base).tmux.conf
+	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT ~/Cloud/Documents/ssh-config $(base).ssh
 	SEARCHPATH=~/ make show-dead-symlinks
 
