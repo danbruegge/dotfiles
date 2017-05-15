@@ -13,7 +13,6 @@ install:
 	ln -sfT $(df)bash_profile $(base).bash_profile
 	ln -sfT $(df)bashrc $(base).bashrc
 	ln -sfT $(df)eslintrc $(base).eslintrc
-	ln -sfT $(df)jshintrc $(base).jshintrc
 	ln -sfT $(df)pip $(base).pip
 	ln -sfT $(df)gitconfig $(base).gitconfig
 	ln -sfT $(df)screenlayout $(base).screenlayout
