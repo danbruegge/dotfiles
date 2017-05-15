@@ -15,7 +15,6 @@ install:
 	ln -sfT $(df)eslintrc $(base).eslintrc
 	ln -sfT $(df)pip $(base).pip
 	ln -sfT $(df)gitconfig $(base).gitconfig
-	ln -sfT $(df)screenlayout $(base).screenlayout
 	ln -sfT $(df)ssh $(base).ssh
 	ln -sfT $(df)tmux.conf $(base).tmux.conf
 	ln -sfT $(df)tmux $(base).tmux
