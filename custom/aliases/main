@@ -9,7 +9,7 @@ alias ll='ls -l'
 alias la='ls -la'
 alias ld='ls -ld .*' # list only dotfiles
 alias lo='ls . | xargs -n1 basename' # list files without extra informations
-alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra 
+alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
                                             # informations
 alias lod='ls -ad .* | xargs -n1 basename'  # list only dotfiles without extra
                                             # informations
@@ -37,7 +37,15 @@ alias dead_symlinks='find -L . -type l'
 
 alias tm='tmux'
 tmx () {
-    tmux source-file "$HOME/.tmux/$1.conf";
+    COMMANDS=("list" "help")
+    TMUX_HOME="$HOME/.tmux"
+
+    if [[ "${COMMANDS[*]}" == *"$1"* ]]; then
+        find "$TMUX_HOME/" -name "*.conf" -exec basename \{\} .conf \;
+        return
+    fi
+
+    tmux source-file "$TMUX_HOME/$1.conf";
 }
 
 # set screensaver off #
