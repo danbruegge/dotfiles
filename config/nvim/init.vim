@@ -12,7 +12,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'nowk/genericdc'
+Plug 'owickstrom/vim-colors-paramount'
 Plug 'itchyny/lightline.vim'
 
 " editor sugar
