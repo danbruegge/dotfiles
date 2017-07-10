@@ -263,6 +263,19 @@ autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_enabled_makers = ['flake8']
 
+let g:neomake_javascript_eslint_args = ['-f', 'compact', '--fix']
+
+autocmd BufWritePost * call neomake#Make(1, [], function('s:Neomake_callback'))
+
+" Callback for reloading file in buffer when eslint has finished and maybe has
+" autofixed some stuff
+function! s:Neomake_callback(options)
+    if (a:options.name ==? 'eslint') && (a:options.status == 0)
+        edit
+    endif
+endfunction
+
+
 " }}}
 
 " =============================================================================
