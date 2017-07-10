@@ -28,6 +28,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " languages
 Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
@@ -366,5 +367,13 @@ augroup VimCSS3Syntax
 
   autocmd FileType css setlocal iskeyword+=-
 augroup END
+
+" }}}
+
+" =============================================================================
+" editorconfig {{{
+" =============================================================================
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " }}}
