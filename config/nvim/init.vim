@@ -145,9 +145,6 @@ set timeout timeoutlen=3000 ttimeoutlen=100
     " always look for file changes
 set autoread
 
-    " need for vaxe and autocomplete
-set autowrite
-
     " disable 'ex' mode call
 map Q <NOP>
 
