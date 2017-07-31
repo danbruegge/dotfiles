@@ -15,6 +15,7 @@ Plug 'morhetz/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'bounceme/poppy.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
@@ -389,5 +390,13 @@ augroup END
 " =============================================================================
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" }}}
+
+" =============================================================================
+" poppy {{{
+" =============================================================================
+
+au! cursormoved * call PoppyInit()
 
 " }}}
