@@ -19,6 +19,7 @@ install:
 	ln -sfT $(df)config/Thunar $(base).config/Thunar
 	ln -sfT $(df)config/nvim $(base).config/nvim
 	ln -sfT $(df)config/ranger $(base).config/ranger
+	ln -sfT $(df)config/tig $(base).config/tig
 	ln -sfT $(df)eslintrc $(base).eslintrc
 	ln -sfT $(df)gitconfig $(base).gitconfig
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
