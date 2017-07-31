@@ -14,6 +14,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'morhetz/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
@@ -189,6 +190,8 @@ nmap ]l :lnext<cr>
 
 nmap <left> :bprevious<cr>
 nmap <right> :bnext<cr>
+
+nmap <leader>g :Goyo<cr>
 
 " nnoremap --------------------------------------------------------------------
     " Save file
