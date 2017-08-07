@@ -25,6 +25,7 @@ alias mkdir='mkdir -pv'
 alias rmd='rm -rf' # to remove a dir
 alias ping='ping -c 5'
 alias tree='tree -C'
+alias rename='perl-rename'
 alias bashrc='nvim ~/.bashrc && . ~/.bashrc'
 alias aliases='nvim ~/.dotfiles/custom/aliases && . ~/.bashrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
