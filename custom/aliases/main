@@ -38,7 +38,7 @@ alias dead_symlinks='find -L . -type l'
 
 alias tm='tmux'
 tmx () {
-    COMMANDS=("list" "help")
+    COMMANDS=("ls" "list" "help")
     TMUX_HOME="$HOME/.tmux"
 
     if [[ "${COMMANDS[*]}" == *"$1"* ]]; then
