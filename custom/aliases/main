@@ -49,6 +49,18 @@ tmx () {
     tmux source-file "$TMUX_HOME/$1.conf";
 }
 
+note () {
+    COMMANDS=("ls" "list" "help")
+    NOTES_HOME="$HOME/Cloud/Notes"
+
+    if [[ "${COMMANDS[*]}" == *"$1"* ]]; then
+        tree "$NOTES_HOME";
+        return
+    fi
+
+    nvim "$HOME/Cloud/Notes/$1.md";
+}
+
 # set screensaver off #
 alias soff='xset s off'
 # set screensaver on #
