@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips'
@@ -202,10 +203,10 @@ nmap <leader>g :Goyo<cr>
 nnoremap <leader>w :w<cr>
 
     "  Open file
-nnoremap <leader>o :FZF<cr>
+nnoremap <leader>o :Files<cr>
 
     " buffer stuff
-nnoremap <leader>b :ls<cr>:b<space>
+nnoremap <leader>b :Buffers<cr>
 nnoremap <c-c>c :bp\|bd #<cr>
 nnoremap <c-c>a :%bd<cr>
 
@@ -356,7 +357,8 @@ let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
 
 " search, but don't open the first result immediately
-map <leader>fs :Ack! ""<left>
+map <leader>a :Ack! ""<left>
+map <leader>r :Rg!<cr>
 
 " }}}
 
@@ -403,6 +405,19 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " =============================================================================
 
 let g:goyo_linenr = 1
+
+" }}}
+
+" =============================================================================
+" fzf.vim {{{
+" =============================================================================
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 " }}}
 
