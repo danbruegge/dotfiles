@@ -87,6 +87,12 @@
 
     # list info
     i = !echo "----" && \
+        echo "= Remote update" && \
+        git remote update && \
+        echo "----" && \
+        echo "= Show master diff" && \
+        git show-branch *master && \
+        echo "----" && \
         echo "= Branch" && \
         echo "----" && \
         git branch && \
