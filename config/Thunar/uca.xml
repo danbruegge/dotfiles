@@ -55,4 +55,13 @@
 	<patterns>*.png</patterns>
 	<image-files/>
 </action>
+<action>
+	<icon>preferences-system-search-symbolic</icon>
+	<name>Search</name>
+	<unique-id>1503298411780190-1</unique-id>
+	<command>catfish --path=%f</command>
+	<description>Search for files and folders</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
 </actions>
