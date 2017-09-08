@@ -162,6 +162,9 @@ map Q <NOP>
     " Open a new empty vertical split and switch over to it
 nnoremap <leader>n <c-w>n<c-w>L
 
+    " Open a new empty horizontal split and switch to it
+nnoremap <leader>N <c-w>n<c-w>J
+
     " Makes jumping between splited windows easier
 nnoremap <a-h> <c-w>h
 nnoremap <a-j> <c-w>j
