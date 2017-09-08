@@ -99,6 +99,9 @@
         echo "----" && \
         git status -s
 
+    # show git notes
+    gn = "!less ~/Cloud/Notes/git.md"
+
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
