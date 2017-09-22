@@ -17,6 +17,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
+Plug 'j16180339887/Global.vim'
 
 " editor sugar
 Plug 'benekastah/neomake'
