@@ -6,9 +6,8 @@
 if [ -e /usr/share/terminfo/x/xterm-256color ] \
     && [ "$COLORTERM" == "xfce4-terminal" ];
 then
-    export TERM=xterm-256color
+    export TERM="xterm-256color"
 fi
-
 
 # =============================================================================
 # CUSTOM VARIABLES
