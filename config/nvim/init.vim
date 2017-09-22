@@ -152,6 +152,10 @@ set autoread
     " disable 'ex' mode call
 map Q <NOP>
 
+    " Show invisibles
+set list
+set listchars=tab:»-,trail:·,eol:¬
+
 " }}}
 
 " =============================================================================
