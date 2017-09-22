@@ -15,6 +15,7 @@ Plug 'morhetz/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
 
 " editor sugar
@@ -197,6 +198,7 @@ nmap <left> :bprevious<cr>
 nmap <right> :bnext<cr>
 
 nmap <leader>g :Goyo<cr>
+nmap <leader>l :Limelight!!<cr>
 
 " nnoremap --------------------------------------------------------------------
     " Save file
@@ -428,3 +430,15 @@ command! -bang -nargs=* Rg
 au! cursormoved * call PoppyInit()
 
 " }}}
+
+" =============================================================================
+" limelight {{{
+" =============================================================================
+
+let g:limelight_conceal_ctermfg = 240
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" }}}
+
