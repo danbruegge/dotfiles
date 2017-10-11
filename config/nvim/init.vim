@@ -156,6 +156,9 @@ map Q <NOP>
 set list
 set listchars=tab:»-,trail:·,eol:¬
 
+    " set :substitute flag g to on
+set gdefault
+
 " }}}
 
 " =============================================================================
