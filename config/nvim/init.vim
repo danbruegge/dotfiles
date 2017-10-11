@@ -302,13 +302,13 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 " Lightline stuff {{{
 " =============================================================================
 
+set noshowmode
+
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ 'component': {
         \ 'readonly': '%{&readonly?"x":""}',
     \ },
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '|', 'right': '|' },
     \ 'component_function': {
         \ 'filename': 'LightLineFilename'
     \ }
