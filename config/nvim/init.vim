@@ -273,9 +273,7 @@ let g:user_emmet_mode='a'
 
 autocmd! BufWritePost * Neomake
 
-    " Standard maker for javascript
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_javascript_enabled_makers = ['eslint', 'stylelint']
 
 let g:neomake_javascript_eslint_args = ['-f', 'compact', '--fix']
 
