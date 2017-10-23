@@ -38,11 +38,31 @@ alias dead_symlinks='find -L . -type l'
 
 alias tm='env TERM=xterm-256color tmux'
 tmx () {
-    COMMANDS=("ls" "list" "help")
+    HELP_COMMANDS=("" "help")
     TMUX_HOME="$HOME/.tmux"
 
-    if [[ "${COMMANDS[*]}" == *"$1"* ]]; then
+    if [[ "${HELP_COMMANDS[*]}" == *"$1"* ]]; then
+        echo "list                          - List configs";
+        echo "add [name] [location-name]    - Add a new config from [name] and [location-name]";
+        echo "edit [name]                   - Edit an existing config by name";
+        return
+    fi
+
+    if [[ "list" == "$1" ]]; then
         find "$TMUX_HOME/" -name "*.conf" -exec basename \{\} .conf \;
+        return
+    fi
+
+    if [[ "add" == "$1" ]]; then
+        sed -e "s/{{name}}/$2/g" \
+            -e "s/{{location}}/$3/g" \
+            "$TMUX_HOME/config.template" > "$TMUX_HOME/$2.conf"
+
+        return
+    fi
+
+    if [[ "edit" == "$1" ]]; then
+        nvim "$TMUX_HOME/$2.conf";
         return
     fi
 
