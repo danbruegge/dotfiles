@@ -265,6 +265,17 @@ map <leader>h2 VypVr-
     " enable all function in all mode.
 let g:user_emmet_mode='a'
 
+    " quick emmet workaround to have css completion in javascript
+function! ToggleJsxCssFt()
+    if &filetype == 'javascript.jsx'
+        set filetype=scss
+    else
+        set filetype=javascript.jsx
+    endif
+endfunction
+
+nnoremap <leader>T :call ToggleJsxCssFt()<cr>
+
 " }}}
 
 " =============================================================================
