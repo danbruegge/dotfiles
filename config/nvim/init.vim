@@ -63,9 +63,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-    " syntax highlighting for vim
-set syntax=on
-
     " hide a unsaved buffer, so you can open a new buffer with :e
 set hidden
 
