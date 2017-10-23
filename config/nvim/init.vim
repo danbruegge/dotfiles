@@ -43,6 +43,10 @@ Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 
+" `for` css currently because i don't use css files. This prevents me from
+" deactivating the plugin so i can retrieve updates and checkout later.
+Plug 'styled-components/vim-styled-components', { 'for': ['css'], 'branch': 'rewrite' }
+
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
 
