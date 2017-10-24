@@ -19,11 +19,12 @@ Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
 
 " editor sugar
-Plug 'benekastah/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
+Plug 'w0rp/ale'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tmhedberg/matchit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -280,25 +281,18 @@ nnoremap <leader>T :call ToggleJsxCssFt()<cr>
 " }}}
 
 " =============================================================================
-" Neomake stuff {{{
+" ALE stuff {{{
 " =============================================================================
 
-autocmd! BufWritePost * Neomake
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'jsx': ['stylelint', 'eslint'],
+\}
+let g:ale_linter_aliases = {'jsx': 'css'}
 
-let g:neomake_javascript_enabled_makers = ['eslint', 'stylelint']
-
-let g:neomake_javascript_eslint_args = ['-f', 'compact', '--fix']
-
-autocmd BufWritePost * call neomake#Make(1, [], function('s:Neomake_callback'))
-
-" Callback for reloading file in buffer when eslint has finished and maybe has
-" autofixed some stuff
-function! s:Neomake_callback(options)
-    if (a:options.name ==? 'eslint') && (a:options.status == 0)
-        edit
-    endif
-endfunction
-
+let g:ale_fix_on_save = 1
+let g:ale_fixers = { 'javascript': ['eslint'], }
 
 " }}}
 
