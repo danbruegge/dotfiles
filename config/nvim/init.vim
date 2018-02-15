@@ -17,6 +17,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
+Plug 'machakann/vim-highlightedyank'
 
 " editor sugar
 Plug 'w0rp/ale', { 'for': ['javascript.jsx'] }
