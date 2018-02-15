@@ -23,9 +23,8 @@ Plug 'w0rp/ale'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'tmhedberg/matchit'
+Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -446,5 +445,13 @@ let g:limelight_conceal_ctermfg = 240
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" }}}
+
+" =============================================================================
+" vim-commentary {{{
+" =============================================================================
+
+" autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
 " }}}
