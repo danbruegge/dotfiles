@@ -166,6 +166,9 @@ set listchars=tab:»-,trail:·,eol:¬
     " set :substitute flag g to on
 set gdefault
 
+    " will open a split window with all searches of document from :substitute
+set inccommand=split
+
 " }}}
 
 " =============================================================================
