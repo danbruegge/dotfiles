@@ -19,7 +19,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
 
 " editor sugar
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'for': ['javascript.jsx'] }
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -289,7 +289,7 @@ nnoremap <leader>T :call ToggleJsxCssFt()<cr>
 " ALE stuff {{{
 " =============================================================================
 
-" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'jsx': ['stylelint', 'eslint'],
