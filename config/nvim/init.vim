@@ -29,6 +29,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -39,7 +40,6 @@ Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'css', 'scss'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx'] }
-Plug 'marijnh/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 
