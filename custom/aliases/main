@@ -36,7 +36,7 @@ alias wg='cd ~/workspace/games/'
 
 alias dead_symlinks='find -L . -type l'
 
-alias tm='env TERM=xterm-256color tmux'
+alias tm='tmux'
 tmx () {
     HELP_COMMANDS=("" "help")
     TMUX_HOME="$HOME/.tmux"
@@ -66,7 +66,7 @@ tmx () {
         return
     fi
 
-    env TERM=xterm-256color tmux source-file "$TMUX_HOME/$1.conf";
+    tmux source-file "$TMUX_HOME/$1.conf";
 }
 
 note () {
