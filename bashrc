@@ -3,11 +3,7 @@
 
 [[ $- != *i* ]] && return
 
-if [ -e /usr/share/terminfo/x/xterm-256color ] \
-    && [ "$COLORTERM" == "xfce4-terminal" ];
-then
-    export TERM="xterm-256color"
-fi
+export TERM="screen-256color"
 
 # =============================================================================
 # CUSTOM VARIABLES
@@ -23,6 +19,11 @@ USER_PROMPT=$HOME/.dotfiles/custom/prompt/user.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# =============================================================================
+# HISTORY
+# =============================================================================
+export HISTCONTROL=ignoreboth
 
 # =============================================================================
 # PROMPT
