@@ -97,7 +97,7 @@ alias now='date +"%T"'
 # PACKER-ALIAS
 # =============================================================================
 
-alias up='packer -Syu'
+alias up='trizen -Syu'
 alias paclck='su -c "rm /var/lib/pacman/db.lck"'
 
 # =============================================================================
