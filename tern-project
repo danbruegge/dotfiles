@@ -10,8 +10,6 @@
   "async": true,
   "plugins": {
     "node": {},
-    "angular": {},
-    "requirejs": {},
     "doc_comment": {},
     "complete_strings": {}
   }
