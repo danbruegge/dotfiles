@@ -50,6 +50,7 @@
     d = diff --word-diff
     ds = diff --stat
     dlc = diff --cached HEAD^ # diff last commit
+    dt = difftool
 
     # add
     aa = add .
@@ -116,4 +117,4 @@
 
 [merge]
     conflictstyle = diff3
-    tool = meld
+    tool = vimdiff
