@@ -1,21 +1,7 @@
 # strict
-snippet strict
-'use strict';
-endsnippet
-
 # jshint global variables
 snippet global
 /* global ${1} */
-endsnippet
-
-# jslint options
-snippet lint
-/* jslint ${1} */
-endsnippet
-
-# jshint options
-snippet hint
-/* jshint ${1} */
 endsnippet
 
 # iife
@@ -28,32 +14,6 @@ endsnippet
 # function
 snippet f
 function ${1}(${2}) {
-    ${3}
-}
-endsnippet
-
-# function;
-snippet f;
-function ${1}(${2}) {
-    ${3}
-};
-endsnippet
-
-# function,
-snippet f,
-function ${1}(${2}) {
-    ${3}
-},
-endsnippet
-
-# function, with strict and self
-snippet ff
-function ${1}(${2}) {
-
-    'use strict';
-
-    var self = this;
-
     ${3}
 }
 endsnippet
@@ -71,8 +31,6 @@ else {
     ${1}
 }
 endsnippet
-
-
 
 # for
 snippet for
@@ -148,46 +106,20 @@ snippet ct
 console.trace();
 endsnippet
 
-# helper - declare self
-snippet self
-var self = this;
-endsnippet
-
-# helper - check if object exist
-snippet exist
-if (${1}.length > 0) {
-    ${2}
-}
-endsnippet
-
-# helper - check if object is defined
-snippet defined
-if (typeof ${1} !== 'undefined') {
-    ${2}
-}
-endsnippet
-
 # ES6 ==========================================================================
 snippet import "import ... from ..."
-import { $1 } from './$2';
+import $1 from '$2';
 endsnippet
 
-snippet export
-export { $1 };
+snippet export "export default"
+export default
 endsnippet
 
-snippet class
+snippet class "class $1 { constructor ($2) { $3 } }"
 class $1 {
     constructor ($2) {
 	    $3
     }
-}
-endsnippet
-
-# arrow function
-snippet fa
-(${1}) => {
-    ${2}
 }
 endsnippet
 
@@ -217,17 +149,8 @@ beforeEach(() => {
 endsnippet
 
 # react ========================================================================
-snippet scomponent
-const $1 = props => <div />;
-export default $1;
-endsnippet
-
 snippet component
-export default class $1 extends React.Component {
-    constructor (props) {
-        super(props);
-    }
-
+class $1 extends Component {
     render () {
 	return $2;
     }
