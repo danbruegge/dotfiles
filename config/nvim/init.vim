@@ -21,7 +21,7 @@ Plug 'bounceme/poppy.vim'
 Plug 'machakann/vim-highlightedyank'
 
 " editor sugar
-Plug 'w0rp/ale', { 'for': ['javascript.jsx'] }
+Plug 'w0rp/ale', { 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx', 'json'] }
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -31,7 +31,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim'
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -44,6 +44,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
+Plug 'HerringtonDarkholme/yats.vim'
 
 " `for` css currently because i don't use css files. This prevents me from
 " deactivating the plugin so i can retrieve updates and checkout later.
@@ -467,5 +468,13 @@ autocmd! User GoyoLeave Limelight!
 " =============================================================================
 
 " autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+
+" }}}
+
+" =============================================================================
+" typescript {{{
+" =============================================================================
+
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 
 " }}}
