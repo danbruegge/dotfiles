@@ -295,13 +295,20 @@ nnoremap <leader>T :call ToggleJsxCssFt()<cr>
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \ 'jsx': ['stylelint', 'eslint'],
+    \ 'javascript': ['flow', 'eslint'],
+    \ 'jsx': ['flow', 'eslint', 'stylelint'],
 \}
 let g:ale_linter_aliases = {'jsx': 'css'}
 
 let g:ale_fix_on_save = 1
-let g:ale_fixers = { 'javascript': ['eslint'], }
+let g:ale_fixers = {
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'json': ['prettier', 'eslint'],
+\}
+
+let g:ale_javascript_prettier_use_local_config = 1
+
+let g:ale_echo_msg_format = '%linter% says %s'
 
 " }}}
 
