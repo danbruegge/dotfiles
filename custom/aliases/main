@@ -70,15 +70,19 @@ tmx () {
 }
 
 note () {
-    COMMANDS=("ls" "list" "help")
     NOTES_HOME="$HOME/Cloud/Notes"
 
-    if [[ "${COMMANDS[*]}" == *"$1"* ]]; then
+    if [[ "ls" == *"$1"* ]]; then
         tree "$NOTES_HOME";
         return
     fi
 
-    nvim "$HOME/Cloud/Notes/$1.md";
+    if [[ "rm" == "$1" ]]; then
+        rm -i "$NOTES_HOME/$2.md";
+        return
+    fi
+
+    nvim "$NOTES_HOME/$1.md";
 }
 
 # set screensaver off #
