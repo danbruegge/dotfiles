@@ -46,7 +46,7 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 
 " `for` css currently because i don't use css files. This prevents me from
 " deactivating the plugin so i can retrieve updates and checkout later.
-Plug 'styled-components/vim-styled-components', { 'for': ['css'], 'branch': 'rewrite' }
+Plug 'styled-components/vim-styled-components', { 'for': ['css'] }
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
