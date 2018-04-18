@@ -38,13 +38,9 @@ Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 " languages
-Plug 'plasticboy/vim-markdown', { 'for': ['mkd', 'markdown'] }
+Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'css', 'scss'] }
-Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
-Plug 'HerringtonDarkholme/yats.vim'
 
 " `for` css currently because i don't use css files. This prevents me from
 " deactivating the plugin so i can retrieve updates and checkout later.
@@ -100,12 +96,7 @@ let g:gruvbox_contrast_light='hard'
 
 let g:onedark_termcolors=256
 
-colorscheme gruvbox
-
-" if &diff
-"     let g:gruvbox_contrast_light='soft'
-"     set background=light
-" endif
+colorscheme onedark
 
 set completeopt=longest,menuone
 
@@ -331,7 +322,7 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 set noshowmode
 
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night',
+    \ 'colorscheme': 'onedark',
     \ 'component': {
         \ 'readonly': '%{&readonly?"x":""}',
     \ },
