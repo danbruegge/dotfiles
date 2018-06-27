@@ -12,8 +12,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -92,11 +90,11 @@ let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_light='soft'
 
 let g:onedark_termcolors=256
 
-colorscheme onedark
+colorscheme gruvbox
 
 set completeopt=longest,menuone
 
@@ -326,7 +324,7 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 set noshowmode
 
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ 'component': {
         \ 'readonly': '%{&readonly?"x":""}',
     \ },
