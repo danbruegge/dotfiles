@@ -44,6 +44,8 @@ Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx'] }
 " deactivating the plugin so i can retrieve updates and checkout later.
 Plug 'styled-components/vim-styled-components', { 'for': ['css'] }
 
+Plug 'airblade/vim-gitgutter'
+
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
 
@@ -469,5 +471,13 @@ autocmd! User GoyoLeave Limelight!
 " =============================================================================
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
+
+" }}}
+
+" =============================================================================
+" vim-gitgutter {{{
+" =============================================================================
+
+set updatetime=500
 
 " }}}
