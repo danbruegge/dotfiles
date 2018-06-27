@@ -23,7 +23,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # =============================================================================
 # HISTORY
 # =============================================================================
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth:erasedups   # no duplicate entries
+shopt -s histappend                       # append history file
+export PROMPT_COMMAND="history -a"        # update histfile after every command
 
 # =============================================================================
 # PROMPT
