@@ -19,7 +19,7 @@ Plug 'bounceme/poppy.vim'
 Plug 'machakann/vim-highlightedyank'
 
 " editor sugar
-Plug 'w0rp/ale', { 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx', 'json'] }
+Plug 'w0rp/ale'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -48,6 +48,7 @@ Plug 'airblade/vim-gitgutter'
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
+" OR https://github.com/mbbill/undotree
 
 call plug#end()
 
@@ -105,8 +106,8 @@ set showcmd
 
     " tabbing stuff
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 
     " indenting
 set smartindent
@@ -147,9 +148,6 @@ autocmd FileType h wincmd L
     " https://github.com/vim/vim/issues/24
     " It is related to terminal only. In gVim all is fine.
 set timeout timeoutlen=3000 ttimeoutlen=100
-
-    " always look for file changes
-set autoread
 
     " disable 'ex' mode call
 map Q <NOP>
@@ -303,11 +301,15 @@ let g:ale_fixers = {
     \ 'json': ['prettier', 'eslint'],
     \ 'typescript': ['prettier', 'tslint'],
     \ 'typescript.jsx': ['prettier', 'tslint'],
+    \ 'scss': ['prettier'],
 \}
 
 let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_echo_msg_format = '%linter% says %s'
+
+" only for tsserver
+let g:ale_completion_enabled = 1
 
 " }}}
 
