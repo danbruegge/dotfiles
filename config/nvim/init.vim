@@ -35,6 +35,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mhinz/vim-signify'
 
 " languages
 Plug 'sheerun/vim-polyglot'
@@ -482,5 +483,13 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 " =============================================================================
 
 set updatetime=500
+
+" }}}
+
+" =============================================================================
+" vim-signify {{{
+" =============================================================================
+
+let g:signify_vcs_list = [ 'git' ]
 
 " }}}
