@@ -30,6 +30,7 @@ install:
 	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT ~/Cloud/Documents/ssh-config $(base).ssh
 	SEARCHPATH=~/ make show-dead-symlinks
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-root:
 	ln -sfT $(df)config/nvim /root/.config/nvim
