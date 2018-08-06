@@ -201,6 +201,9 @@ nmap <c-cr> i<cr><Esc>
 
 nmap <leader>1 :w !wc -w<cr>
 
+" reload current buffer
+nmap <leader>e :e<cr>
+
 nmap <leader><cr> <F9>
 
 nmap [l :lprevious<cr>
