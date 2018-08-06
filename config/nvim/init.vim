@@ -39,14 +39,12 @@ Plug 'mhinz/vim-signify'
 
 " languages
 Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'css', 'scss'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescript.jsx', 'css', 'scss'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx', 'typescript.jsx'] }
 
-" `for` css currently because i don't use css files. This prevents me from
+" `for` css currently because i don't use abc files. This prevents me from
 " deactivating the plugin so i can retrieve updates and checkout later.
-Plug 'styled-components/vim-styled-components', { 'for': ['css'] }
-
-Plug 'airblade/vim-gitgutter'
+Plug 'styled-components/vim-styled-components', { 'for': ['abc'] }
 
 " TODO:
 " Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
@@ -274,6 +272,18 @@ map <leader>h2 VypVr-
     " enable all function in all mode.
 let g:user_emmet_mode='a'
 
+let g:user_emmet_settings = {
+\  'typescript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\  'jsx': {
+\    'attribute_name': {'class': 'className'},
+\  },
+\}
+
     " quick emmet workaround to have css completion in javascript
 function! ToggleJsxCssFt()
     if &filetype == 'javascript.jsx'
@@ -333,13 +343,13 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 set noshowmode
 
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night',
+    \ 'colorscheme': 'gruvbox',
     \ 'component': {
         \ 'readonly': '%{&readonly?"x":""}',
     \ },
     \ 'component_function': {
         \ 'filename': 'LightLineFilename'
-    \ }
+    \ },
 \ }
 
 function! LightLineFilename()
@@ -361,9 +371,20 @@ let g:ycm_key_list_select_completion = ['<Down>']
 " Deoplete stuff {{{
 " =============================================================================
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_start_length = 1
+" Enable deoplete when InsertEnter.
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
 
+let g:python3_host_prog = '/usr/bin/python3'
+let g:deoplete#auto_complete_start_length = 2
+
+let g:deoplete#sources#ternjs#filetypes = [
+  \ 'jsx',
+  \ 'javascript',
+  \ 'javascript.jsx',
+  \ 'typescript',
+  \ 'typescript.jsx',
+\ ]
 
 " }}}
 
@@ -422,6 +443,8 @@ augroup END
 " =============================================================================
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_exec_path = 'editorconfig'
+let g:EditorConfig_core_mode = 'external_command'
 
 " }}}
 
