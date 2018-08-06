@@ -12,6 +12,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
