@@ -23,7 +23,6 @@
     ],
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "globals": {
-        "angular": 1,
         "React": 1,
         "ReactDOM": 1,
         "PropTypes": 1,
