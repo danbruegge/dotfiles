@@ -305,8 +305,8 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
     \ 'javascript': ['flow', 'eslint'],
     \ 'javascript.jsx': ['flow', 'eslint', 'stylelint'],
-    \ 'typescript': ['tslint', 'tsserver'],
-    \ 'typescript.jsx': ['tslint', 'tsserver'],
+    \ 'typescript': ['tsserver'],
+    \ 'typescript.jsx': ['tsserver'],
 \}
 let g:ale_linter_aliases = {'jsx': 'css'}
 
@@ -324,8 +324,9 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_echo_msg_format = '%linter% says %s'
 
-" only for tsserver
+" only for typescript
 let g:ale_completion_enabled = 1
+let g:ale_linters_ignore = {'typescript': ['tslint']}
 
 " }}}
 
