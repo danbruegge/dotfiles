@@ -43,6 +43,7 @@
 
     # checkout
     com = checkout master
+    cod = checkout develop
     cob = checkout -b
     cof = checkout -f
 
