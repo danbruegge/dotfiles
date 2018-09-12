@@ -1,16 +1,14 @@
 {
   "libs": [
     "browser",
-    "chai",
-    "ecma5",
-    "ecma6",
-    "browser",
-    "jquery"
+    "ecmascript",
+    "react",
+    "underscore"
   ],
   "async": true,
   "plugins": {
     "node": {},
-    "doc_comment": {},
-    "complete_strings": {}
+    "es_modules": {},
+    "webpack": {}
   }
 }
