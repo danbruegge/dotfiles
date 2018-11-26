@@ -37,6 +37,7 @@ alias wg='cd ~/workspace/games/'
 alias dead_symlinks='find -L . -type l'
 
 alias tm='tmux'
+alias tc='tmx vcws' # opens the most common project tmux config at the moment
 tmx () {
     HELP_COMMANDS=("" "help")
     TMUX_HOME="$HOME/.tmux"
