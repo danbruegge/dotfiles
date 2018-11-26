@@ -152,10 +152,11 @@ alias runphp='php -S localhost:8001'
 # GIT-ALIAS
 # =============================================================================
 
-alias gg='git'
-alias gti='git'
-alias gut='git'
+alias g='git'
 alias gitignore='nvim .gitignore'
+
+# bash completion for g - git alias
+__git_complete g __git_main
 
 # =============================================================================
 # STEAM THINGS
