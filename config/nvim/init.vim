@@ -36,6 +36,7 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mhinz/vim-signify'
+Plug 'AaronLasseigne/yank-code'
 
 " languages
 Plug 'sheerun/vim-polyglot'
@@ -192,6 +193,10 @@ nnoremap <a-l> <c-w>l
 " vmap ------------------------------------------------------------------------
     " copy to system clipboard
 vmap <leader>y "+y
+    " copy to system clipboard with sugar
+" vmap <leader>y :YankCode<CR>
+    " small hack to highlight also the yanked code
+xmap <Leader>Y :YankCode<CR>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<CR>
 
 " nmap ------------------------------------------------------------------------
     " Add new line on current position with <CTRL><ENTER>
