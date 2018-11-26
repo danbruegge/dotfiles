@@ -29,8 +29,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'Shougo/deoplete.nvim'
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -41,6 +40,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " languages
 Plug 'sheerun/vim-polyglot'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm -g install tern', 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescript.jsx', 'css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx', 'typescript.jsx'] }
 
