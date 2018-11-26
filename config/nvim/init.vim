@@ -231,6 +231,10 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <c-c>c :bp\|bd #<cr>
 nnoremap <c-c>a :%bd<cr>
 
+" vnoremap --------------------------------------------------------------------
+    " search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
 " mixed -----------------------------------------------------------------------
 " disable arrow keys
 inoremap <Up> <NOP>
