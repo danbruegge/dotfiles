@@ -37,6 +37,7 @@ Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mhinz/vim-signify'
 Plug 'AaronLasseigne/yank-code'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " languages
 Plug 'sheerun/vim-polyglot'
@@ -524,5 +525,13 @@ set updatetime=500
 " =============================================================================
 
 let g:signify_vcs_list = [ 'git' ]
+
+" }}}
+
+" =============================================================================
+" vim-which-key {{{
+" =============================================================================
+
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " }}}
