@@ -12,12 +12,13 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'owickstrom/vim-colors-paramount'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'bounceme/poppy.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'kshenoy/vim-signature'
 
 " editor sugar
 Plug 'w0rp/ale'
