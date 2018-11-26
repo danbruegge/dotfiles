@@ -27,23 +27,24 @@
     excludesfile = ~/dotfiles/custom/gitignore_global
     pager = less -r
     editor = nvim
+    logAllRefUpdates = true
 
 [diff]
     algorithm = patience
 
 [alias]
     st = status -s
-    ec = config --global -e # open gitconfig in editor
+    edit = config --global -e # open gitconfig in editor
 
     # branch
+    br = branch
     bra = branch --all
 
     # tags
     tl = tag -l -n
 
     # checkout
-    com = checkout master
-    cod = checkout develop
+    co = checkout
     cob = checkout -b
     cof = checkout -f
 
@@ -55,14 +56,13 @@
 
     # add
     aa = add .
+    ap = add -p
 
     # commit
-    cim = commit -m
-    cia = commit -am
+    ci = commit
     cam = commit --amend
-
-    # merge
-    mm = merge master
+    cia = commit -am
+    cim = commit -m
 
     # log
     l = log
@@ -72,20 +72,26 @@
     last = log --pretty -1 HEAD
 
     # stash
-    ss = stash save
-    sp = stash pop
     sa = stash apply
     sl = stash list
+    sp = stash pop
+    ss = stash save
 
     # reset
     undo = reset HEAD^
     kill = reset --hard HEAD^
 
-    # push current branch
-    pcb = "!git push -u origin $(git symbolic-ref --short HEAD)"
+    # rebase
+    ra = rebase --abort
+    rc = rebase --continue
+    rs = rebase --skip
 
-    # clean up old remote branches, need <remote-name>
-    rp = remote prune
+    # push current branch
+    pcb = "!git push origin HEAD"
+    pcbf = "!git push origin HEAD --force-with-lease"
+
+    # clean up old remote branches
+    rpo = remote prune origin
 
     # list info
     i = !echo "----" && \
@@ -108,10 +114,13 @@
         git status -s
 
     # show git notes
-    gn = "!less ~/Cloud/Notes/git.md"
+    notes = "!less ~/Cloud/Notes/git.md"
 
     # list aliases
-    la = "!git config -l | grep alias | cut -c 7-"
+    alias = "!git config -l | grep alias | cut -c 7-"
+
+    mt = mergetool
+    meld = mergetool --tool meld
 
 [push]
     default = simple
