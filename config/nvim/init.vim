@@ -398,6 +398,8 @@ let g:deoplete#sources#ternjs#filetypes = [
   \ 'typescript.jsx',
 \ ]
 
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+
 " }}}
 
 " =============================================================================
