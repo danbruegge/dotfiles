@@ -44,6 +44,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescript.jsx', 'css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx', 'typescript.jsx'] }
 
+" ---
+" Plug 'iamcco/markdown-preview.nvim'
+" preview markdown on your browser with sync scroll and flexible configuration
+" ---
+
 " `for` css currently because i don't use abc files. This prevents me from
 " deactivating the plugin so i can retrieve updates and checkout later.
 Plug 'styled-components/vim-styled-components', { 'for': ['abc'] }
