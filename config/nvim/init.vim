@@ -41,7 +41,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " languages
 Plug 'sheerun/vim-polyglot'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm -g install tern', 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm -g install tern@0.21.0', 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescript.jsx', 'css', 'scss'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx', 'typescript.jsx'] }
 
