@@ -270,14 +270,13 @@ setlocal spelllang=de_de
 " }}}
 
 " =============================================================================
-" Markdown settings {{{
+" markdown settings {{{
 " =============================================================================
 
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_conceal = 0
+autocmd FileType latex,tex,txt,md,markdown setlocal spell
 
-map <leader>h1 VypVr=
-map <leader>h2 VypVr-
+map <leader>mh1 VypVr=
+map <leader>mh2 VypVr-
 
 " }}}
 
