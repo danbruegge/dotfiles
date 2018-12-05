@@ -72,6 +72,7 @@ tmx () {
 
 note () {
     NOTES_HOME="$HOME/Cloud/Notes"
+    NOTES_EDITOR="nvim"
 
     if [[ "ls" == *"$1"* ]]; then
         tree "$NOTES_HOME";
@@ -83,7 +84,7 @@ note () {
         return
     fi
 
-    nvim "$NOTES_HOME/$1.md";
+    $NOTES_EDITOR "$NOTES_HOME/$1.md";
 }
 
 # set screensaver off #
