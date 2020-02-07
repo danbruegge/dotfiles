@@ -20,11 +20,8 @@
 [format]
     pretty = oneline
 
-[include]
-    path = ~/.dotfiles/custom/gitconfig_user
-
 [core]
-    excludesfile = ~/dotfiles/custom/gitignore_global
+    excludesfile = ~/dotfiles/scripts/gitignore_global
     pager = less -r
     editor = nvim
     logAllRefUpdates = true
@@ -73,6 +70,7 @@
 
     # stash
     sa = stash apply
+    sd = stash drop
     sl = stash list
     sp = stash pop
     ss = stash save
@@ -128,3 +126,6 @@
 [merge]
     conflictstyle = diff3
     tool = vimdiff
+
+[user]
+    useConfigOnly = true
