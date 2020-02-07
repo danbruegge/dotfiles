@@ -5,6 +5,7 @@ config/nvim/autoload/plug.vim.old
 config/nvim/bundle
 config/nvim/session
 config/nvim/sessions
+config/nvim/undo
 config/ranger/bookmarks
 config/ranger/history
 config/ranger/tagged
