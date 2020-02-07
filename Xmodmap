@@ -1,2 +1,9 @@
+! right ctrl
 keycode 105 = Menu
-keycode 66 =
+
+! disable capslock
+! keycode 66 =
+
+! disable capslock and bind it to Home
+clear Lock
+keycode 66 = Home NoSymbol Home
