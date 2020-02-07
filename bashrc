@@ -8,9 +8,9 @@ export TERM="screen-256color"
 # =============================================================================
 # CUSTOM VARIABLES
 # =============================================================================
-ALIASES=( "main" "vw" )
-BASHRCGLOBAL=$HOME/.dotfiles/custom/bashrc_global
-USER_PROMPT=$HOME/.dotfiles/custom/prompt/user.sh
+ALIASES="$HOME/.dotfiles/scripts/aliases/*"
+BASHRCGLOBAL=$HOME/.dotfiles/scripts/bashrc_global
+USER_PROMPT=$HOME/.dotfiles/scripts/prompt/user.sh
 
 # =============================================================================
 # XDG
@@ -23,6 +23,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # =============================================================================
 # HISTORY
 # =============================================================================
+export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups   # no duplicate entries
 shopt -s histappend                       # append history file
 
@@ -41,9 +42,8 @@ shopt -s histappend                       # append history file
 # =============================================================================
 # GET ALIASES
 # =============================================================================
-for i in "${ALIASES[@]}"; do
-    f="$HOME/.dotfiles/custom/aliases/$i"
-    [ -f "$f" ] && source "$f"
+for f in $ALIASES; do
+  [ -f "$f" ] && source "$f"
 done
 
 # =============================================================================
@@ -105,11 +105,14 @@ M-^     complete history
 EOF
 }
 
+# https://github.com/carlitux/deoplete-ternjs
+ulimit -n 2048
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # export FZF_DEFAULT_COMMAND='ag -g ""'
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git/*" --glob "!dist/*" --files --smart-case'
+export FZF_DEFAULT_COMMAND='rg --hidden -g "!.git/*" -g "!dist/*" --files --smart-case'
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`

@@ -1,15 +1,20 @@
+#!/bin/sh
 #
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# shellcheck source=/home/dan/.bashrc
+[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec startx
+if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
+  exec startx
 fi
 
-export PATH=${PATH}:/opt/android-sdk/platform-tools/:/opt/android-sdk/tools/:$(ruby -e 'print Gem.user_dir')/bin
+PATH_ANDROID_PLATFORM=/opt/android-sdk/platform-tools/
+PATH_ANDROID_TOOLS=/opt/android-sdk/tools/
+PATH_RUBY_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+PATH_NPM_BIN="$HOME/.npm-global/bin"
+export PATH="$PATH:$PATH_ANDROID_PLATFORM:$PATH_ANDROID_TOOLS:$PATH_RUBY_BIN:$PATH_NPM_BIN"
 
-export PATH=~/.npm-global/bin:${PATH}
-
-source "$HOME/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh"
+# shellcheck source=/home/dan/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh
+. "$HOME/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh"

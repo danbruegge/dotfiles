@@ -5,14 +5,14 @@
 
 #--- VARIABLES ---
 ALIASES=( "main" "vw" )
-BASHRCGLOBAL=/home/dan/.dotfiles/custom/bashrc_global
-ROOT_PROMPT=/home/dan/.dotfiles/custom/prompt/root.sh
+BASHRCGLOBAL=/home/dan/.dotfiles/scripts/bashrc_global
+ROOT_PROMPT=/home/dan/.dotfiles/scripts/prompt/root.sh
 
 #--- ROOT ONLY ---
 #------ pacman related ---
-alias pacnew='find / -name *.pacnew'
-alias pacorig='find / -name *.pacorig'
-alias pacsave='find / -name *.pacsave'
+alias pacnew="fd '\.pacnew' --full-path '/'"
+alias pacorig="fd '\.pacorig' --full-path '/'"
+alias pacsave="fd '\.pacsave' --full-path '/'"
 alias paccleanup='pacman -Rsn `pacman -Qdtq`'
 #--- mirrorlist ---
 # Pacman Mirrorlist Update
@@ -58,7 +58,7 @@ alias wifire=wifiReconnect
 # GET ALIASES
 # =============================================================================
 for i in "${ALIASES[@]}"; do
-    f="/home/dan/.dotfiles/custom/aliases/$i"
+    f="/home/dan/.dotfiles/scripts/aliases/$i"
     [ -f "$f" ] && source "$f"
 done
 
