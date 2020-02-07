@@ -1,23 +1,14 @@
-<?xml encoding="UTF-8" version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
 	<unique-id>1453836195253064-2</unique-id>
-	<command>xfce4-terminal --maximize --working-directory=%f</command>
+	<command>termite -d %f</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
-</action>
-<action>
-	<icon>image-x-generic</icon>
-	<name>Pngout</name>
-	<unique-id>1491558798159744-4</unique-id>
-	<command>xfce4-terminal -e &quot;pngout %f&quot;</command>
-	<description></description>
-	<patterns>*.png</patterns>
-	<image-files/>
 </action>
 <action>
 	<icon>image-x-generic</icon>
@@ -32,7 +23,7 @@
 	<icon>text-editor</icon>
 	<name>Open with Neovim</name>
 	<unique-id>1456996562453023-3</unique-id>
-	<command>xfce4-terminal --maximize -e &quot;nvim %f&quot;</command>
+	<command>xfce4-terminal -e &quot;nvim %f&quot;</command>
 	<description></description>
 	<patterns>*</patterns>
 	<text-files/>
@@ -61,6 +52,15 @@
 	<unique-id>1503298411780190-1</unique-id>
 	<command>catfish --path=%f</command>
 	<description>Search for files and folders</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Neue Textdatei</name>
+	<unique-id>1555071146741835-1</unique-id>
+	<command>xfce4-terminal --working-directory=%f -e &quot;vi&quot;</command>
+	<description>xfce4-terminal --working-directory=%f -e &quot;vi&quot;</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
