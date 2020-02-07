@@ -11,8 +11,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 " visuals
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
+Plug 'axvr/photon.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -21,8 +22,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'kshenoy/vim-signature'
 
 " editor sugar
-Plug 'w0rp/ale'
-Plug 'vim-scripts/loremipsum'
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
@@ -33,32 +33,28 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mhinz/vim-signify'
 Plug 'AaronLasseigne/yank-code'
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'simnalamburt/vim-mundo'
+Plug 'rhysd/git-messenger.vim'
+" Plug 'wellle/context.vim'
 
 " languages
 Plug 'sheerun/vim-polyglot'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm -g install tern@0.21.0', 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescript.jsx', 'css', 'scss'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'javascript.jsx', 'typescript.jsx'] }
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascriptreact', 'typescriptreact', 'css', 'scss'] }
 
 " ---
 " Plug 'iamcco/markdown-preview.nvim'
 " preview markdown on your browser with sync scroll and flexible configuration
 " ---
 
-" `for` css currently because i don't use abc files. This prevents me from
-" deactivating the plugin so i can retrieve updates and checkout later.
-Plug 'styled-components/vim-styled-components', { 'for': ['abc'] }
-
-" TODO:
-" Plug 'simnalamburt/vim-mundo' " https://github.com/simnalamburt/vim-mundo
-" OR https://github.com/mbbill/undotree
-
 call plug#end()
+
+let g:plug_window = "enew"
+let g:plug_pwindow = "vsplit new"
 
 " }}}
 
@@ -103,9 +99,12 @@ let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 
-let g:onedark_termcolors=256
+    " fix hightlighting missspelled words:
+    " https://github.com/morhetz/gruvbox/issues/175
+let g:gruvbox_guisp_fallback = "fg"
 
-colorscheme gruvbox
+colorscheme kraken
+" colorscheme gruvbox
 
 set completeopt=longest,menuone
 
@@ -146,7 +145,6 @@ set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
 
     " System default for mappings
 let mapleader="\<Space>"
-" let mapleader=","
 
     " Open the help window on the Vertical Left side
 autocmd FileType help wincmd L
@@ -170,20 +168,33 @@ set gdefault
     " will open a split window with all searches of document from :substitute
 set inccommand=split
 
+set termguicolors
+
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.config/nvim/undo
+
+" }}}
+
+" =============================================================================
+" commands {{{
+" =============================================================================
+
+command! -nargs=0 Nvimrc :e ~/.config/nvim/init.vim
+
+command! -nargs=0 Up :PlugUpgrade | PlugUpdate
+
 " }}}
 
 " =============================================================================
 " Working with split windows {{{
 " =============================================================================
 
-    " Open a new vertical split and switch over to it
-" nnoremap <leader>w <C-w>v<C-w>l
+    " Open vertical split and switch over to it
+nnoremap <leader>n <c-w>n<c-w>L:Startify<cr>
 
-    " Open a new empty vertical split and switch over to it
-nnoremap <leader>n <c-w>n<c-w>L
-
-    " Open a new empty horizontal split and switch to it
-nnoremap <leader>N <c-w>n<c-w>J
+    " Open a horizontal split and switch to it
+nnoremap <leader>N <c-w>s<c-w>J
 
     " Makes jumping between splited windows easier
 nnoremap <a-h> <c-w>h
@@ -200,57 +211,71 @@ nnoremap <a-l> <c-w>l
 " vmap ------------------------------------------------------------------------
     " copy to system clipboard
 vmap <leader>y "+y
-    " copy to system clipboard with sugar
-" vmap <leader>y :YankCode<CR>
     " small hack to highlight also the yanked code
-xmap <Leader>Y :YankCode<CR>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<CR>
+xmap <leader>Y :YankCode<cr>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<cr>
 
 " nmap ------------------------------------------------------------------------
-    " Add new line on current position with <CTRL><ENTER>
-nmap <c-cr> i<cr><Esc>
 
 nmap <leader>1 :w !wc -w<cr>
-
-" reload current buffer
-nmap <leader>e :e<cr>
-
-nmap <leader><cr> <F9>
 
 nmap [l :lprevious<cr>
 nmap ]l :lnext<cr>
 
-nmap <left> :bprevious<cr>
-nmap <right> :bnext<cr>
+nmap <leader><cr> :Commands<cr>
+nmap <leader>G :Goyo<cr>
+nmap <leader>L :Limelight!!<cr>
+nmap <leader>H :HexokinaseToggle<cr>
+nmap <leader>C :ContextToggle<cr>
+nmap <leader>f :Lines<cr>
+nmap <leader>F :BLines<cr>
 
-nmap <leader>g :Goyo<cr>
-nmap <leader>l :Limelight!!<cr>
+  " quickly open TODO.md file from buffer.
+nmap <leader><Tab> :buffer TODO.md<cr>
 
 " nnoremap --------------------------------------------------------------------
     " Save file
 nnoremap <leader>w :w<cr>
 
-    "  Open file
+    " Open file
 nnoremap <leader>o :Files<cr>
+    " Open changed files from `git status`
+nnoremap <leader>O :GFiles?<cr>
 
-    " buffer stuff
+  " buffer stuff
 nnoremap <leader>b :Buffers<cr>
 nnoremap <c-c>c :bp\|bd #<cr>
-nnoremap <c-c>a :%bd<cr>
+nnoremap <c-c>a :%bd<cr>:Startify<cr>
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
+nnoremap <leader><leader> <c-^>
 
 " vnoremap --------------------------------------------------------------------
     " search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
 " mixed -----------------------------------------------------------------------
-" disable arrow keys
+  " disable arrow keys
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
-nnoremap <leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+    " go hollow mode
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_transparent = 0
+    endif
+endfunction
+nnoremap <leader>h :call Toggle_transparent()<CR>
 
     " Simple sort lines
 vmap <leader>s :sort<cr>
@@ -273,10 +298,10 @@ setlocal spelllang=de_de
 " markdown settings {{{
 " =============================================================================
 
-autocmd FileType latex,tex,txt,md,markdown setlocal spell
-
 map <leader>mh1 VypVr=
 map <leader>mh2 VypVr-
+
+" autocmd BufEnter *.md set background=light
 
 " }}}
 
@@ -288,10 +313,10 @@ map <leader>mh2 VypVr-
 let g:user_emmet_mode='a'
 
 let g:user_emmet_settings = {
-\  'typescript.jsx' : {
+\  'typescriptreact' : {
 \      'extends' : 'jsx',
 \  },
-\  'javascript.jsx' : {
+\  'javascriptreact' : {
 \      'extends' : 'jsx',
 \  },
 \  'jsx': {
@@ -301,10 +326,10 @@ let g:user_emmet_settings = {
 
     " quick emmet workaround to have css completion in javascript
 function! ToggleJsxCssFt()
-    if &filetype == 'javascript.jsx'
+    if &filetype == 'javascriptreact'
         set filetype=scss
     else
-        set filetype=javascript.jsx
+        set filetype=javascriptreact
     endif
 endfunction
 
@@ -316,40 +341,42 @@ nnoremap <leader>T :call ToggleJsxCssFt()<cr>
 " ALE stuff {{{
 " =============================================================================
 
-let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
-    \ 'javascript': ['flow', 'eslint'],
-    \ 'javascript.jsx': ['flow', 'eslint', 'stylelint'],
-    \ 'typescript': ['tsserver'],
-    \ 'typescript.jsx': ['tsserver'],
+    \ 'javascript': ['eslint'],
+    \ 'javascriptreact': ['eslint', 'stylelint'],
+    \ 'typescript': ['eslint', 'tsserver'],
+    \ 'typescriptreact': ['eslint', 'tsserver', 'stylelint'],
 \}
-let g:ale_linter_aliases = {'jsx': 'css'}
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
     \ 'javascript': ['prettier', 'eslint'],
-    \ 'javascript.jsx': ['prettier', 'eslint'],
+    \ 'javascriptreact': ['prettier', 'eslint'],
     \ 'json': ['prettier', 'eslint'],
-    \ 'typescript': ['prettier', 'tslint'],
-    \ 'typescript.jsx': ['prettier', 'tslint'],
+    \ 'typescript': ['prettier', 'eslint'],
+    \ 'typescriptreact': ['prettier', 'eslint'],
     \ 'scss': ['prettier'],
+    \ 'css': ['prettier'],
 \}
+
+let g:ale_linters_ignore = {
+  \ 'typescript': ['tslint'],
+  \ 'typescriptreact': ['tslint']
+\}
+
+let g:ale_linter_aliases = {'jsx': 'css'}
 
 let g:ale_javascript_prettier_use_local_config = 1
 
-let g:ale_echo_msg_format = '%linter% says %s'
+let g:ale_echo_msg_format = '(%linter%) %code%: %s'
 
-" only for typescript
-let g:ale_completion_enabled = 1
-let g:ale_linters_ignore = {'typescript': ['tslint']}
+" nmap <silent> gd :TSDef<CR>
+nmap <silent> gd :ALEGoToDefinition<CR>
+nmap <silent> gr :TSRefs<CR>
+nmap <silent> gi :TSType<CR>
 
-" }}}
-
-" =============================================================================
-" Clean up html {{{
-" =============================================================================
-
-vmap <F7> :!tidy -q -i --show-errors 0<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " }}}
 
@@ -360,9 +387,12 @@ vmap <F7> :!tidy -q -i --show-errors 0<cr>
 set noshowmode
 
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'kraken',
     \ 'component': {
         \ 'readonly': '%{&readonly?"x":""}',
+    \ },
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
     \ },
     \ 'component_function': {
         \ 'filename': 'LightLineFilename'
@@ -376,53 +406,27 @@ endfunction
 " }}}
 
 " =============================================================================
-" UltiSnip stuff {{{
-" =============================================================================
-
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:ycm_key_list_select_completion = ['<Down>']
-
-" }}}
-
-" =============================================================================
 " Deoplete stuff {{{
 " =============================================================================
 
-" Enable deoplete when InsertEnter.
-let g:deoplete#enable_at_startup = 0
-autocmd InsertEnter * call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
 
-let g:python3_host_prog = '/usr/bin/python3'
-let g:deoplete#auto_complete_start_length = 2
+let g:python3_host_prog = '/usr/bin/python'
 
-let g:deoplete#sources#ternjs#filetypes = [
-  \ 'jsx',
-  \ 'javascript',
-  \ 'javascript.jsx',
-  \ 'typescript',
-  \ 'typescript.jsx',
-\ ]
+call deoplete#custom#option({
+\ 'smart_case': v:true,
+\ 'min_pattern_length': 1,
+\ })
 
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 
 " }}}
 
 " =============================================================================
-" Ack/Ag/Ripgrep stuff {{{
+" Ripgrep stuff {{{
 " =============================================================================
 
-if executable('rg')
-    let g:ackprg = 'rg --vimgrep --no-heading'
-endif
-
-let g:ack_apply_qmappings = 1
-let g:ack_qhandler = 'botright copen 25'
-let g:ackhighlight = 1
-let g:ack_autoclose = 1
-let g:ack_autofold_results = 1
-
 " search, but don't open the first result immediately
-map <leader>a :Ack! ""<left>
 map <leader>r :Rg!<cr>
 
 " }}}
@@ -433,15 +437,9 @@ map <leader>r :Rg!<cr>
 
 let g:startify_relative_path = 1
 let g:startify_change_to_dir = 0
-" let g:startify_bookmarks = [ '/tmp', '/etc' ]
-
-" }}}
-
-" =============================================================================
-" jsx stuff {{{
-" =============================================================================
-
-let g:jsx_ext_required = 0
+let g:startify_fortune_use_unicode = 1
+let g:startify_update_oldfiles = 1
+let g:startify_use_env = 1
 
 " }}}
 
@@ -471,6 +469,7 @@ let g:EditorConfig_core_mode = 'external_command'
 " goyo {{{
 " =============================================================================
 
+let g:goyo_width = 82
 let g:goyo_linenr = 1
 
 " }}}
@@ -479,9 +478,10 @@ let g:goyo_linenr = 1
 " fzf.vim {{{
 " =============================================================================
 
+  " TODO: How can i avoid searching in filename
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always -g="!yarn.lock" -g="!**/dist/*" '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
@@ -502,16 +502,8 @@ au! cursormoved * call PoppyInit()
 
 let g:limelight_conceal_ctermfg = 240
 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-" }}}
-
-" =============================================================================
-" vim-commentary {{{
-" =============================================================================
-
-" autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 
 " }}}
 
@@ -519,15 +511,8 @@ autocmd! User GoyoLeave Limelight!
 " typescript {{{
 " =============================================================================
 
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
-
-" }}}
-
-" =============================================================================
-" vim-gitgutter {{{
-" =============================================================================
-
-set updatetime=500
+let g:nvim_typescript#javascript_support = 1
+let g:nvim_typescript#diagnostics_enable = 0
 
 " }}}
 
@@ -537,12 +522,22 @@ set updatetime=500
 
 let g:signify_vcs_list = [ 'git' ]
 
+noremap <leader>sr :SignifyRefresh<CR>
+
 " }}}
 
 " =============================================================================
-" vim-which-key {{{
+" vim-mundo {{{
 " =============================================================================
 
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <f6> :MundoToggle<CR>
+
+" }}}
+
+" =============================================================================
+" git-messenger-vim {{{
+" =============================================================================
+
+nnoremap <leader>B :GitMessenger<CR>
 
 " }}}
