@@ -1,4 +1,4 @@
-new         -s {{name}} -n env
+new         -s xmasdev -n env
 send        -t env 'cd ~/workspace/projects/{{location}}/' Enter
 neww        -n dev
 neww        -n bash
