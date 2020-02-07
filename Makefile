@@ -29,6 +29,7 @@ install:
 	ln -sfT $(df)tmux.conf $(base).tmux.conf
 	ln -sfT $(df)xinitrc_$(thishost) $(base).xinitrc
 	ln -sfT ~/Cloud/Documents/ssh-config $(base).ssh
+	ln -sfT ~/Cloud/Documents/passwordstore $(base).password-store
 	SEARCHPATH=~/ make show-dead-symlinks
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
