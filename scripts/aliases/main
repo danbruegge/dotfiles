@@ -1,0 +1,112 @@
+#!/bin/sh
+
+# =============================================================================
+# MAIN
+# =============================================================================
+
+alias c='clear'
+alias ls='ls -hH --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
+alias ld='ls -ld .*' # list only dotfiles
+alias lo='ls . | xargs -n1 basename' # list files without extra informations
+alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
+                                            # informations
+alias lod='ls -ad .* | xargs -n1 basename'  # list only dotfiles without extra
+                                            # informations
+alias lsm='find / -type l -ls' # list all symlinks
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias diff='colordiff'
+alias grep='grep --color=auto'
+alias df='df -h'
+alias du='du -ch'
+alias mkdir='mkdir -pv'
+alias rmd='rm -rf' # to remove a dir
+alias ping='ping -c 5'
+alias tree='tree -C'
+alias rename='perl-rename'
+alias bashrc='nvim ~/.bashrc && . ~/.bashrc'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias reload='. ~/.bashrc'
+alias dots='cd ~/.dotfiles'
+alias edal='nvim ~/.dotfiles/scripts/aliases && . ~/.bashrc'
+
+  # needs the package "arch-wiki-docs" to be installed on the system
+alias archwiki='firefox /usr/share/doc/arch-wiki/html/en/Table_of_contents.html'
+
+alias r='ranger'
+
+mkcd () {
+  mkdir -pv "$1"
+  cd "$1" || return
+}
+
+alias dead_symlinks='find -L . -type l'
+
+# request a page with a ajax header (search engine testing) #
+alias curlajax='curl -H "X-Requested-With: XMLHttpRequest"'
+# get web server headers #
+alias header='curl -I'
+
+alias now='date +"%T"'
+alias c='cal -3w'
+
+camcam () {
+  # set default if $1 is empty
+  if [ -z "$1" ]
+  then
+    CAM=0
+  else
+    CAM=$1
+  fi
+
+  mpv "av://v4l2:/dev/video$CAM"
+}
+
+slugify () {
+  echo "$1" | iconv -c -t ascii//TRANSLIT | sed -r s/[~^]+//g | sed -r s/[^a-zA-Z0-9]+/-/g | sed -r s/^-+\|-+$//g | tr A-Z a-z | xclip -selection c
+  # TODO: xclip -o returns wrong value
+  echo "$(xclip -o)" "copied to clipboard"
+}
+
+# =============================================================================
+# PACKER/PACMAN
+# =============================================================================
+
+alias up='yay'
+alias paclck='su -c "rm /var/lib/pacman/db.lck"'
+
+# =============================================================================
+# ARCH-AUDIT
+# =============================================================================
+
+audit () {
+    echo "# Arch audit:";
+    arch-audit
+    echo "# Upgradable:";
+    arch-audit --upgradable
+}
+
+# =============================================================================
+# RIPGREP
+# =============================================================================
+
+alias rg='rg --type-add="jsx:*jsx"'
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+alias pyserver='python2 -m SimpleHTTPServer'
+alias pyclean='find . -name "*.pyc" -delete'
+
+# =============================================================================
+# GIT
+# =============================================================================
+
+alias g='git'
+
+# bash completion for g - git alias
+__git_complete g __git_main

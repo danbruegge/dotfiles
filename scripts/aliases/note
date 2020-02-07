@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# In nvim use :Vex to open a filelist
+
+alias nt='note today'
+alias nq='note quick'
+
+note () {
+  NOTES_HOME="$HOME/Cloud/Notes"
+  NOTES_EDITOR="nvim"
+
+  case "$1" in
+    "ls")
+      tree "$NOTES_HOME"
+      return
+      ;;
+    "rm")
+      rm -i "$NOTES_HOME/$2.md"
+      return
+      ;;
+    "find")
+      rg "$2" "$NOTES_HOME" "$3"
+      return
+      ;;
+    "view")
+      mdv "$NOTES_HOME/$2.md" | less -r
+      return
+      ;;
+  esac
+
+  # `man test` to get explanation
+  if [ -z "$1" ] # is empty?
+  then
+    $NOTES_EDITOR "$NOTES_HOME"
+    return;
+  fi
+
+  $NOTES_EDITOR "$NOTES_HOME/$1.md";
+}

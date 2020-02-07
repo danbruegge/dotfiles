@@ -1,0 +1,46 @@
+#!/bin/sh
+
+alias tm='tmux'
+alias tma='tmux attach'
+alias tmc='tmx wshop' # opens the most common project tmux config at the moment
+alias tmh='tmx home'
+alias tme='nvim ~/.tmux.conf'
+
+tmx () {
+    TMUX_HOME="$HOME/.tmux"
+    FILE="$TMUX_HOME/$1.conf";
+
+    if [ -f "$FILE" ]; then
+      # https://unix.stackexchange.com/questions/10689/how-can-i-tell-if-im-in-a-tmux-session-from-a-bash-script
+      tmux source-file "$FILE"
+      return
+    fi
+
+    case "$1" in
+      "list")
+        find "$TMUX_HOME/" -name "*.conf" -exec basename \{\} .conf \;
+        return
+      ;;
+      "add")
+        sed -e "s/{{name}}/$2/g" \
+          -e "s/{{location}}/$3/g" \
+          "$TMUX_HOME/config.template" > "$TMUX_HOME/$2.conf"
+        return
+      ;;
+      "edit")
+        nvim "$TMUX_HOME/$2.conf";
+        return
+      ;;
+      "delete")
+        rm -i "$TMUX_HOME/$2.conf";
+        return
+      ;;
+      *)
+        echo "list                          - List configs";
+        echo "add [name] [location-name]    - Add a new config from [name] and [location-name]";
+        echo "edit [name]                   - Edit an existing config by name";
+        echo "delete [name]                 - Delete an existing config by name";
+        return
+      ;;
+    esac
+}
