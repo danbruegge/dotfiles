@@ -1,54 +1,42 @@
 " vim:fdm=marker
-"
-" =============================================================================
-" vim-plug {{{
-" =============================================================================
 
+" # vim-plug ==================================================================
 call plug#begin('~/.config/nvim/bundle')
 
-" dependencies?!
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-
-" visuals
+" colorschemes
+Plug 'axvr/photon.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
-Plug 'axvr/photon.vim'
+
+" visuals
+Plug 'bounceme/poppy.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'bounceme/poppy.vim'
-Plug 'machakann/vim-highlightedyank'
 Plug 'kshenoy/vim-signature'
+Plug 'machakann/vim-highlightedyank'
 
 " editor sugar
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
-Plug 'tomtom/tcomment_vim'
+Plug 'AaronLasseigne/yank-code'
+Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
-Plug 'mhinz/vim-startify'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'mhinz/vim-signify'
-Plug 'AaronLasseigne/yank-code'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'mhinz/vim-startify'
 Plug 'simnalamburt/vim-mundo'
-Plug 'rhysd/git-messenger.vim'
-" Plug 'wellle/context.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 " languages
 Plug 'sheerun/vim-polyglot'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascriptreact', 'typescriptreact', 'css', 'scss'] }
 
 " ---
+" Plug 'wellle/context.vim'
+"   - Vim plugin that shows the context of the currently visible buffer contents
 " Plug 'iamcco/markdown-preview.nvim'
-" preview markdown on your browser with sync scroll and flexible configuration
+"   - preview markdown on your browser with sync scroll and flexible configuration
 " ---
 
 call plug#end()
@@ -56,42 +44,37 @@ call plug#end()
 let g:plug_window = "enew"
 let g:plug_pwindow = "vsplit new"
 
-" }}}
-
-" =============================================================================
-" vim common {{{
-" =============================================================================
-
-    " filetype stuff
+" # vim common ================================================================
+" filetype
 filetype on
 filetype plugin on
 filetype indent on
 
-    " hide a unsaved buffer, so you can open a new buffer with :e
+" hide a unsaved buffer, so you can open a new buffer with :e
 set hidden
 
-    " don't update the display while executing macors
+" don't update the display while executing macors
 set lazyredraw
 
-    " When the page starts to scroll, keep the cursor 8 lines from the top and
-    " 8 lines from the bottom
+" When the page starts to scroll, keep the cursor 8 lines from the top and
+" 8 lines from the bottom
 set scrolloff=8
 
-    " Better command-line completion
+" Better command-line completion
 set wildignore+=*.dll,*.o,*.pyc,*.pyo,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif
 set wildignore+=*$py.class,*.class,*/*.dSYM/*,*.dylib,*.DAT,*.scssc
 set wildignore+=*/node_modules/*
 
-    " When completing by tag, show the whole tag, not just the funtion name
+" When completing by tag, show the whole tag, not just the funtion name
 set showfulltag
 
-    " move backup files to ~/.vim/sessions
+" move backup files to ~/.vim/sessions
 set backupdir=~/.config/nvim/sessions
 set dir=~/.config/nvim/sessions
 
 set background=dark
 
-    " theme specific settings before enable it with `colorscheme gruvbox`
+" theme specific settings before enable it with `colorscheme gruvbox`
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
@@ -99,73 +82,69 @@ let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 
-    " fix hightlighting missspelled words:
-    " https://github.com/morhetz/gruvbox/issues/175
+" fix hightlighting missspelled words:
+" https://github.com/morhetz/gruvbox/issues/175
 let g:gruvbox_guisp_fallback = "fg"
 
-colorscheme kraken
 " colorscheme gruvbox
+colorscheme kraken
 
 set completeopt=longest,menuone
 
-    " Show partial commands in the last line of the screen
+" Show partial commands in the last line of the screen
 set showcmd
 
-    " tabbing stuff
+" tabbing
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-    " indenting
+" indenting
 set smartindent
 set cindent
 
-    " set relativenumber as default and switch if in insert mode to number
+" set relativenumber as default and switch if in insert mode to number
 set number
 set relativenumber
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-    " set and display line ending
+" set and display line ending
 set ruler
 set colorcolumn=80
 
-    " a long line is just a long line
+" a long line is just a long line
 set nowrap
 
-    " display/highlight current line
+" display/highlight current line
 set cursorline
 
-    " Set the command window height to 2 lines, to avoid many cases of having
-    " to press <Enter> to continue"
+" Set the command window height to 2 lines, to avoid many cases of having to
+" press <Enter> to continue"
 set cmdheight=2
 
-    " change options
-set cpoptions+=$    " usefull when using `cw`. Adds a $ to the end of word
+" change options
+" usefull when using `cw`. Adds a $ to the end of word
+set cpoptions+=$
 
-    " System default for mappings
+" System default for mappings
 let mapleader="\<Space>"
 
-    " Open the help window on the Vertical Left side
+" Open the help window on the Vertical Left side
 autocmd FileType help wincmd L
 autocmd FileType h wincmd L
 
-    " Removes the delay after hiting <esc><S-o>
-    " https://github.com/vim/vim/issues/24
-    " It is related to terminal only. In gVim all is fine.
-set timeout timeoutlen=3000 ttimeoutlen=100
-
-    " disable 'ex' mode call
+" disable 'ex' mode call
 map Q <NOP>
 
-    " Show invisibles
+" Show invisibles
 set list
 set listchars=tab:»-,trail:·,eol:¬
 
-    " set :substitute flag g to on
+" set :substitute flag g to on
 set gdefault
 
-    " will open a split window with all searches of document from :substitute
+" will open a split window with all searches of document from :substitute
 set inccommand=split
 
 set termguicolors
@@ -174,47 +153,31 @@ set termguicolors
 set undofile
 set undodir=~/.config/nvim/undo
 
-" }}}
-
-" =============================================================================
-" commands {{{
-" =============================================================================
-
+" # commands ==================================================================
 command! -nargs=0 Nvimrc :e ~/.config/nvim/init.vim
 
 command! -nargs=0 Up :PlugUpgrade | PlugUpdate
 
-" }}}
 
-" =============================================================================
-" Working with split windows {{{
-" =============================================================================
-
-    " Open vertical split and switch over to it
+" # split windows =============================================================
+" Open vertical split and switch over to it
 nnoremap <leader>n <c-w>n<c-w>L:Startify<cr>
 
-    " Open a horizontal split and switch to it
+" Open a horizontal split and switch to it
 nnoremap <leader>N <c-w>s<c-w>J
 
-    " Makes jumping between splited windows easier
+" Makes jumping between splited windows easier
 nnoremap <a-h> <c-w>h
 nnoremap <a-j> <c-w>j
 nnoremap <a-k> <c-w>k
 nnoremap <a-l> <c-w>l
 
-" }}}
-
-" =============================================================================
-" Simple key mappings, that are time saver {{{
-" =============================================================================
-
-" vmap ------------------------------------------------------------------------
-    " copy to system clipboard
+" # mappings ==================================================================
+" copy to system clipboard
 vmap <leader>y "+y
-    " small hack to highlight also the yanked code
-xmap <leader>Y :YankCode<cr>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<cr>
 
-" nmap ------------------------------------------------------------------------
+" small hack to highlight also the yanked code
+xmap <leader>Y :YankCode<cr>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<cr>
 
 nmap <leader>1 :w !wc -w<cr>
 
@@ -228,33 +191,34 @@ nmap <leader>H :HexokinaseToggle<cr>
 nmap <leader>C :ContextToggle<cr>
 nmap <leader>f :Lines<cr>
 nmap <leader>F :BLines<cr>
+nmap <leader>b :Buffers<cr>
+nmap <leader>B :GitMessenger<CR>
+nmap <leader>sr :SignifyRefresh<CR>
+" ripgrep - search, but don't open the first result immediately:
+nmap <leader>r :Rg!<cr>
 
-  " quickly open TODO.md file from buffer.
+" quickly open TODO.md file from buffer, if exist.
 nmap <leader><Tab> :buffer TODO.md<cr>
 
-" nnoremap --------------------------------------------------------------------
-    " Save file
+" Save file
 nnoremap <leader>w :w<cr>
 
-    " Open file
+" Open file
 nnoremap <leader>o :Files<cr>
-    " Open changed files from `git status`
+" Open changed files from `git status`
 nnoremap <leader>O :GFiles?<cr>
 
-  " buffer stuff
-nnoremap <leader>b :Buffers<cr>
+" buffer
 nnoremap <c-c>c :bp\|bd #<cr>
 nnoremap <c-c>a :%bd<cr>:Startify<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
 nnoremap <leader><leader> <c-^>
 
-" vnoremap --------------------------------------------------------------------
-    " search for visually selected text
+" search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
-" mixed -----------------------------------------------------------------------
-  " disable arrow keys
+" disable arrow keys
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
@@ -264,7 +228,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-    " go hollow mode
+" go hollow mode
 let t:is_transparent = 0
 function! Toggle_transparent()
     if t:is_transparent == 0
@@ -277,113 +241,21 @@ function! Toggle_transparent()
 endfunction
 nnoremap <leader>h :call Toggle_transparent()<CR>
 
-    " Simple sort lines
+" simple sort lines
 vmap <leader>s :sort<cr>
 nmap <leader>si vi{:sort<cr>
 
-" }}}
-
-" =============================================================================
-" Spellchecking {{{
-" =============================================================================
-
+" # spellchecking =============================================================
 nmap <silent> <f5> :set spell!<cr>
 
-    " set default spellchecking to DE
+" set default spellchecking to DE
 setlocal spelllang=de_de
 
-" }}}
-
-" =============================================================================
-" markdown settings {{{
-" =============================================================================
-
+" # markdown ==================================================================
 map <leader>mh1 VypVr=
 map <leader>mh2 VypVr-
 
-" autocmd BufEnter *.md set background=light
-
-" }}}
-
-" =============================================================================
-" Emmet settings {{{
-" =============================================================================
-
-    " enable all function in all mode.
-let g:user_emmet_mode='a'
-
-let g:user_emmet_settings = {
-\  'typescriptreact' : {
-\      'extends' : 'jsx',
-\  },
-\  'javascriptreact' : {
-\      'extends' : 'jsx',
-\  },
-\  'jsx': {
-\    'attribute_name': {'class': 'className'},
-\  },
-\}
-
-    " quick emmet workaround to have css completion in javascript
-function! ToggleJsxCssFt()
-    if &filetype == 'javascriptreact'
-        set filetype=scss
-    else
-        set filetype=javascriptreact
-    endif
-endfunction
-
-nnoremap <leader>T :call ToggleJsxCssFt()<cr>
-
-" }}}
-
-" =============================================================================
-" ALE stuff {{{
-" =============================================================================
-
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \ 'javascriptreact': ['eslint', 'stylelint'],
-    \ 'typescript': ['eslint', 'tsserver'],
-    \ 'typescriptreact': ['eslint', 'tsserver', 'stylelint'],
-\}
-
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-    \ 'javascript': ['prettier', 'eslint'],
-    \ 'javascriptreact': ['prettier', 'eslint'],
-    \ 'json': ['prettier', 'eslint'],
-    \ 'typescript': ['prettier', 'eslint'],
-    \ 'typescriptreact': ['prettier', 'eslint'],
-    \ 'scss': ['prettier'],
-    \ 'css': ['prettier'],
-\}
-
-let g:ale_linters_ignore = {
-  \ 'typescript': ['tslint'],
-  \ 'typescriptreact': ['tslint']
-\}
-
-let g:ale_linter_aliases = {'jsx': 'css'}
-
-let g:ale_javascript_prettier_use_local_config = 1
-
-let g:ale_echo_msg_format = '(%linter%) %code%: %s'
-
-" nmap <silent> gd :TSDef<CR>
-nmap <silent> gd :ALEGoToDefinition<CR>
-nmap <silent> gr :TSRefs<CR>
-nmap <silent> gi :TSType<CR>
-
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" }}}
-
-" =============================================================================
-" Lightline stuff {{{
-" =============================================================================
-
+" # lightline =================================================================
 set noshowmode
 
 let g:lightline = {
@@ -403,81 +275,18 @@ function! LightLineFilename()
   return expand('%')
 endfunction
 
-" }}}
-
-" =============================================================================
-" Deoplete stuff {{{
-" =============================================================================
-
-let g:deoplete#enable_at_startup = 1
-
-let g:python3_host_prog = '/usr/bin/python'
-
-call deoplete#custom#option({
-\ 'smart_case': v:true,
-\ 'min_pattern_length': 1,
-\ })
-
-call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-
-" }}}
-
-" =============================================================================
-" Ripgrep stuff {{{
-" =============================================================================
-
-" search, but don't open the first result immediately
-map <leader>r :Rg!<cr>
-
-" }}}
-
-" =============================================================================
-" Startify stuff {{{
-" =============================================================================
-
+" # startify ==================================================================
 let g:startify_relative_path = 1
 let g:startify_change_to_dir = 0
 let g:startify_fortune_use_unicode = 1
 let g:startify_update_oldfiles = 1
 let g:startify_use_env = 1
 
-" }}}
-
-" =============================================================================
-" css stuff {{{
-" =============================================================================
-
-augroup VimCSS3Syntax
-  autocmd!
-
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
-
-" }}}
-
-" =============================================================================
-" editorconfig {{{
-" =============================================================================
-
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:EditorConfig_exec_path = 'editorconfig'
-let g:EditorConfig_core_mode = 'external_command'
-
-" }}}
-
-" =============================================================================
-" goyo {{{
-" =============================================================================
-
+" # goyo ======================================================================
 let g:goyo_width = 82
 let g:goyo_linenr = 1
 
-" }}}
-
-" =============================================================================
-" fzf.vim {{{
-" =============================================================================
-
+" # fzf.vim ===================================================================
   " TODO: How can i avoid searching in filename
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -486,58 +295,14 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-" }}}
-
-" =============================================================================
-" poppy {{{
-" =============================================================================
-
+" # poppy =====================================================================
 au! cursormoved * call PoppyInit()
 
-" }}}
-
-" =============================================================================
-" limelight {{{
-" =============================================================================
-
+" # limelight =================================================================
 let g:limelight_conceal_ctermfg = 240
 
-" autocmd! User GoyoEnter Limelight
-" autocmd! User GoyoLeave Limelight!
-
-" }}}
-
-" =============================================================================
-" typescript {{{
-" =============================================================================
-
-let g:nvim_typescript#javascript_support = 1
-let g:nvim_typescript#diagnostics_enable = 0
-
-" }}}
-
-" =============================================================================
-" vim-signify {{{
-" =============================================================================
-
+" # vim-signify ===============================================================
 let g:signify_vcs_list = [ 'git' ]
 
-noremap <leader>sr :SignifyRefresh<CR>
-
-" }}}
-
-" =============================================================================
-" vim-mundo {{{
-" =============================================================================
-
+" # vim-mundo =================================================================
 nnoremap <f6> :MundoToggle<CR>
-
-" }}}
-
-" =============================================================================
-" git-messenger-vim {{{
-" =============================================================================
-
-nnoremap <leader>B :GitMessenger<CR>
-
-" }}}
