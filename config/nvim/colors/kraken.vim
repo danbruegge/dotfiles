@@ -73,7 +73,6 @@ call s:HL("KrakenBg", s:bg)
 call s:HL("KrakenError", s:error)
 call s:HL("KrakenWarning", s:warning)
 call s:HL("KrakenInfo", s:info)
-call s:HL("KrakenInfoInverse", s:info, s:none, s:inverse)
 call s:HL("KrakenDebug", s:debug)
 
 " BASE
@@ -159,6 +158,14 @@ hi! link plugMessage KrakenPrimary
 
 " vim-highlightedyank
 " https://github.com/machakann/vim-highlightedyank
-hi! link HighlightedyankRegion KrakenInfoInverse
+call s:HL("HighlightedyankRegion ", s:info, s:none, s:inverse)
+
+" Markdown
+call s:HL("htmlH1 ", s:primary, s:none, s:bold)
+call s:HL("htmlH2 ", s:primary, s:none, s:bold)
+call s:HL("htmlH3 ", s:primary, s:none, s:bold)
+call s:HL("htmlH4 ", s:primary, s:none, s:bold)
+call s:HL("htmlH5 ", s:primary, s:none, s:bold)
+call s:HL("htmlH6 ", s:primary, s:none, s:bold)
 
 " }}}
