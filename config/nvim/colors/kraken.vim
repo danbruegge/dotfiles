@@ -54,7 +54,7 @@ let s:fg = ["#eeeeee", 15]
 let s:bg = s:shape2
 let s:error = ["#ff005f", 197]
 let s:warning = ["#ffaf5f ", 215]
-let s:info = ["#87afff", 111] " maybe needs a diffrent color
+let s:info = ["#afaf00", 142]
 let s:debug = ["#ff00d7", 200]
 
 " LINKS
@@ -73,6 +73,7 @@ call s:HL("KrakenBg", s:bg)
 call s:HL("KrakenError", s:error)
 call s:HL("KrakenWarning", s:warning)
 call s:HL("KrakenInfo", s:info)
+call s:HL("KrakenInfoInverse", s:info, s:none, s:inverse)
 call s:HL("KrakenDebug", s:debug)
 
 " BASE
@@ -120,7 +121,7 @@ call s:HL("WarningMsg", s:warning)
 " ALE
 call s:HL('ALEError', s:error, s:none, s:undercurl)
 call s:HL('ALEWarning', s:warning, s:none, s:undercurl)
-call s:HL('ALEInfo', s:warning, s:none, s:undercurl)
+call s:HL('ALEInfo', s:info, s:none, s:undercurl)
 
 " JSX
 hi! link jsxTagName KrakenDebug
@@ -155,5 +156,9 @@ hi! link plugUpdate KrakenShape7
 hi! link plugName KrakenShape5
 hi! link plugNumber KrakenFg
 hi! link plugMessage KrakenPrimary
+
+" vim-highlightedyank
+" https://github.com/machakann/vim-highlightedyank
+hi! link HighlightedyankRegion KrakenInfoInverse
 
 " }}}
