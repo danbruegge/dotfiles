@@ -22,7 +22,6 @@ install:
 	ln -sfT $(df)eslintrc $(base).eslintrc
 	ln -sfT $(df)gitconfig $(base).gitconfig
 	ln -sfT $(df)makepkg.conf $(base).makepkg.conf
-	ln -sfT $(df)pip $(base).pip
 	ln -sfT $(df)tern-project $(base).tern-project
 	ln -sfT $(df)tmux $(base).tmux
 	ln -sfT $(df)tmux.conf $(base).tmux.conf
