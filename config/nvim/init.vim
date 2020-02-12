@@ -4,6 +4,7 @@
 call plug#begin('~/.config/nvim/bundle')
 
 " colorschemes
+Plug 'https://git.barfooz.com/danbruegge/kraken.vim'
 Plug 'axvr/photon.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'owickstrom/vim-colors-paramount'
