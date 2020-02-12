@@ -11,7 +11,6 @@ show-dead-symlinks:
 
 install:
 	ln -sfT $(df)Xmodmap $(base).Xmodmap
-	ln -sfT $(df)Xresources $(base).Xresources
 	ln -sfT $(df)ackrc $(base).ackrc
 	ln -sfT $(df)bash_profile $(base).bash_profile
 	ln -sfT $(df)bashrc $(base).bashrc
