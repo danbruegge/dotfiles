@@ -10,7 +10,6 @@ show-dead-symlinks:
 	find -L $(SEARCHPATH) -type l
 
 install:
-	ln -sf $(df)git_hooks $(df).git/hooks
 	ln -sfT $(df)Xmodmap $(base).Xmodmap
 	ln -sfT $(df)Xresources $(base).Xresources
 	ln -sfT $(df)ackrc $(base).ackrc
