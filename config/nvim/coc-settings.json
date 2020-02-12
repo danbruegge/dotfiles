@@ -1,0 +1,12 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  ],
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"]
+}
