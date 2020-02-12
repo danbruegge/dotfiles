@@ -1,4 +1,4 @@
-" cool help screens
+" good help screens
 " + :he group-name
 " + :he highlight-groups
 " + :he cterm-colors
@@ -7,8 +7,6 @@
 
 " TODO:
 " - better way to show []{}()..
-" - visualize if text got yanked to clipboard
-" - add lightline colors
 " - make a package from it
 
 let g:colors_name="kraken"
@@ -49,13 +47,16 @@ let s:shape6 = ["#a8a8a8", 248]
 let s:shape7 = ["#bcbcbc", 250]
 let s:shape8 = ["#d0d0d0", 252]
 let s:primary = ["#5faf5f", 71]
-let s:special = ["#af00d7", 128]
+let s:special = ["#d75f00 ", 166]
 let s:fg = ["#eeeeee", 15]
 let s:bg = s:shape2
 let s:error = ["#ff005f", 197]
 let s:warning = ["#ffaf5f ", 215]
-let s:info = ["#afaf00", 142]
+let s:info = ["#afaf5f", 143]
 let s:debug = ["#ff00d7", 200]
+let s:insert = s:special
+let s:visual = ["#d75fd7", 170]
+let s:replace = ["#afafd7", 146]
 
 " LINKS
 call s:HL("KrakenShape1", s:shape1)
@@ -74,6 +75,9 @@ call s:HL("KrakenError", s:error)
 call s:HL("KrakenWarning", s:warning)
 call s:HL("KrakenInfo", s:info)
 call s:HL("KrakenDebug", s:debug)
+call s:HL("KrakenInsert", s:insert)
+call s:HL("KrakenVisual", s:visual)
+call s:HL("KrakenReplace", s:replace)
 
 " BASE
 call s:HL("Normal", s:fg, s:bg)
@@ -158,7 +162,7 @@ hi! link plugMessage KrakenPrimary
 
 " vim-highlightedyank
 " https://github.com/machakann/vim-highlightedyank
-call s:HL("HighlightedyankRegion ", s:info, s:none, s:inverse)
+call s:HL("HighlightedyankRegion ", s:info, s:bg, s:inverse)
 
 " Markdown
 call s:HL("htmlH1 ", s:primary, s:none, s:bold)
