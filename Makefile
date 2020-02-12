@@ -1,5 +1,4 @@
-user=dan
-base=/home/$(user)/
+base=/home/$(shell whoami)/
 df=$(base).dotfiles/
 thishost=$(shell hostname)
 
