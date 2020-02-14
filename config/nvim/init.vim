@@ -19,7 +19,6 @@ Plug 'machakann/vim-highlightedyank'
 
 " editor sugar
 Plug 'AaronLasseigne/yank-code'
-Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
