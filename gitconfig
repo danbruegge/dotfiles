@@ -1,33 +1,18 @@
 [color]
-    ui = True
-
-[color "branch"]
-    current = yellow bold
-    local = yellow
-    remote = green
-
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-
-[color "status"]
-    added = yellow bold
-    changed = green bold
-    untracked = cyan bold
+    ui = auto
 
 [format]
     pretty = oneline
 
 [core]
-    excludesfile = ~/dotfiles/scripts/gitignore_global
+    excludesfile = ~/.gitignore
     pager = less -r
     editor = nvim
     logAllRefUpdates = true
 
 [diff]
     algorithm = patience
+    colorMoved = default
 
 [alias]
     st = status -s
@@ -36,17 +21,21 @@
     # branch
     br = branch
     bra = branch --all
+    bd = "!bd() { git branch | rg ${1}; }; bd"
+    bdd = "!bdd() { git branch | rg ${1} | xargs git branch -d; }; bdd"
+    bdf = "!bdf() { git branch | rg ${1} | xargs git branch -D; }; bdf"
 
     # tags
     tl = tag -l -n
 
     # checkout
-    co = checkout
-    cob = checkout -b
+    c = !git branch | fzf --header Checkout | xargs git switch
+    co = switch
+    cob = switch -c
     cof = checkout -f
 
     # diff
-    d = diff --word-diff
+    d = diff
     ds = diff --stat
     dlc = diff --cached HEAD^ # diff last commit
     dt = difftool
@@ -62,7 +51,7 @@
     cim = commit -m
 
     # log
-    l = log
+    l = log --decorate --pretty=oneline --abbrev-commit --graph
     lt = log -10 HEAD # last ten
     ls = log --stat # log stat
     lst = log -10 --stat # log status last ten
@@ -73,16 +62,25 @@
     sd = stash drop
     sl = stash list
     sp = stash pop
-    ss = stash save
+    ss = stash push
 
     # reset
     undo = reset HEAD^
     kill = reset --hard HEAD^
 
+    # unstage
+    unstage = reset HEAD
+
     # rebase
     ra = rebase --abort
     rc = rebase --continue
     rs = rebase --skip
+
+    # worktree
+    wt = worktree
+    wa = worktree add
+    wr = worktree remove
+    wl = worktree list
 
     # push current branch
     pcb = "!git push origin HEAD"
@@ -111,9 +109,6 @@
         echo "----" && \
         git status -s
 
-    # show git notes
-    notes = "!less ~/Cloud/Notes/git.md"
-
     # list aliases
     alias = "!git config -l | grep alias | cut -c 7-"
 
@@ -125,7 +120,48 @@
 
 [merge]
     conflictstyle = diff3
-    tool = vimdiff
+    tool = nvim
+
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = false
+
+[fetch]
+    prune = true
 
 [user]
     useConfigOnly = true
+
+[pull]
+    ff = only
+
+[init]
+    defaultBranch = main
+
+[pager]
+    blame = delta
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
