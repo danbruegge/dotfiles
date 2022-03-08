@@ -1,0 +1,36 @@
+snippet bang
+	#!/bin/sh
+
+# #!/bin/sh
+snippet #!
+	#!/bin/sh
+	# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+	set -euo pipefail
+	IFS=$'\n\t'
+
+	# enable debugging by default
+	set -x
+
+	# https://dev.to/thiht/shell-scripts-matter
+	#/ Usage:
+	#/ Description:
+	#/ Examples:
+	#/ Options:
+	#/   --help: Display this help message
+	usage() { grep '^#/' "" | cut -c4- ; exit 0 ; }
+	expr "$*" : ".*--help" > /dev/null && usage
+
+	# http://redsymbol.net/articles/bash-exit-traps/
+	cleanup() {
+		# Remove temporary files
+		# Restart services
+		# ...
+		true
+	}
+
+	if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+		trap cleanup EXIT
+
+		# Script goes here
+		# ...
+	fi
