@@ -1,0 +1,4 @@
+BASE=/
+DOTS=$(BASE).dotfiles/
+THISHOST=$(shell hostname)
+CLOUD_PATH=$(BASE)Cloudfolder/
