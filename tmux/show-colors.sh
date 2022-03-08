@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 BREAK=6
 count=0
 
