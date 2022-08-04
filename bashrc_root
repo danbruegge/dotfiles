@@ -1,10 +1,11 @@
-#
-# ~/.bashrc
-#
+#!/bin/sh
+
 [[ $- != *i* ]] && return
 
+export TERM="xterm-256color"
+
 #--- VARIABLES ---
-ALIASES=( "main" "vw" )
+ALIASES="/home/dan/.dotfiles/scripts/aliases/*"
 BASHRCGLOBAL=/home/dan/.dotfiles/scripts/bashrc_global
 ROOT_PROMPT=/home/dan/.dotfiles/scripts/prompt/root.sh
 
@@ -33,20 +34,9 @@ alias reboot='systemctl reboot'
 alias sysinfo='grep . /etc/{hostname,locale.conf,vconsole.conf,modules-load.d/*.conf};readlink /etc/localtime'
 alias sysinfod='hostnamectl;localectl;timedatectl'
 
-#--- WLAN ---
-alias scan='iw dev wlan0 scan | grep SSID'
-
-function wifiReconnect () {
-    ip link set wlp3s0 up
-    netctl restart fatalfail
-}
-
-alias wifire=wifiReconnect
-
 # =============================================================================
 # PROMPT
 # =============================================================================
-
 [ -f "$ROOT_PROMPT" ] && source "$ROOT_PROMPT"
 
 # =============================================================================
@@ -57,13 +47,14 @@ alias wifire=wifiReconnect
 # =============================================================================
 # GET ALIASES
 # =============================================================================
-for i in "${ALIASES[@]}"; do
-    f="/home/dan/.dotfiles/scripts/aliases/$i"
-    [ -f "$f" ] && source "$f"
+for f in $ALIASES; do
+  [ -f "$f" ] && source "$f"
 done
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export FZF_DEFAULT_COMMAND='rg --hidden -g "!.git/*" -g "!dist/*" --files --smart-case'
+
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /usr/local/share/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash ] && . /usr/local/share/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash
+[ -f /home/dan/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash ] && . /home/dan/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash

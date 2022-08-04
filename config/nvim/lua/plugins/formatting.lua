@@ -1,21 +1,44 @@
 local null_ls = require("null-ls")
+local b = null_ls.builtins
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
-		null_ls.builtins.formatting.eslint_d,
-		null_ls.builtins.code_actions.eslint_d,
-		null_ls.builtins.formatting.prettierd.with({
+		b.code_actions.shellcheck,
+		b.diagnostics.shellcheck,
+		b.code_actions.gitsigns,
+		b.formatting.stylua,
+		b.formatting.eslint_d,
+		b.diagnostics.eslint_d,
+		b.code_actions.eslint_d,
+		b.formatting.prettierd.with({
 			condition = function(utils)
-				return utils.root_matches("webfleet") or utils.root_has_file(".md") or utils.root_has_file(".json")
+				local isWfAtlantis = utils.root_matches("atlantis")
+				local isWfModules = utils.root_matches("ui%-shared%-modules")
+				local isWebfleet = isWfAtlantis or isWfModules
+
+				return isWebfleet
 			end,
 		}),
-		null_ls.builtins.formatting.stylua,
 	},
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			-- Need the timeout of 2000 to let null-ls have chance to find local executables
-			-- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 10000)")
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({
+						-- timeout_ms = 2000,
+						bufnr = bufnr,
+						filter = function(c)
+							return c.name == "null-ls"
+						end,
+					})
+				end,
+			})
 		end
 	end,
 })

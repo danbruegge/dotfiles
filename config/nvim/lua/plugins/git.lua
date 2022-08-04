@@ -1,5 +1,5 @@
 require("gitsigns").setup({
-	current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	current_line_blame_opts = {
 		delay = 200,
 	},
@@ -12,6 +12,10 @@ require("gitsigns").setup({
 		-- Navigation
 		map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
 		map("n", "[c", "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
+		map("n", "]h", "&diff ? ']h' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+		map("n", "[h", "&diff ? '[h' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
+		map("n", "gj", "&diff ? 'gj' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+		map("n", "gk", "&diff ? 'gk' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
 		-- Actions
 		map("n", "<leader>hs", ":Gitsigns stage_hunk<CR>")

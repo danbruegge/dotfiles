@@ -5,16 +5,12 @@
 # =============================================================================
 
 alias c='clear'
-alias ls='ls -hH --color=auto'
-alias ll='ls -l'
-alias la='ls -la'
-alias ld='ls -ld .*' # list only dotfiles
-alias lo='ls . | xargs -n1 basename' # list files without extra informations
-alias loa='ls -a . | xargs -n1 basename'    # list 'all' files without extra
-                                            # informations
-alias lod='ls -ad .* | xargs -n1 basename'  # list only dotfiles without extra
-                                            # informations
-alias lsm='find / -type l -ls' # list all symlinks
+alias ls='exa --git --icons'
+alias ll='exa --git --icons -l'
+alias la='exa --git --icons -la'
+alias ld='exa --git --icons -ld .*' # list only dotfiles
+alias lt='exa --git --icons -l -T' # list subfolders as a tree
+alias cat='bat'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -28,15 +24,24 @@ alias ping='ping -c 5'
 alias tree='tree -C'
 alias rename='perl-rename'
 alias bashrc='nvim ~/.bashrc && . ~/.bashrc'
-alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias nvimrc='nvim ~/.config/nvim/init.lua'
 alias reload='. ~/.bashrc'
 alias dots='cd ~/.dotfiles'
 alias edal='nvim ~/.dotfiles/scripts/aliases && . ~/.bashrc'
+alias cheat='tldr'
+alias htop='btop'
+alias sm='btop' # sm = system monitor
+alias v='nvim'
 
-  # needs the package "arch-wiki-docs" to be installed on the system
+bashstats () {
+  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25; 
+}
+
+# needs the package "arch-wiki-docs" to be installed on the system
 alias archwiki='firefox /usr/share/doc/arch-wiki/html/en/Table_of_contents.html'
 
 alias r='ranger'
+alias gg='glow $1 --pager'
 
 mkcd () {
   mkdir -pv "$1"
@@ -71,11 +76,29 @@ slugify () {
   echo "$(xclip -o)" "copied to clipboard"
 }
 
+# toggle keyboard layout
+tk () {
+  DE="layout:     de"
+  US="layout:     us"
+  LAYOUT=$(setxkbmap -query | grep layout)
+
+  if [[ "$DE" == "$LAYOUT" ]]; then
+    setxkbmap us
+    xmodmap ~/.Xmodmap
+    return
+  fi
+
+  if [[ "$US" == "$LAYOUT" ]]; then
+    setxkbmap de
+    return
+  fi
+}
+
 # =============================================================================
-# PACKER/PACMAN
+# Package Management
 # =============================================================================
 
-alias up='yay'
+alias up='yay -Syu --devel --cleanafter'
 alias paclck='su -c "rm /var/lib/pacman/db.lck"'
 
 # =============================================================================
@@ -107,6 +130,54 @@ alias pyclean='find . -name "*.pyc" -delete'
 # =============================================================================
 
 alias g='git'
+alias gl='lazygit'
 
 # bash completion for g - git alias
 __git_complete g __git_main
+
+# =============================================================================
+# YARN
+# =============================================================================
+
+alias y='yarn'
+alias zarn='yarn'
+alias ys='BROWSER=none yarn start'
+alias yd='BROWSER=none yarn dev'
+alias yb='yarn build'
+alias yt='yarn test'
+
+# =============================================================================
+# PNPM
+# =============================================================================
+
+alias p='pnpm'
+alias pb='pnpm build'
+alias pc='pnpm check:code'
+alias pt='pnpm test'
+
+# =============================================================================
+# NVM - Node Version Manager
+# =============================================================================
+
+alias nu='nvm use' # search for .nvmrc and use the defined version
+alias nc='nvm current'
+alias nl='unset npm_config_prefix && nvm use lts/erbium'
+
+# =============================================================================
+# Phillips Hue
+# =============================================================================
+
+toggleHueLights () {
+  areHueLightsOff=$( lampe -s I | rg off )
+
+  if [ -n "$areHueLightsOff" ];
+  then
+    echo ""
+    notify-send --icon=info "Switch HUE lights ON"
+    lampe -s Y
+  else
+    notify-send --icon=info "Switch HUE lights OFF"
+    lampe -s N
+  fi
+}
+

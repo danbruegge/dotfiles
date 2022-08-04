@@ -2,8 +2,8 @@ local lspconfig = require("lspconfig")
 local configs = require("lspconfig.configs")
 local servers = require("nvim-lsp-installer.servers")
 local server = require("nvim-lsp-installer.server")
-local path = require("nvim-lsp-installer.path")
-local npm = require("nvim-lsp-installer.installers.npm")
+local path = require("nvim-lsp-installer.core.path")
+local npm = require("nvim-lsp-installer.core.managers.npm")
 
 local custom_servers = {
 	{
@@ -31,6 +31,7 @@ local custom_servers = {
 		installer_server = server.Server:new({
 			name = "ls_emmet",
 			root_dir = server.get_server_root_path("ls_emmet"),
+			async = true,
 			installer = npm.packages({ "ls_emmet" }),
 			default_options = {
 				cmd = {

@@ -4,7 +4,7 @@
 	<icon>Terminal</icon>
 	<name>Terminal hier öffnen</name>
 	<unique-id>1453836195253064-2</unique-id>
-	<command>termite -d %f</command>
+	<command>alacritty</command>
 	<description>Beispiel für eine eigene Aktion</description>
 	<patterns>*</patterns>
 	<startup-notify/>

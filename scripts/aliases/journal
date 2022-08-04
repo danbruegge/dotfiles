@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Idea taken from: https://blog.isquaredsoftware.com/2020/09/coding-career-advice-daily-work-journal/
+
+journal () {
+  JOURNAL_HOME="$HOME/Cloud.rocks/Journal.dev"
+  YEAR=$(date +"%Y")
+  MONTH="$(date +"%m")-$(date +"%B" | tr '[:upper:]' '[:lower:]')"
+  DAY="$(date +"%d")-$(date +"%A" | tr '[:upper:]' '[:lower:]')"
+  CURRENT_MONTH_PATH="$JOURNAL_HOME/$YEAR/$MONTH"
+  CURRENT_DAY_FILE="$CURRENT_MONTH_PATH/$DAY.md"
+
+  [ ! -d "$CURRENT_MONTH_PATH" ] && mkdir -p $CURRENT_MONTH_PATH
+
+  case "$1" in
+     "find")
+      rg "$2" "$JOURNAL_HOME" "$3"
+      return
+      ;;
+     "ls")
+      ranger $JOURNAL_HOME
+      return
+      ;;
+    "view")
+      glow "$CURRENT_DAY_FILE" --pager
+      return
+      ;;
+  esac
+
+  # check if file exists, if not create new with template content
+  if [ ! -f "$CURRENT_DAY_FILE" ]
+  then
+    echo -e "# $YEAR/$MONTH/$DAY.md\n\n\n# Todo\n- \n\n# Remember\n- " > $CURRENT_DAY_FILE
+  fi
+
+  # `man test` to get explanation
+  if [ -z "$1" ] # is empty?
+  then
+    $EDITOR "$CURRENT_DAY_FILE"
+    return;
+  fi
+}

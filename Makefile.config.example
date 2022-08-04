@@ -1,4 +1,4 @@
-BASE=/
+BASE=/<homepath>
 DOTS=$(BASE).dotfiles/
 THISHOST=$(shell hostname)
-CLOUD_PATH=$(BASE)Cloudfolder/
+CLOUD_PATH=$(BASE)<cloudfolder>/

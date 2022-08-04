@@ -47,3 +47,6 @@ map("n", "<leader>si", ":vi{:sort<cr>", {})
 
 -- Markdown Preview
 map("n", "<leader>p", ":Glow<cr>", {})
+
+-- Markdown Preview
+map("n", "<leader>l", ":LspRestart<cr>", {})

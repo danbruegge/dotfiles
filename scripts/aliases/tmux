@@ -2,7 +2,6 @@
 
 alias tm='tmux'
 alias tma='tmux attach'
-alias tmc='tmx wshop' # opens the most common project tmux config at the moment
 alias tmh='tmx home'
 alias tme='nvim ~/.tmux.conf'
 
@@ -23,7 +22,7 @@ tmx () {
       ;;
       "add")
         sed -e "s/{{name}}/$2/g" \
-          -e "s/{{location}}/$3/g" \
+          -e "s/{{folder}}/$3/g" \
           "$TMUX_HOME/config.template" > "$TMUX_HOME/$2.conf"
         return
       ;;
@@ -37,7 +36,7 @@ tmx () {
       ;;
       *)
         echo "list                          - List configs";
-        echo "add [name] [location-name]    - Add a new config from [name] and [location-name]";
+        echo "add [name] [folder-name]      - Add a new config from [name] and [folder-name: cd ~/workspace/{{folder}}/]";
         echo "edit [name]                   - Edit an existing config by name";
         echo "delete [name]                 - Delete an existing config by name";
         return

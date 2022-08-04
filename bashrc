@@ -1,9 +1,8 @@
-#!/bin/bash
-# ~/.bashrc
+#!/bin/sh
 
 [[ $- != *i* ]] && return
 
-export TERM="screen-256color"
+export TERM="tmux-256color"
 
 # =============================================================================
 # CUSTOM VARIABLES
@@ -108,11 +107,12 @@ EOF
 # https://github.com/carlitux/deoplete-ternjs
 ulimit -n 2048
 
+source /usr/share/nvm/init-nvm.sh
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# export FZF_DEFAULT_COMMAND='ag -g ""'
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='rg --hidden -g "!.git/*" -g "!dist/*" --files --smart-case'
+source /usr/share/fzf-tab-completion/bash/fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`

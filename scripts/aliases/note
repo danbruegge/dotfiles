@@ -6,8 +6,7 @@ alias nt='note today'
 alias nq='note quick'
 
 note () {
-  NOTES_HOME="$HOME/Cloud/Notes"
-  NOTES_EDITOR="nvim"
+  NOTES_HOME="$HOME/Cloud.rocks/Notes"
 
   case "$1" in
     "ls")
@@ -18,12 +17,16 @@ note () {
       rm -i "$NOTES_HOME/$2.md"
       return
       ;;
-    "find")
+    "rename")
+      mv "$NOTES_HOME/$2.md" "$NOTES_HOME/$3.md"
+      return
+      ;;
+     "find")
       rg "$2" "$NOTES_HOME" "$3"
       return
       ;;
     "view")
-      mdv "$NOTES_HOME/$2.md" | less -r
+      glow "$NOTES_HOME/$2.md" --pager
       return
       ;;
   esac
@@ -31,9 +34,9 @@ note () {
   # `man test` to get explanation
   if [ -z "$1" ] # is empty?
   then
-    $NOTES_EDITOR "$NOTES_HOME"
+    $EDITOR "$NOTES_HOME"
     return;
   fi
 
-  $NOTES_EDITOR "$NOTES_HOME/$1.md";
+  $EDITOR "$NOTES_HOME/$1.md";
 }

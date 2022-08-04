@@ -5,7 +5,6 @@ require("packer").startup({
 		use("lewis6991/impatient.nvim")
 
 		-- package management
-
 		use("wbthomason/packer.nvim")
 
 		-- colorscheme
@@ -13,26 +12,28 @@ require("packer").startup({
 
 		-- LSP
 		use({
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
-			"williamboman/nvim-lsp-installer",
+			"jose-elias-alvarez/typescript.nvim",
 		})
 
 		-- formatting
-		use({
-			{ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } },
-			"jose-elias-alvarez/nvim-lsp-ts-utils",
-		})
+		use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
 		-- completion
 		use({
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"dcampos/nvim-snippy",
 			"dcampos/cmp-snippy",
+			"onsails/lspkind-nvim",
 		})
 
 		-- treesitter
@@ -44,7 +45,6 @@ require("packer").startup({
 			{ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 			{ "AckslD/nvim-neoclip.lua", requires = { "tami5/sqlite.lua", module = "sqlite" } },
-			use("nvim-telescope/telescope-file-browser.nvim"),
 		})
 
 		-- statusline
@@ -53,23 +53,29 @@ require("packer").startup({
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		})
 
+		-- vim code
+		use("mhinz/vim-startify")
+		use("kevinhwang91/rnvimr")
+		use("tpope/vim-sleuth")
+		use("AaronLasseigne/yank-code")
+
 		-- other
-		use("mhinz/vim-startify") -- vim code
 		use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
-		use("kevinhwang91/rnvimr") -- vim code
-		use("jiangmiao/auto-pairs") -- vim code
-		use("AaronLasseigne/yank-code") -- vim code
+		use("windwp/nvim-autopairs")
+		use("windwp/nvim-ts-autotag")
 		use("blackCauldron7/surround.nvim")
 		use("numToStr/Comment.nvim")
 		use("norcalli/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
 		use("ellisonleao/glow.nvim")
 		use({
-			"nmac427/guess-indent.nvim",
-			config = function()
-				require("guess-indent").setup({})
-			end,
+			"bennypowers/nvim-regexplainer",
+			requires = {
+				"nvim-lua/plenary.nvim",
+				"MunifTanjim/nui.nvim",
+			},
 		})
+		use("lukas-reineke/headlines.nvim")
 	end,
 	config = {
 		compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
@@ -83,26 +89,28 @@ require("packer").startup({
 
 require("common")
 require("mappings")
-require("plugins.lsp-installer")
+require("plugins.lsp")
 require("plugins.formatting")
 require("plugins.syntax")
 require("plugins.completion")
-require("snippy").setup({
-	mappings = {
-		is = {
-			["<Tab>"] = "expand_or_advance",
-			["<S-Tab>"] = "previous",
-		},
-	},
-})
-require("plugins.nvim-telescope")
+require("plugins.telescope")
 require("plugins.startify")
 require("plugins.statusline")
 require("plugins.git")
 require("plugins.rnvimr")
+require("plugins.indent")
+require("nvim-autopairs").setup({
+	fast_wrap = {
+		highlight = "IncSearch",
+	}, -- setup function and press <a-e> to use fast_wrap
+	check_ts = true,
+	map_c_h = true,
+})
+require("nvim-ts-autotag").setup()
 require("surround").setup({ mappings_style = "surround" })
 require("Comment").setup()
-require("plugins.indent")
+require("regexplainer").setup({ auto = true })
+require("headlines").setup()
 
 -- load as last one for project specific settings
-require("projects")
+-- require("projects")

@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 local keywordLength = 1
 local bufferConfig = {
@@ -12,33 +13,7 @@ local bufferConfig = {
 	},
 }
 
-local kind_icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "ﴯ",
-	Interface = "",
-	Module = "",
-	Property = "ﰠ",
-	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 
 cmp.setup({
 	snippet = {
@@ -47,29 +22,17 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-			-- Source
-			vim_item.menu = ({
-				buffer = "[Buffer]",
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[Lua]",
-				path = "[Path]",
-				snippy = "[Snippy]",
-			})[entry.source.name]
-
-			return vim_item
-		end,
+		format = require("lspkind").cmp_format(),
 	},
 	sources = cmp.config.sources({
 		{ name = "snippy", group_index = 100 },
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
 		bufferConfig,
 	}),
-	mapping = {
+	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<tab>"] = cmp.mapping.confirm({
@@ -77,7 +40,7 @@ cmp.setup({
 			select = true,
 		}),
 		["<s-tab>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-	},
+	}),
 	completion = {
 		keyword_length = keywordLength,
 	},
@@ -89,9 +52,11 @@ cmp.setup({
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
-	sources = {
+	sources = cmp.config.sources({
 		bufferConfig,
-	},
+		{ name = "nvim_lsp_document_symbol" },
+	}),
+	mapping = cmp.mapping.preset.cmdline(),
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
@@ -101,4 +66,14 @@ cmp.setup.cmdline(":", {
 	}, {
 		{ name = "cmdline" },
 	}),
+	mapping = cmp.mapping.preset.cmdline(),
+})
+
+require("snippy").setup({
+	mapping = {
+		is = {
+			["<Tab>"] = "expand_or_advance",
+			["<S-Tab>"] = "previous",
+		},
+	},
 })

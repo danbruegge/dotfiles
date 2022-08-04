@@ -12,9 +12,7 @@ fi
 
 PATH_ANDROID_PLATFORM=/opt/android-sdk/platform-tools/
 PATH_ANDROID_TOOLS=/opt/android-sdk/tools/
-PATH_RUBY_BIN="$(ruby -e 'print Gem.user_dir')/bin"
-PATH_NPM_BIN="$HOME/.npm-global/bin"
-export PATH="$PATH:$PATH_ANDROID_PLATFORM:$PATH_ANDROID_TOOLS:$PATH_RUBY_BIN:$PATH_NPM_BIN"
-
-# shellcheck source=/home/dan/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh
-. "$HOME/.config/nvim/bundle/gruvbox/gruvbox_256palette.sh"
+PATH_RUBY="$(ruby -e 'print Gem.user_dir')/bin"
+PATH_NPM="$HOME/.npm-global/bin:$HOME/.local/bin"
+PATH_RADICLE="$HOME/.radicle/bin"
+export PATH="$PATH:$PATH_ANDROID_PLATFORM:$PATH_ANDROID_TOOLS:$PATH_RUBY:$PATH_NPM:$PATH_RADICLE"
