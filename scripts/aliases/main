@@ -4,7 +4,6 @@
 # MAIN
 # =============================================================================
 
-alias c='clear'
 alias ls='exa --git --icons'
 alias ll='exa --git --icons -l'
 alias la='exa --git --icons -la'
