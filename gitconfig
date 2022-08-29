@@ -24,6 +24,7 @@
     bd = "!bd() { git branch | rg ${1}; }; bd"
     bdd = "!bdd() { git branch | rg ${1} | xargs git branch -d; }; bdd"
     bdf = "!bdf() { git branch | rg ${1} | xargs git branch -D; }; bdf"
+    blt = !git branch --sort=-committerdate | head -n 10
 
     # tags
     tl = tag -l -n
