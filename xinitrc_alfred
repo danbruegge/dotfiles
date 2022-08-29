@@ -34,7 +34,7 @@ fi
 
 nm-applet &
 blueman-applet &
-tmux new -d -s "home" &
+tmux new -d -s home \; send -R "cal -3w" Enter &
 greenclip daemon &
 thunar --daemon &
 redshift-gtk -l 52.520008:13.404954 &
