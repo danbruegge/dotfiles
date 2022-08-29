@@ -5,7 +5,7 @@ local servers = {
 	"diagnosticls",
 	"graphql",
 	"html",
-	"ls_emmet",
+	"emmet_ls",
 	"marksman",
 	"stylelint_lsp",
 	"sumneko_lua",
@@ -16,7 +16,15 @@ local servers = {
 
 -- require("plugins.lsp.customs")
 
-require("mason").setup()
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,

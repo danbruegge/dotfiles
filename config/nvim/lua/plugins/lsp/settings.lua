@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 local function on_attach()
 	map("n", "<A-,>", ":lua vim.lsp.buf.hover()<cr>", {})
-	map("n", "<A-.>", ":lua vim.lsp.buf.range_code_action()<cr>", {})
+	map("n", "<A-.>", ":lua vim.lsp.buf.code_action()<cr>", {})
 	map("n", "<A-/>", ":lua vim.diagnostic.open_float()<cr>", {})
 	map("n", "gy", ":lua require('telescope.builtin').lsp_type_definitions()<cr>", {})
 	map("n", "gd", ":lua require('telescope.builtin').lsp_definitions()<cr>", {})

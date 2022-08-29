@@ -63,7 +63,7 @@ require("packer").startup({
 		use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("windwp/nvim-autopairs")
 		use("windwp/nvim-ts-autotag")
-		use("blackCauldron7/surround.nvim")
+		use("kylechui/nvim-surround")
 		use("numToStr/Comment.nvim")
 		use("norcalli/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
@@ -107,7 +107,7 @@ require("nvim-autopairs").setup({
 	map_c_h = true,
 })
 require("nvim-ts-autotag").setup()
-require("surround").setup({ mappings_style = "surround" })
+require("nvim-surround").setup()
 require("Comment").setup()
 require("regexplainer").setup({ auto = true })
 require("headlines").setup()
