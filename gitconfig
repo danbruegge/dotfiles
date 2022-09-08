@@ -90,6 +90,11 @@
     # clean up old remote branches
     rpo = remote prune origin
 
+    # pull and rebase
+    pr = pull --rebase origin
+    prd = pull --rebase origin develop
+    prm = pull --rebase origin main
+
     # list info
     i = !echo "----" && \
         echo "= Remote update" && \

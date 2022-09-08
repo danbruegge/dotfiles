@@ -4,6 +4,7 @@ config/Thunar/renamerrc
 config/nvim/.netrwhist
 config/nvim/autoload/plug.vim.old
 config/nvim/bundle
+config/nvim/lua/packer_compiled.lua
 config/nvim/session
 config/nvim/sessions
 config/nvim/undo
