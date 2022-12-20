@@ -39,13 +39,26 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
-		["<s-tab>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		-- ["<s-tab>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<cr><tab>"] = cmp.mapping(function()
+			vim.api.nvim_feedkeys(
+				vim.fn["copilot#Accept"](vim.api.nvim_replace_termcodes("<Tab>", true, true, true)),
+				"n",
+				true
+			)
+		end),
+		["<C-h>"] = cmp.mapping(function()
+			vim.api.nvim_feedkeys(vim.fn["copilot#Previous"](), "n", true)
+		end),
+		["<C-l>"] = cmp.mapping(function()
+			vim.api.nvim_feedkeys(vim.fn["copilot#Next"](), "n", true)
+		end),
 	}),
 	completion = {
 		keyword_length = keywordLength,
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 		native_menu = false,
 	},
 })

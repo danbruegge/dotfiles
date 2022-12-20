@@ -65,3 +65,5 @@ require("lualine").setup({
 		lualine_z = { "progress", "location" },
 	},
 })
+
+require("incline").setup()

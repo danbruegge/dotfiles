@@ -1,20 +1,23 @@
+local autocmd = vim.api.nvim_create_autocmd
+local cmd = vim.api.nvim_command
+
 local servers = {
+	"astro",
 	"bashls",
 	"cssls",
 	"cssmodules_ls",
 	"diagnosticls",
+	"emmet_ls",
+	"eslint",
 	"graphql",
 	"html",
-	"emmet_ls",
 	"marksman",
+	"prismals",
 	"stylelint_lsp",
 	"sumneko_lua",
 	"tailwindcss",
-	"tsserver",
 	"vimls",
 }
-
--- require("plugins.lsp.customs")
 
 require("mason").setup({
 	ui = {
@@ -32,6 +35,7 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 local on_attach = require("plugins.lsp.settings")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Disable virtual text for diagnostics
 vim.diagnostic.config({
@@ -40,16 +44,49 @@ vim.diagnostic.config({
 })
 
 for _, server in ipairs(servers) do
-	if server == "tsserver" then
-		require("typescript").setup({
-			server = {
-				on_attach = on_attach,
-				on_init = function(_)
-					vim.notify("tsserver started", vim.log.levels.INFO)
-				end,
+	if server == "emmet_ls" then
+		lspconfig[server].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = {
+				"html",
+				"javascript",
+				"javascript.jsx",
+				"javascriptreact",
+				"typescript",
+				"typescript.tsx",
+				"typescriptreact",
+				"css",
+				"scss",
+				"sass",
+				"astro",
 			},
 		})
+	elseif server == "tsserver" then
+		lspconfig[server].setup({
+			on_attach = function(client, bufnr)
+				require("twoslash-queries").attach(client, bufnr)
+			end,
+			capabilities = capabilities,
+		})
 	else
-		lspconfig[server].setup({ on_attach = on_attach })
+		lspconfig[server].setup({ on_attach = on_attach, capabilities = capabilities })
 	end
 end
+
+require("typescript").setup({
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+})
+
+autocmd({ "BufWritePre" }, {
+	pattern = "*.astro,*.tsx,*.ts,*.jsx,*.js",
+	callback = function()
+		cmd("EslintFixAll")
+	end,
+})
+
+require("lsp_lines").setup()
+vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })

@@ -3,24 +3,16 @@ local b = null_ls.builtins
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+require("prettier").setup({ bin = "prettierd" })
+
 null_ls.setup({
 	sources = {
 		b.code_actions.shellcheck,
 		b.diagnostics.shellcheck,
 		b.code_actions.gitsigns,
 		b.formatting.stylua,
-		b.formatting.eslint_d,
-		b.diagnostics.eslint_d,
-		b.code_actions.eslint_d,
-		b.formatting.prettierd.with({
-			condition = function(utils)
-				local isWfAtlantis = utils.root_matches("atlantis")
-				local isWfModules = utils.root_matches("ui%-shared%-modules")
-				local isWebfleet = isWfAtlantis or isWfModules
-
-				return isWebfleet
-			end,
-		}),
+		-- b.formatting.eslint_d,
+		require("typescript.extensions.null-ls.code-actions"),
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

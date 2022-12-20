@@ -10,16 +10,21 @@ require("packer").startup({
 		-- colorscheme
 		use("~/workspace/kraken")
 
+		-- copilot
+		use("github/copilot.vim")
+
 		-- LSP
 		use({
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
-			"jose-elias-alvarez/typescript.nvim",
+			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		})
 
 		-- formatting
 		use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
+		use("jose-elias-alvarez/typescript.nvim")
+		use("MunifTanjim/prettier.nvim")
 
 		-- completion
 		use({
@@ -39,12 +44,21 @@ require("packer").startup({
 		-- treesitter
 		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 		use("nvim-treesitter/playground")
+		use({
+			"Wansmer/treesj",
+			requires = { "nvim-treesitter" },
+		})
+
+		-- harpoon
+		use({ "ThePrimeagen/harpoon", requires = { "nvim-lua/plenary.nvim" } })
 
 		-- telescope
 		use({
 			{ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 			{ "AckslD/nvim-neoclip.lua", requires = { "tami5/sqlite.lua", module = "sqlite" } },
+			"nvim-telescope/telescope-live-grep-args.nvim",
+			"smartpde/telescope-recent-files",
 		})
 
 		-- statusline
@@ -52,6 +66,7 @@ require("packer").startup({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		})
+		use("b0o/incline.nvim")
 
 		-- vim code
 		use("mhinz/vim-startify")
@@ -60,6 +75,7 @@ require("packer").startup({
 		use("AaronLasseigne/yank-code")
 
 		-- other
+		use("stevearc/dressing.nvim")
 		use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("windwp/nvim-autopairs")
 		use("windwp/nvim-ts-autotag")
@@ -75,7 +91,9 @@ require("packer").startup({
 				"MunifTanjim/nui.nvim",
 			},
 		})
-		use("lukas-reineke/headlines.nvim")
+		use("FraserLee/ScratchPad")
+
+		use("ActivityWatch/aw-watcher-vim")
 	end,
 	config = {
 		compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
@@ -99,6 +117,9 @@ require("plugins.statusline")
 require("plugins.git")
 require("plugins.rnvimr")
 require("plugins.indent")
+require("plugins.scratchpad")
+require("plugins.treesj")
+require("plugins.copilot")
 require("nvim-autopairs").setup({
 	fast_wrap = {
 		highlight = "IncSearch",
@@ -110,7 +131,12 @@ require("nvim-ts-autotag").setup()
 require("nvim-surround").setup()
 require("Comment").setup()
 require("regexplainer").setup({ auto = true })
-require("headlines").setup()
+require("dressing").setup({
+	select = {
+		telescope = require("telescope.themes").get_cursor(),
+	},
+})
+require("harpoon").setup()
 
 -- load as last one for project specific settings
 -- require("projects")

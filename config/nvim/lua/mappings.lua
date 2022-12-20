@@ -12,6 +12,7 @@ vim.cmd([[
 ]])
 
 map("n", "<cr>", ":w<cr>", {})
+map("n", "<leader><cr>", ":wa<cr>", {})
 map("n", "<leader>R", ":%s/", {})
 map("n", "<leader>1", ":w !wc -w<cr>", {}) -- count words in file
 
@@ -47,6 +48,3 @@ map("n", "<leader>si", ":vi{:sort<cr>", {})
 
 -- Markdown Preview
 map("n", "<leader>p", ":Glow<cr>", {})
-
--- Markdown Preview
-map("n", "<leader>l", ":LspRestart<cr>", {})
