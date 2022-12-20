@@ -7,7 +7,7 @@ show-dead-symlinks:
 	find -L $(SEARCHPATH) -type l
 
 install-linux:
-	ln -sfT $(CLOUD_PATH)Documents/passwordstore $(BASE).password-store
+	# ln -sfT $(CLOUD_PATH)Documents/passwordstore $(BASE).password-store
 	ln -sfT $(CLOUD_PATH)Documents/ssh-config $(BASE).ssh
 	ln -sfT $(DOTS)Xmodmap $(BASE).Xmodmap
 	ln -sfT $(DOTS)ackrc $(BASE).ackrc

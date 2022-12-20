@@ -3,7 +3,6 @@
 # ~/.bash_profile
 #
 
-# shellcheck source=/home/dan/.bashrc
 [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
@@ -12,7 +11,6 @@ fi
 
 PATH_ANDROID_PLATFORM=/opt/android-sdk/platform-tools/
 PATH_ANDROID_TOOLS=/opt/android-sdk/tools/
-PATH_RUBY="$(ruby -e 'print Gem.user_dir')/bin"
 PATH_NPM="$HOME/.npm-global/bin:$HOME/.local/bin"
 PATH_RADICLE="$HOME/.radicle/bin"
-export PATH="$PATH:$PATH_ANDROID_PLATFORM:$PATH_ANDROID_TOOLS:$PATH_RUBY:$PATH_NPM:$PATH_RADICLE"
+export PATH="$PATH:$PATH_ANDROID_PLATFORM:$PATH_ANDROID_TOOLS:$PATH_NPM:$PATH_RADICLE"

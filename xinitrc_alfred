@@ -41,8 +41,8 @@ redshift-gtk -l 52.520008:13.404954 &
 notion-app-enhanced &
 # ./Notion-linux-x64/Notion &
 flameshot &
-hushboard &
-typora /home/dan/Cloud.rocks/plan.md &
+typora /home/dan/Cloud.rocks/TyporaSpace/plan.md &
+# aw-qt & # activitywatch
 
 # exec bspwm
 

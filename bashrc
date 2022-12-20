@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 export TERM="tmux-256color"
@@ -24,38 +25,31 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # =============================================================================
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups   # no duplicate entries
-shopt -s histappend                       # append history file
 
 # =============================================================================
 # PROMPT
 # =============================================================================
 
-[ -f "$USER_PROMPT" ] && source "$USER_PROMPT"
+[ -f "$USER_PROMPT" ] && . "$USER_PROMPT"
 
 # =============================================================================
 # GET GLOBAL BASHRC STUFF
 # =============================================================================
 
-[ -f "$BASHRCGLOBAL" ] && source "$BASHRCGLOBAL"
+[ -f "$BASHRCGLOBAL" ] && . "$BASHRCGLOBAL"
 
 # =============================================================================
 # GET ALIASES
 # =============================================================================
 for f in $ALIASES; do
-  [ -f "$f" ] && source "$f"
+  [ -f "$f" ] && . "$f"
 done
-
-# =============================================================================
-# Force Libreoffice to use gtk2
-# =============================================================================
-export SAL_USE_VCLPLUGIN=gtk
 
 # =============================================================================
 # Good bash tips for everyone
 # =============================================================================
-
 function bashtips() {
-# copyright 2007 - 2010 Christopher Bratusek
+  # copyright 2007 - 2010 Christopher Bratusek
 cat <<EOF
 DIRECTORIES
 -----------
@@ -104,14 +98,9 @@ M-^     complete history
 EOF
 }
 
-# https://github.com/carlitux/deoplete-ternjs
-ulimit -n 2048
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
-source /usr/share/nvm/init-nvm.sh
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-source /usr/share/fzf-tab-completion/bash/fzf-bash-completion.sh
+. /usr/share/fzf-tab-completion/bash/fzf-bash-completion.sh
 bind -x '"\t": fzf_bash_completion'
 
 # tabtab source for yarn package

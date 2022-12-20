@@ -1,7 +1,6 @@
 # =============================================================================
 # COLORED MAN PAGES
 # =============================================================================
-
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -17,35 +16,20 @@ man() {
 # =============================================================================
 # DEFAULTS
 # =============================================================================
-
 export EDITOR=nvim
 export TERMINAL=alacritty
 export BROWSER=firefox
 
 # =============================================================================
-# BASH
-# =============================================================================
-
-# auto cd when type '/etc' for example.
-shopt -s autocd
-
-# ZSH like auto-completion
-# bind 'set show-all-if-ambiguous on'
-# bind 'set completion-ignore-case on'
-# bind 'TAB:menu-complete'
-
-# =============================================================================
 # NVM
 # =============================================================================
+NVMINIT=/usr/share/nvm/init-nvm.sh
 
-# NVMINIT=/usr/share/nvm/init-nvm.sh
-#
-# [ -f "$NVMINIT" ] && source "$NVMINIT"
+[ -f "$NVMINIT" ] && . "$NVMINIT"
 
 # =============================================================================
 # GIT BASH COMPLETION
 # =============================================================================
-
 GITBASHCOMPLETION=/usr/share/git/completion/git-completion.bash
 
-[ -f "$GITBASHCOMPLETION" ] && source "$GITBASHCOMPLETION"
+[ -f "$GITBASHCOMPLETION" ] && . "$GITBASHCOMPLETION"
