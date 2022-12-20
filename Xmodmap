@@ -1,15 +1,11 @@
-! right ctrl
-keycode 105 = Menu
-
-! disable capslock
-! keycode 66 =
-
 ! disable capslock and bind it to Home
 clear Lock
-keycode 66 = acute NoSymbol
+keycode 66 = Home NoSymbol
 
 ! Alt_R + aAeEoOuUs and more umlauts for US layout
-keysym Alt_R = Mode_switch
+clear mod1
+keycode 108 = Mode_switch
+add mod1 = Alt_R
 keycode 39 = s S ssharp
 keycode 38 = a A adiaeresis Adiaeresis
 keycode 30 = u U udiaeresis Udiaeresis
