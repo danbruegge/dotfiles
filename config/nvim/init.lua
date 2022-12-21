@@ -91,7 +91,6 @@ require("packer").startup({
 				"MunifTanjim/nui.nvim",
 			},
 		})
-		use("FraserLee/ScratchPad")
 
 		use("ActivityWatch/aw-watcher-vim")
 	end,
@@ -117,7 +116,6 @@ require("plugins.statusline")
 require("plugins.git")
 require("plugins.rnvimr")
 require("plugins.indent")
-require("plugins.scratchpad")
 require("plugins.treesj")
 require("plugins.copilot")
 require("nvim-autopairs").setup({
