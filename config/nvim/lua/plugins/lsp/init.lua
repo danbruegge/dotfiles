@@ -41,6 +41,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.diagnostic.config({
 	update_in_insert = true,
 	virtual_text = false,
+	virtual_lines = { only_current_line = true },
 })
 
 for _, server in ipairs(servers) do

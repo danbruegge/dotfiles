@@ -11,7 +11,6 @@ null_ls.setup({
 		b.diagnostics.shellcheck,
 		b.code_actions.gitsigns,
 		b.formatting.stylua,
-		-- b.formatting.eslint_d,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
 	on_attach = function(client, bufnr)
