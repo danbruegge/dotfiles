@@ -2,12 +2,11 @@ Makefile.config
 accels.scm
 config/Thunar/renamerrc
 config/nvim/.netrwhist
-config/nvim/autoload/plug.vim.old
 config/nvim/bundle
-config/nvim/lua/packer_compiled.lua
 config/nvim/session
 config/nvim/sessions
 config/nvim/undo
+config/nvim/lua/projects.lua
 config/nvim.old/.netrwhist
 config/nvim.old/autoload/plug.vim.old
 config/nvim.old/bundle

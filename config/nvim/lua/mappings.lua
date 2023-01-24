@@ -1,13 +1,9 @@
-local g = vim.g
 local map = vim.api.nvim_set_keymap
-
-map("n", "<Space>", "", {})
-g.mapleader = " "
 
 -- Commands
 vim.cmd([[
   command! -nargs=0 Nvimrc :e ~/.config/nvim/init.lua
-  command! -nargs=0 Up :PackerSync
+  command! -nargs=0 Up :Lazy check
   command! -nargs=0 Json :%!jq .
 ]])
 
@@ -36,15 +32,8 @@ map("n", "<S-Tab>", ":bprevious<cr>", {})
 map("v", "yc", '"+y', {}) -- copy to system clipboard
 map("n", "Y", "y$", {}) -- copy to from cusor to end of the line. :h Y
 
--- small hack to highlight also the yanked code
--- xmap yC :YankCode<cr>:call highlightedyank#highlight#add('HighlightedyankRegion', getpos("'<"), getpos("'>"), 'V', 1000)<cr>
-map("v", "yC", ":YankCode<cr>", {})
-
 map("n", "Q", "<NOP>", {}) -- disable 'ex' mode call
 
 -- simple sort lines
 map("v", "<leader>s", ":sort<cr>", {})
 map("n", "<leader>si", ":vi{:sort<cr>", {})
-
--- Markdown Preview
-map("n", "<leader>p", ":Glow<cr>", {})

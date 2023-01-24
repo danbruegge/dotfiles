@@ -1,5 +1,9 @@
-require("treesj").setup({
-	use_default_keymaps = false,
-})
-
-vim.api.nvim_set_keymap("n", "<leader>j", ":TSJToggle<cr>", {})
+return {
+	"Wansmer/treesj",
+	keys = {
+		{ "<leader>j", ":TSJToggle<cr>", desc = "TreeSJ" },
+	},
+	opts = {
+		use_default_keymaps = false,
+	},
+}

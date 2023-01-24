@@ -4,8 +4,7 @@ local wo = vim.wo
 local autocmd = vim.api.nvim_create_autocmd
 local cmd = vim.api.nvim_command
 
-o.termguicolors = true
-cmd("colorscheme kraken")
+cmd("colorscheme kong")
 
 -- this option is deprecated without an alternative
 cmd("set gdefault") -- set :substitute flag g to on
