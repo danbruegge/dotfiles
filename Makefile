@@ -31,14 +31,15 @@ install-linux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-mac:
-	ln -sfT $(DOTS)config/alacritty $(BASE).config/alacritty
-	ln -sfT $(DOTS)config/bat $(BASE).config/bat
-	ln -sfT $(DOTS)config/nvim $(BASE).config/nvim
-	ln -sfT $(DOTS)config/ranger $(BASE).config/ranger
-	ln -sfT $(DOTS)config/tig $(BASE).config/tig
-	ln -sfT $(DOTS)scripts/gitignore_global $(BASE).gitignore
-	ln -sfT $(DOTS)tmux $(BASE).tmux
-	ln -sfT $(DOTS)tmux.conf $(BASE).tmux.conf
+	ln -sf $(DOTS)config/alacritty $(BASE).config/alacritty
+	ln -sf $(DOTS)config/bat $(BASE).config/bat
+	ln -sf $(DOTS)config/nvim $(BASE).config/nvim
+	ln -sf $(DOTS)config/ranger $(BASE).config/ranger
+	ln -sf $(DOTS)config/tig $(BASE).config/tig
+	ln -sf $(DOTS)scripts/gitignore_global $(BASE).gitignore
+	ln -sf $(DOTS)Brewfile $(BASE)Brewfile
+	ln -sf $(DOTS)tmux $(BASE).tmux
+	ln -sf $(DOTS)tmux.conf $(BASE).tmux.conf
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-root:

@@ -137,7 +137,7 @@ alias lg='lazygit'
 alias tig='lazygit'
 
 # bash completion for g - git alias
-__git_complete g __git_main
+# __git_complete g __git_main
 
 # =============================================================================
 # YARN
