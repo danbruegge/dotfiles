@@ -8,12 +8,6 @@ config/nvim/sessions
 config/nvim/undo
 config/nvim/lazy-lock.json
 config/nvim/lua/projects.lua
-config/nvim.old/.netrwhist
-config/nvim.old/autoload/plug.vim.old
-config/nvim.old/bundle
-config/nvim.old/session
-config/nvim.old/sessions
-config/nvim.old/undo
 config/ranger/bookmarks
 config/ranger/history
 config/ranger/tagged
