@@ -27,7 +27,7 @@ install-linux:
 	ln -sfT $(DOTS)tmux $(BASE).tmux
 	ln -sfT $(DOTS)tmux.conf $(BASE).tmux.conf
 	ln -sfT $(DOTS)xinitrc_$(THISHOST) $(BASE).xinitrc
-	SEARCHPATH=$(BASE) make show-dead-symlinks
+	# SEARCHPATH=$(BASE) make show-dead-symlinks
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-mac:
@@ -46,7 +46,7 @@ install-root:
 	ln -sfT $(DOTS)config/nvim /root/.config/nvim
 	ln -sfT $(DOTS)config/ranger /root/.config/ranger
 	ln -sfT $(DOTS)bashrc_root /root/.bashrc
-	SEARCHPATH=/root/ make show-dead-symlinks
+	# SEARCHPATH=/root/ make show-dead-symlinks
 
 root:
 	su -c 'make install-root'
