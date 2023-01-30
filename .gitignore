@@ -6,6 +6,7 @@ config/nvim/bundle
 config/nvim/session
 config/nvim/sessions
 config/nvim/undo
+config/nvim/lazy-lock.json
 config/nvim/lua/projects.lua
 config/nvim.old/.netrwhist
 config/nvim.old/autoload/plug.vim.old
