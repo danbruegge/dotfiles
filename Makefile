@@ -31,14 +31,14 @@ install-linux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-mac:
-	ln -sf $(DOTS)config/alacritty $(BASE).config/alacritty
-	ln -sf $(DOTS)config/bat $(BASE).config/bat
-	ln -sf $(DOTS)config/nvim $(BASE).config/nvim
-	ln -sf $(DOTS)config/ranger $(BASE).config/ranger
-	ln -sf $(DOTS)config/tig $(BASE).config/tig
-	ln -sf $(DOTS)scripts/gitignore_global $(BASE).gitignore
-	ln -sf $(DOTS)tmux $(BASE).tmux
-	ln -sf $(DOTS)tmux.conf $(BASE).tmux.conf
+	ln -sfn $(DOTS)config/alacritty $(BASE).config/alacritty
+	ln -sfn $(DOTS)config/bat $(BASE).config/bat
+	ln -sfn $(DOTS)config/nvim $(BASE).config/nvim
+	ln -sfn $(DOTS)config/ranger $(BASE).config/ranger
+	ln -sfn $(DOTS)config/tig $(BASE).config/tig
+	ln -sfn $(DOTS)scripts/gitignore_global $(BASE).gitignore
+	ln -sfn $(DOTS)tmux $(BASE).tmux
+	ln -sfn $(DOTS)tmux.conf $(BASE).tmux.conf
 	rm -rf ~/.tmux/plugins/tpm
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	sudo chmod 755 ./scripts/setup-mac.sh
