@@ -39,7 +39,9 @@ install-mac:
 	ln -sf $(DOTS)scripts/gitignore_global $(BASE).gitignore
 	ln -sf $(DOTS)tmux $(BASE).tmux
 	ln -sf $(DOTS)tmux.conf $(BASE).tmux.conf
+	rm -rf ~/.tmux/plugins/tpm
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	sudo chmod 755 ./scripts/setup-mac.sh
 	./scripts/setup-mac.sh
 
 install-root:

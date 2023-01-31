@@ -14,3 +14,4 @@ config/ranger/tagged
 scripts/gitconfig_user*
 ssh/known_hosts
 tmux/plugins/
+Brewfile.lock.json
