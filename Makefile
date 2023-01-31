@@ -31,6 +31,8 @@ install-linux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install-mac:
+	ln -sfn $(DOTS)bash_profile $(BASE).bash_profile
+	ln -sfn $(DOTS)bashrc $(BASE).bashrc
 	ln -sfn $(DOTS)config/alacritty $(BASE).config/alacritty
 	ln -sfn $(DOTS)config/bat $(BASE).config/bat
 	ln -sfn $(DOTS)config/nvim $(BASE).config/nvim
