@@ -37,10 +37,10 @@ install-mac:
 	ln -sf $(DOTS)config/ranger $(BASE).config/ranger
 	ln -sf $(DOTS)config/tig $(BASE).config/tig
 	ln -sf $(DOTS)scripts/gitignore_global $(BASE).gitignore
-	ln -sf $(DOTS)Brewfile $(BASE)Brewfile
 	ln -sf $(DOTS)tmux $(BASE).tmux
 	ln -sf $(DOTS)tmux.conf $(BASE).tmux.conf
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	./scripts/setup-mac.sh
 
 install-root:
 	ln -sfT $(DOTS)config/nvim /root/.config/nvim
