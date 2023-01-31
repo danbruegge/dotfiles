@@ -2,6 +2,7 @@
 
 # Create directories
 mkdir -p ~/workspace &&
+mkdir -p ~/.nvm &&
 
 brew update &&
 
