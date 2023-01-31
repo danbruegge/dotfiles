@@ -15,6 +15,7 @@ $(brew --prefix)/opt/fzf/install &&
 go install github.com/arl/gitmux@latest &&
 
 # Install nodejs
+source ~/.bash_profile &&
 nvm install node &&
 
 # Change computer name
