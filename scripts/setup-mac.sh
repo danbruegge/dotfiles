@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Create directories
+mkdir -p ~/workspace &&
+
 brew update &&
 
 brew bundle --file ~/.dotfiles/Brewfile &&
@@ -9,6 +12,9 @@ $(brew --prefix)/opt/fzf/install &&
 
 # Install gitmux
 go install github.com/arl/gitmux@latest &&
+
+# Install nodejs
+nvm install node &&
 
 # Change computer name
 sudo scutil --set ComputerName "alfred" &&
